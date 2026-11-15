@@ -1,0 +1,122 @@
+"use client";
+
+import { useEffect, useRef, useState, type MouseEvent } from "react";
+import { BRAND, CALL_HREF, CONTACT, NAV, PHONE_LABEL, REGISTER_HREF, href, type NavLink } from "./data";
+
+const MOBILE_MAX = 1100;
+
+function NavAnchor({ link, className }: { link: NavLink; className?: string }) {
+  const cls = [link.className, className].filter(Boolean).join(" ") || undefined;
+  return (
+    <a
+      href={href(link.href)}
+      className={cls}
+      id={link.id}
+      {...(link.external ? { target: "_blank", rel: "noopener" } : {})}
+    >
+      {link.label}
+    </a>
+  );
+}
+
+export function TopBar() {
+  return (
+    <div className="topbar">
+      <div className="wrap">
+        <span className="addr">✈ {BRAND.slogan}</span>
+        <span>
+          ☎ <a href={CALL_HREF}>{PHONE_LABEL}</a> · {CONTACT.hours}
+        </span>
+      </div>
+    </div>
+  );
+}
+
+export function SiteHeader() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [openDd, setOpenDd] = useState<number | null>(null);
+  const navRef = useRef<HTMLElement>(null);
+
+  // Máy tính: thanh menu cuộn ngang → đặt menu xổ xuống ở vị trí cố định theo mục cha
+  useEffect(() => {
+    const nav = navRef.current;
+    if (!nav) return;
+    const place = (dd: Element) => {
+      const a = dd.querySelector<HTMLElement>(":scope>a");
+      const m = dd.querySelector<HTMLElement>(".dd-menu");
+      if (!a || !m || window.innerWidth <= MOBILE_MAX) return;
+      const r = a.getBoundingClientRect();
+      m.style.position = "fixed";
+      m.style.top = `${r.bottom + 2}px`;
+      const w = m.offsetWidth || 240;
+      m.style.left = `${Math.max(8, Math.min(r.left, window.innerWidth - w - 8))}px`;
+    };
+    const handler = (e: Event) => {
+      const dd = (e.target as Element).closest?.("nav.main .dd");
+      if (dd) place(dd);
+    };
+    nav.addEventListener("mouseover", handler);
+    nav.addEventListener("focusin", handler);
+    return () => {
+      nav.removeEventListener("mouseover", handler);
+      nav.removeEventListener("focusin", handler);
+    };
+  }, []);
+
+  // Điện thoại: chạm lần đầu mở danh sách con, chạm lần nữa mới vào trang
+  const onGroupClick = (i: number) => (e: MouseEvent<HTMLAnchorElement>) => {
+    if (window.innerWidth > MOBILE_MAX) return;
+    if (openDd !== i) {
+      e.preventDefault();
+      setOpenDd(i);
+    }
+  };
+
+  return (
+    <header className="site">
+      <div className="wrap">
+        <a className="brand" href={href("khoa-hoc")}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={BRAND.logoMark} alt={`Logo ${BRAND.fullName}`} width={48} height={48} />
+          <div>
+            <b>{BRAND.headerName}</b>
+            <span>{BRAND.zh}</span>
+          </div>
+        </a>
+        <button
+          className="menu-btn"
+          type="button"
+          aria-expanded={menuOpen}
+          aria-controls="mainnav"
+          onClick={() => setMenuOpen((v) => !v)}
+        >
+          Menu
+        </button>
+        <nav className={`main${menuOpen ? " open" : ""}`} id="mainnav" ref={navRef}>
+          {NAV.map((item, i) =>
+            item.children ? (
+              <div className={`dd${openDd === i ? " open" : ""}`} key={item.label}>
+                <a href={href(item.href)} className={item.active ? "on" : undefined} onClick={onGroupClick(i)}>
+                  {item.label}{" "}
+                  <span className="caret" aria-hidden="true">
+                    ▾
+                  </span>
+                </a>
+                <div className="dd-menu">
+                  {item.children.map((c) => (
+                    <NavAnchor link={c} key={c.href + c.label} />
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <NavAnchor link={item} key={item.label} className={item.active ? "on" : undefined} />
+            ),
+          )}
+        </nav>
+        <a className="btn gold sm cta" href={href(REGISTER_HREF)}>
+          Đăng ký tư vấn
+        </a>
+      </div>
+    </header>
+  );
+}
