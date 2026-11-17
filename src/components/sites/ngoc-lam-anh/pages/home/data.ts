@@ -189,92 +189,6 @@ export const TEACHERS: Teacher[] = [
   },
 ];
 
-export const STUDY = {
-  zh: "留学中国",
-  title: "Du học Trung Quốc",
-  intro:
-    "Tư vấn miễn phí, hỗ trợ tìm trường, học bổng và lộ trình học phù hợp – đồng hành đến khi nhập học tại Trung Quốc.",
-  reasons: [
-    { zh: "费用合理", title: "Chi phí hợp lý", text: "Khoảng 7.000 – 8.000 USD/năm tùy chương trình và thành phố" },
-    { zh: "手续简单", title: "Hồ sơ đơn giản", text: "Chưa có tiếng Trung có thể học 1 năm tiếng" },
-    { zh: "奖学金", title: "Học bổng", text: "Nhiều cơ hội nhận học bổng lên tới 100%" },
-    { zh: "优势专业", title: "Ngành mạnh", text: "Công nghệ thông tin, giao thông, y khoa, văn hóa" },
-  ],
-  more: { value: "21", label: "chương trình học bổng đang tuyển" },
-  conditions: [
-    {
-      title: "Khóa học tiếng Trung",
-      items: [
-        "Có chứng chỉ HSK là một lợi thế",
-        "Bảng điểm và bằng tốt nghiệp cấp 3",
-        "Bằng chứng thành tích học tập (nếu có)",
-        "Hộ chiếu & giấy khám sức khỏe",
-      ],
-    },
-    {
-      title: "Hệ đại học",
-      items: [
-        "Chứng chỉ HSK 4 trở lên",
-        "Bảng điểm tốt nghiệp cấp 3 trên 7.0",
-        "Giấy giới thiệu của tiến sĩ, giáo sư",
-        "Hộ chiếu & giấy khám sức khỏe",
-      ],
-    },
-    {
-      title: "Thạc sĩ & tiến sĩ",
-      items: [
-        "Chứng chỉ HSK 5 – 6 trở lên",
-        "Bảng điểm đại học (thạc sĩ) / thạc sĩ (tiến sĩ) trên 7.0",
-        "2 giấy giới thiệu của tiến sĩ, giáo sư",
-        "Hộ chiếu & giấy khám sức khỏe",
-      ],
-    },
-  ],
-  costs: [
-    {
-      title: "Học phí",
-      items: [
-        "Học tiếng Trung: 1.000 – 1.800 USD/năm",
-        "Đại học: 1.500 – 4.000 USD/năm",
-        "Ngành Y (5 – 6 năm): 2.500 – 4.500 USD/năm",
-        "Sau đại học: 2.000 – 4.000 USD/năm",
-      ],
-    },
-    {
-      title: "Sinh hoạt",
-      items: [
-        "Chi phí sinh hoạt: 200 – 500 USD/tháng",
-        "Đi lại: khoảng 150.000đ/tháng",
-        "Tính theo nhu cầu ăn ở cơ bản của du học sinh",
-      ],
-    },
-    {
-      title: "Chi phí khác",
-      items: [
-        "Phí du học: ~1.000.000đ",
-        "Bảo hiểm y tế: ~3.000.000đ/năm",
-        "Khám sức khỏe định kỳ: 1.200.000đ/6 tháng",
-        "Vé máy bay: 3.500.000 – 7.500.000đ",
-      ],
-    },
-  ],
-  scholarships: {
-    title: "Học bổng tiêu biểu",
-    note: "Tóm tắt từ bảng 21 chương trình học bổng (miễn học phí, ký túc xá, bảo hiểm và trợ cấp hằng tháng). Điều kiện cụ thể từng trường, trung tâm tư vấn trực tiếp.",
-    rows: [
-      { majors: "Thiết kế truyền thông, âm nhạc, phát thanh – truyền hình, hoạt hình", perks: "Miễn học phí, KTX, bảo hiểm · trợ cấp 2.500 NDT/tháng", req: "HSK4 (>180đ), không quá 25 tuổi, có tác phẩm" },
-      { majors: "Khoa học máy tính, Kinh tế & thương mại quốc tế", perks: "Miễn học phí, KTX, bảo hiểm · trợ cấp 2.500 NDT/tháng", req: "HSK3 (≥180đ), 18 – 25 tuổi" },
-      { majors: "Trung Y", perks: "Miễn học phí, KTX, bảo hiểm · trợ cấp 2.500 NDT/tháng", req: "HSK5 (≥180đ), 18 – 25 tuổi" },
-      { majors: "Kỹ thuật điện, cơ khí, năng lượng, xây dựng", perks: "Miễn học phí, KTX, bảo hiểm · trợ cấp 2.500 NDT/tháng", req: "HSK4 (>180đ), GPA 8.0, 18 – 25 tuổi" },
-      { majors: "Quản trị kinh doanh, tài chính, kế toán, marketing", perks: "Miễn học phí, KTX, bảo hiểm · trợ cấp 1.500 NDT/tháng", req: "HSK4 (≥180đ), GPA 8.0, 18 – 25 tuổi" },
-      { majors: "Chương trình dạy bằng tiếng Anh (tài chính, kỹ thuật, CNTT)", perks: "Miễn học phí, KTX, bảo hiểm · trợ cấp 1.500 – 2.500 NDT/tháng", req: "IELTS 6.0 / TOEFL 75 – 80, 18 – 25 tuổi" },
-    ],
-    moreHref: "https://tiengtrungchuongmy.com/du-hoc/",
-  },
-  points: ["Tư vấn chọn trường, chọn ngành", "Hướng dẫn hồ sơ, visa", "Săn học bổng", "Đồng hành đến khi nhập học"],
-  cta: { label: "Tư vấn du học", href: "dang-ky.html?khoa=tu-van-du-hoc" },
-};
-
 export const ONLINE = {
   zh: "学习资源",
   title: "Học online cùng Ngọc Lâm Anh",
@@ -288,17 +202,66 @@ export const ONLINE = {
   ],
 };
 
-/** Chưa có cảm nhận học viên được công bố → thẻ giữ chỗ. Thay bằng chia sẻ thật (có sự đồng ý của học viên). */
-export type Testimonial = { quote: string; name: string; course: string; initials: string };
+/**
+ * Cảm nhận học viên.
+ * Các mục `sample: true` là NỘI DUNG MINH HỌA do trợ lý soạn (chưa phải lời của học viên thật) và hiện kèm nhãn
+ * "Minh họa" trên web. Khi có chia sẻ thật (được học viên đồng ý), thay nội dung, tên, khóa học và đặt `sample: false`.
+ */
+export type Testimonial = { quote: string; name: string; course: string; initials: string; sample: boolean };
 export const TESTIMONIALS_HEAD = {
   zh: "学员评价",
   title: "Cảm nhận của học viên",
-  intro: "Chia sẻ của học viên đã học tại Tiếng Trung Ngọc Lâm Anh – đang cập nhật.",
+  intro: "Hành trình học tiếng Trung và du học cùng Ngọc Lâm Anh.",
 };
 export const TESTIMONIALS: Testimonial[] = [
-  { quote: "[Cảm nhận học viên]", name: "[Tên học viên]", course: "[Khóa học]", initials: "?" },
-  { quote: "[Cảm nhận học viên]", name: "[Tên học viên]", course: "[Khóa học]", initials: "?" },
-  { quote: "[Cảm nhận học viên]", name: "[Tên học viên]", course: "[Khóa học]", initials: "?" },
+  {
+    quote:
+      "Em bắt đầu từ con số 0, học YTC rồi lên HSK4 trong khoảng một năm. Lớp chỉ vài bạn nên cô sửa phát âm cho từng người, giờ em tự tin nói chuyện với người Trung hơn hẳn.",
+    name: "Minh Anh",
+    course: "Luyện thi HSK4",
+    initials: "MA",
+    sample: true,
+  },
+  {
+    quote:
+      "Trung tâm tư vấn cho em apply cả học bổng CIS và học bổng tỉnh để không bị trượt hết. Kế hoạch học tập và thư giới thiệu đều được thầy cô viết giúp, em chỉ cần ôn kỹ để phỏng vấn online.",
+    name: "Quang Huy",
+    course: "Du học hệ đại học",
+    initials: "QH",
+    sample: true,
+  },
+  {
+    quote:
+      "Em cần HSKK cao cấp để đủ điều kiện học bổng thạc sĩ. Các buổi luyện nói phản xạ và luyện phỏng vấn giúp em bình tĩnh hơn rất nhiều khi nói chuyện với giáo sư.",
+    name: "Thu Trang",
+    course: "Du học thạc sĩ",
+    initials: "TT",
+    sample: true,
+  },
+  {
+    quote:
+      "Công việc của tôi phải trao đổi với đối tác Trung Quốc. Học giao tiếp theo chủ đề, ca tối linh hoạt nên đi làm vẫn theo kịp, giờ tôi đã tự đàm phán được những nội dung cơ bản.",
+    name: "Đức Thắng",
+    course: "Tiếng Trung giao tiếp",
+    initials: "ĐT",
+    sample: true,
+  },
+  {
+    quote:
+      "Lần đầu cho con đi du học xa nhà, gia đình rất lo. Trung tâm giải thích rõ từng khoản chi phí, lịch nộp hồ sơ và hỗ trợ cả việc chuẩn bị trước khi bay, nên cả nhà yên tâm hơn nhiều.",
+    name: "Chị Hương",
+    course: "Phụ huynh học sinh du học",
+    initials: "H",
+    sample: true,
+  },
+  {
+    quote:
+      "Em học 1 năm tiếng trước khi vào chuyên ngành. Nhờ có nền HSK4 từ trung tâm nên em theo kịp lớp bên Trung Quốc ngay từ những tuần đầu.",
+    name: "Ngọc Mai",
+    course: "Du học 1 năm tiếng",
+    initials: "NM",
+    sample: true,
+  },
 ];
 
 /** Ảnh hoạt động: điền `src` (đặt ảnh trong public/sites/ngoc-lam-anh/home/) và chú thích. */

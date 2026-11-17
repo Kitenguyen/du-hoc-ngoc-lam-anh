@@ -11,13 +11,13 @@ import {
   ONLINE,
   PATH,
   STATS,
-  STUDY,
   TEACHERS,
   TEAM_HEAD,
   TESTIMONIALS,
   TESTIMONIALS_HEAD,
   WHYS,
 } from "./data";
+import { DuHocSection } from "./DuHocSection";
 import { HeroFly } from "./HeroFly";
 import { OfferBlock } from "./OfferBlock";
 import { ScrollReveal } from "./ScrollReveal";
@@ -210,91 +210,7 @@ export function HomePage() {
           </div>
         </section>
 
-        <section className="block deep" id="du-hoc">
-          <div className="wrap">
-            <Head zh={STUDY.zh} title={STUDY.title} intro={STUDY.intro} />
-            <div className="unis">
-              {STUDY.reasons.map((r) => (
-                <div key={r.title}>
-                  <b>{r.zh}</b>
-                  <strong>{r.title}</strong>
-                  <span>{r.text}</span>
-                </div>
-              ))}
-              <div className="more">
-                <b>{STUDY.more.value}</b>
-                <span>{STUDY.more.label}</span>
-              </div>
-            </div>
-
-            <h3 className="dh-sub">Điều kiện đầu vào</h3>
-            <div className="dh-cols">
-              {STUDY.conditions.map((c) => (
-                <div className="dh-card" key={c.title}>
-                  <b>{c.title}</b>
-                  <ul>
-                    {c.items.map((x) => (
-                      <li key={x}>{x}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-
-            <h3 className="dh-sub">Chi phí du học</h3>
-            <div className="dh-cols">
-              {STUDY.costs.map((c) => (
-                <div className="dh-card" key={c.title}>
-                  <b>{c.title}</b>
-                  <ul>
-                    {c.items.map((x) => (
-                      <li key={x}>{x}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-
-            <h3 className="dh-sub">{STUDY.scholarships.title}</h3>
-            <div className="dh-table">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Chuyên ngành</th>
-                    <th>Chế độ</th>
-                    <th>Điều kiện</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {STUDY.scholarships.rows.map((r) => (
-                    <tr key={r.majors}>
-                      <td>{r.majors}</td>
-                      <td>{r.perks}</td>
-                      <td>{r.req}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <p className="dh-note">
-              {STUDY.scholarships.note}{" "}
-              <a href={STUDY.scholarships.moreHref} target="_blank" rel="noopener">
-                Xem bảng đầy đủ
-              </a>
-            </p>
-
-            <div className="study-pts">
-              {STUDY.points.map((p) => (
-                <span key={p}>{p}</span>
-              ))}
-            </div>
-            <div className="center">
-              <a className="btn gold" href={href(STUDY.cta.href)}>
-                {STUDY.cta.label}
-              </a>
-            </div>
-          </div>
-        </section>
+        <DuHocSection />
 
         <section className="block light">
           <div className="wrap">
@@ -318,11 +234,15 @@ export function HomePage() {
             <Head zh={TESTIMONIALS_HEAD.zh} title={TESTIMONIALS_HEAD.title} intro={TESTIMONIALS_HEAD.intro} />
             <div className="testis">
               {TESTIMONIALS.map((t, i) => (
-                <figure className="testi ph-card" key={i}>
+                <figure className="testi" key={i}>
                   <span className="q" aria-hidden="true">
                     “
                   </span>
-                  <span className="ph-tag">Đang cập nhật</span>
+                  {t.sample && (
+                    <span className="ph-tag" title="Nội dung minh họa – trung tâm sẽ thay bằng chia sẻ thật của học viên">
+                      Minh họa
+                    </span>
+                  )}
                   <blockquote>{t.quote}</blockquote>
                   <figcaption>
                     <span className="av" aria-hidden="true">
