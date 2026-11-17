@@ -15,7 +15,7 @@ export const HERO = {
   places: [
     { label: "Cơ sở", text: CONTACT.address },
     { label: "Hình thức", text: "Trực tuyến · Offline tại cơ sở" },
-    { label: "Lớp học", text: "3 – 7 học viên" },
+    { label: "Lớp học", text: "8 – 12 học viên" },
   ],
   art: {
     bigChar: "玉",
@@ -30,7 +30,7 @@ export const HERO = {
 
 export const STATS = [
   { value: "25", label: "năm kinh nghiệm đào tạo" },
-  { value: "3 – 7", label: "học viên mỗi lớp" },
+  { value: "8 – 12", label: "học viên mỗi lớp" },
   { value: "10", label: "giáo viên tiếng Trung" },
   { value: "100%", label: "học bổng du học tối đa" },
 ];
@@ -39,23 +39,30 @@ export const COURSES_HEAD = {
   zh: "热门课程",
   title: "Các khóa học",
   intro:
-    "Tiếng Trung giao tiếp, YTC cho người mới và luyện thi HSK 0 – 5 – test trình độ và học thử miễn phí, ca sáng – chiều – tối linh hoạt.",
+    "Tiếng Trung giao tiếp, chương trình HSK 1 – 9 và tiếng Trung trẻ em YCT 1 – 4 – test trình độ và học thử miễn phí, ca sáng – chiều – tối linh hoạt.",
 };
 
 /** Học phí chưa được công bố — trung tâm điền theo id khóa học (id trong COURSE_GROUPS). */
-export const COURSE_FEES: Record<string, string> = {};
+export const COURSE_FEES: Record<string, string> = {
+  "yct-1": "Trọn gói YCT 0 – 2: 4.599.000đ",
+  "yct-2": "Trọn gói YCT 0 – 2: 4.599.000đ",
+  "yct-3": "Trọn gói YCT 0 – 3: 6.999.000đ",
+};
+
+/** Khóa học hiện trên trang chủ (đủ danh sách ở trang Khóa học) */
+export const HOME_COURSE_IDS = ["tieng-trung-giao-tiep", "hsk-1", "hsk-3", "hsk-4", "hsk-5", "yct-1"];
 export const FEE_PLACEHOLDER = "[Học phí]";
 
 export const PATH = {
   zh: "学习路线",
   title: "Lộ trình học",
-  intro: "Học từ người mới bắt đầu đến HSK5, giao tiếp thực tế và du học Trung Quốc.",
+  intro: "Từ sơ cấp đến cao cấp theo Khung tiêu chuẩn năng lực tiếng Trung quốc tế GF0025-2021.",
   steps: [
-    { ic: "初", title: "YTC cấp 1", goal: "Phát âm chuẩn", text: "Người mới – lộ trình 30 ngày" },
-    { ic: "话", title: "Giao tiếp", goal: "20 chủ đề", text: "Nghe – nói phản xạ thực tế" },
-    { ic: "三", title: "HSK 3", goal: "Chứng chỉ HSK3", text: "Nền tảng vững từ con số 0" },
-    { ic: "四", title: "HSK 4", goal: "Chứng chỉ HSK4", text: "Du học, học bổng, việc làm" },
-    { ic: "五", title: "HSK 5", goal: "Chứng chỉ HSK5", text: "Học bổng đại học & sau đại học" },
+    { ic: "初", title: "HSK 1 – 2", goal: "Sơ cấp", text: "48 buổi · khoảng 1.272 từ" },
+    { ic: "三", title: "HSK 3", goal: "Sơ cấp", text: "40 buổi · khoảng 2.245 từ" },
+    { ic: "四", title: "HSK 4", goal: "Trung cấp", text: "45 buổi · khoảng 3.245 từ" },
+    { ic: "五", title: "HSK 5 – 6", goal: "Trung cấp", text: "135 buổi · khoảng 5.456 từ" },
+    { ic: "高", title: "HSK 7 – 9", goal: "Cao cấp", text: "230 buổi · khoảng 11.092 từ" },
   ],
 };
 
@@ -167,8 +174,8 @@ export const TEACHERS: Teacher[] = [
     name: "Nguyễn Lam Anh",
     photo: `${IMG}/nguyen-lam-anh.jpg`,
     role: "Giáo viên · 6 năm giảng dạy",
-    bio: "Tốt nghiệp Đại học Nam Kinh. Dạy tiếng Trung thiếu nhi & giao tiếp bằng phương pháp trực quan, giúp phát âm chuẩn ngay từ đầu.",
-    chips: ["Thiếu nhi", "Giao tiếp", "Phát âm"],
+    bio: "Tốt nghiệp Đại học Nam Kinh. Dạy tiếng Trung trẻ em & giao tiếp bằng phương pháp trực quan, giúp phát âm chuẩn ngay từ đầu.",
+    chips: ["Trẻ em", "Giao tiếp", "Phát âm"],
     url: `${PROFILE}giang-vien-3-thay-minh/`,
   },
   {
@@ -216,7 +223,7 @@ export const TESTIMONIALS_HEAD = {
 export const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      "Em bắt đầu từ con số 0, học YTC rồi lên HSK4 trong khoảng một năm. Lớp chỉ vài bạn nên cô sửa phát âm cho từng người, giờ em tự tin nói chuyện với người Trung hơn hẳn.",
+      "Em bắt đầu từ con số 0, học YTC rồi lên HSK4 trong khoảng một năm. Lớp nhỏ nên cô sửa phát âm cho từng người, giờ em tự tin nói chuyện với người Trung hơn hẳn.",
     name: "Minh Anh",
     course: "Luyện thi HSK4",
     initials: "MA",

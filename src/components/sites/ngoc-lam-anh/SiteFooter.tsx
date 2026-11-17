@@ -16,7 +16,9 @@ export function SiteFooter() {
                 <li>
                   ☎ Hotline / Zalo: <a href={CALL_HREF}>{PHONE_LABEL}</a>
                 </li>
-                <li>✉ {CONTACT.email || "[Email]"}</li>
+                <li>
+                  ✉ Email: {CONTACT.email ? <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a> : "[Email]"}
+                </li>
                 <li>
                   👍 Facebook:{" "}
                   <a href={CONTACT.facebook} target="_blank" rel="noopener">

@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState, type MouseEvent } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type MouseEvent } from "react";
+import "./wordmark.css";
 import { BRAND, CALL_HREF, CONTACT, NAV, PHONE_LABEL, REGISTER_HREF, href, slugOf, type NavItem, type NavLink } from "./data";
 
 /** Mục menu sáng khi trang hiện tại là chính nó hoặc một trang con (không tính link #neo) */
@@ -10,6 +11,7 @@ function isActive(item: NavItem, active: string): boolean {
 }
 
 const MOBILE_MAX = 1100;
+const NBSP = String.fromCharCode(160);
 
 function NavAnchor({ link, className }: { link: NavLink; className?: string }) {
   const cls = [link.className, className].filter(Boolean).join(" ") || undefined;
@@ -81,13 +83,32 @@ export function SiteHeader({ active = "" }: { active?: string }) {
   return (
     <header className="site">
       <div className="wrap">
-        <a className="brand" href={href("index.html")}>
+        <a className="brand" href={href("index.html")} aria-label={`${BRAND.headerName} – ${BRAND.zh} – về trang chủ`}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={BRAND.logoMark} alt={`Logo ${BRAND.fullName}`} width={48} height={48} />
-          <div>
-            <b>{BRAND.headerName}</b>
-            <span>{BRAND.zh}</span>
-          </div>
+          {/* Tiếng Việt 2 dòng ⇄ chữ Hán 1 dòng, đổi qua lại bằng hiệu ứng lật chữ */}
+          <span className="wordmark" aria-hidden="true">
+            <span className="wm-vi-block">
+              {BRAND.logoLines.map((line, n) => (
+                <span className={`wm-line l${n + 1}`} key={line}>
+                  <span className="wm-vi">
+                    {Array.from(line).map((ch, i) => (
+                      <span key={i} style={{ "--i": i + n * 4 } as CSSProperties}>
+                        {ch === " " ? NBSP : ch}
+                      </span>
+                    ))}
+                  </span>
+                </span>
+              ))}
+            </span>
+            <span className="wm-zh">
+              {Array.from(BRAND.zh).map((ch, i) => (
+                <span key={i} style={{ "--i": i * 2 } as CSSProperties}>
+                  {ch}
+                </span>
+              ))}
+            </span>
+          </span>
         </a>
         <button
           className="menu-btn"

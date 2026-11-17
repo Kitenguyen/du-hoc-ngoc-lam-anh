@@ -7,7 +7,7 @@ export const PAGE = {
 };
 
 /** Lợi ích khi đăng ký — lấy từ thông tin chung của trung tâm (data.ts › GENERAL_INFO). */
-export const BENEFITS = ["Test trình độ và học thử miễn phí", "Lớp 3 – 7 học viên, giáo viên theo sát", "Xếp lớp phù hợp lịch học"];
+export const BENEFITS = ["Test trình độ và học thử miễn phí", "Lớp 8 – 12 học viên, giáo viên theo sát", "Xếp lớp phù hợp lịch học"];
 
 export const CONSULT_ID = "tu-van";
 

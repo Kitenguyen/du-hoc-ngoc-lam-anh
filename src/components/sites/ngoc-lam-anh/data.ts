@@ -7,6 +7,8 @@ export const BRAND = {
   fullName: "Trung tâm Du học Ngọc Lâm Anh",
   // Tên chữ Hán: 玉 (Ngọc) 林 (Lâm) 英 (Anh) + 留学 (du học) — đổi nếu trung tâm dùng tên khác
   zh: "玉林英留学",
+  /** Chữ logo ở đầu trang: 2 dòng tiếng Việt, đổi qua lại với tên chữ Hán `zh` (1 dòng) */
+  logoLines: ["DU HỌC", "NGỌC LÂM ANH"],
   slogan: "Vươn tầm thế giới – Kiến tạo tương lai",
   tagline: "Ngôn ngữ vững vàng – Tương lai rộng mở",
   logoMark: "/sites/ngoc-lam-anh/logo-mark.png",
@@ -20,7 +22,7 @@ export const CONTACT = {
   phone: "+84818814444", // dùng cho link gọi (tel:)
   phoneLabel: "(+84) 81 881 4444", // cách hiển thị
   zalo: "https://zalo.me/0818814444", // giả định Zalo dùng cùng số hotline
-  email: "", // ví dụ: "tiengtrungngoclamanh@gmail.com"
+  email: "trungtamquynhchinese@gmail.com",
   address: "Tổ dân phố Cao Sơn, Phường Chương Mỹ, Hà Nội, Việt Nam",
   hours: "Ca sáng – chiều – tối",
   facebook: "https://www.facebook.com/HoaNguQuynhChinese",
@@ -30,8 +32,15 @@ export const PHONE_LABEL = CONTACT.phoneLabel || CONTACT.phone || "[Số điện
 export const CALL_HREF = CONTACT.phone ? `tel:${CONTACT.phone}` : CONTACT.facebook;
 export const ZALO_HREF = CONTACT.zalo || (CONTACT.phone ? `https://zalo.me/${CONTACT.phone}` : CONTACT.facebook);
 
-/** Trang bài viết/blog của trung tâm (chưa có trong dự án này) */
-export const BLOG_ORIGIN = "https://tiengtrungchuongmy.com/";
+/**
+ * Blog / tin tức: trung tâm đăng bài trên Blogger (blogger.com) bằng tài khoản Google của trung tâm,
+ * web tự lấy bài về trang /blog. Điền địa chỉ blog, ví dụ "https://duhocngoclamanh.blogspot.com".
+ * Hướng dẫn: docs/HUONG-DAN-BLOG.md
+ */
+export const BLOG = {
+  bloggerUrl: "https://tintucnla.blogspot.com",
+  perPage: 9,
+};
 
 /**
  * Chuyển link kiểu trang gốc sang route nội bộ:
@@ -63,7 +72,8 @@ export const NAV: NavItem[] = [
     href: "khoa-hoc.html",
     children: [
       { label: "Tiếng Trung giao tiếp", href: "khoa-hoc.html#giao-tiep" },
-      { label: "Luyện thi HSK", href: "khoa-hoc.html#hsk" },
+      { label: "Chương trình HSK 1 – 9", href: "khoa-hoc.html#hsk" },
+      { label: "Tiếng Trung trẻ em (YCT)", href: "khoa-hoc.html#yct" },
       { label: "Luyện thi khối D4", href: "luyen-thi-d4.html" },
       { label: "Đăng ký học", href: "dang-ky.html" },
     ],
@@ -77,6 +87,7 @@ export const NAV: NavItem[] = [
     ],
   },
   { label: "Du học", href: "index.html#du-hoc" },
+  { label: "Tin tức", href: "blog" },
   {
     label: "Thi thử HSK",
     href: "thi-thu.html",
@@ -129,6 +140,9 @@ export type Course = {
   outcome?: string;
   syllabusTitle?: string;
   syllabus: string[];
+  /** Đổi nhãn mặc định "Lịch học" / "Đầu ra" trên thẻ khóa học */
+  scheduleLabel?: string;
+  outcomeLabel?: string;
   cta?: string;
   ctaHref?: string;
 };
@@ -146,12 +160,13 @@ export const PAGE_HEAD = {
   zh: "课程",
   title: "Khóa học tiếng Trung",
   intro:
-    "Hệ thống đào tạo tiếng Trung bài bản và tư vấn du học tận tâm. Lớp 3 – 7 học viên, ca sáng – chiều – tối linh hoạt.",
+    "Hệ thống đào tạo tiếng Trung bài bản và tư vấn du học tận tâm. Lớp 8 – 12 học viên, ca sáng – chiều – tối linh hoạt.",
 };
 
 export const JUMP_LINKS = [
   { label: "Tiếng Trung giao tiếp", href: "#giao-tiep" },
-  { label: "Luyện thi HSK", href: "#hsk" },
+  { label: "Chương trình HSK", href: "#hsk" },
+  { label: "Tiếng Trung trẻ em", href: "#yct" },
   { label: "Du học Trung Quốc", href: "#du-hoc" },
 ];
 
@@ -222,60 +237,261 @@ export const COURSE_GROUPS: CourseGroup[] = [
     id: "hsk",
     tone: "red",
     zh: "汉语水平考试",
-    title: "Luyện thi HSK",
+    title: "Chương trình HSK 1 – 9",
     intro:
-      "Luyện thi HSK 3 – 4 trong 4 – 6 tháng. Chiến lược đúng – thi là đỗ. Lộ trình chuẩn quốc tế, luyện HSK & HSKK bài bản theo format mới, cam kết đầu ra – hỗ trợ thi thật.",
+      "Lộ trình sơ cấp – trung cấp – cao cấp theo Khung tiêu chuẩn năng lực tiếng Trung quốc tế GF0025-2021. Số từ là tổng tích lũy đến cấp độ đó. Đánh giá đầu vào trước khi xếp lớp, đánh giá giữa khóa và cuối khóa theo 4 kỹ năng.",
     courses: [
       {
-        id: "hsk-0-3",
+        id: "hsk-1",
+        glyph: "一",
+        tag: "Sơ cấp",
+        title: "HSK 1",
+        months: "26 buổi",
+        sessions: "khoảng 500 từ",
+        intro: "Pinyin; thanh mẫu, vận mẫu, thanh điệu; chữ Hán cơ bản; từ vựng và ngữ pháp nền tảng.",
+        audience: "Người mới bắt đầu và học viên trình độ sơ cấp",
+        schedule: "Giao tiếp bước đầu trong chào hỏi, ăn uống, mua sắm, thời tiết, hỏi giờ.",
+        outcome: "Bài kiểm tra từ vựng – ngữ pháp; nghe nhận biết; hội thoại giới thiệu; viết câu đơn.",
+        syllabusTitle: "Chuẩn đầu ra 4 kỹ năng",
+        scheduleLabel: "Ứng dụng thực tế",
+        outcomeLabel: "Đánh giá đầu ra",
+        syllabus: [
+          "Nghe: Nhận biết từ, câu và thông tin rất ngắn, quen thuộc.",
+          "Nói: Chào hỏi, giới thiệu bản thân, gia đình, sở thích; trả lời câu hỏi đơn giản.",
+          "Đọc: Nhận diện chữ Hán, đọc từ, câu và đoạn cực ngắn.",
+          "Viết: Viết chữ Hán cơ bản, thông tin cá nhân và câu đơn.",
+        ],
+        cta: "Test trình độ miễn phí",
+      },
+      {
+        id: "hsk-2",
+        glyph: "二",
+        tag: "Sơ cấp",
+        title: "HSK 2",
+        months: "22 buổi",
+        sessions: "khoảng 1.272 từ",
+        intro: "Mở rộng từ vựng; cấu trúc câu cơ bản; câu hỏi, phủ định, thời gian và lượng từ.",
+        audience: "Người mới bắt đầu và học viên trình độ sơ cấp",
+        schedule: "Giao tiếp trong sinh hoạt, học tập, mua sắm và du lịch cơ bản.",
+        outcome: "Nghe hiểu hội thoại; đóng vai tình huống; đọc hiểu; viết đoạn ngắn.",
+        syllabusTitle: "Chuẩn đầu ra 4 kỹ năng",
+        scheduleLabel: "Ứng dụng thực tế",
+        outcomeLabel: "Đánh giá đầu ra",
+        syllabus: [
+          "Nghe: Hiểu hội thoại ngắn về sinh hoạt và tình huống quen thuộc.",
+          "Nói: Trao đổi thông tin, nhu cầu và kế hoạch đơn giản.",
+          "Đọc: Đọc câu và đoạn ngắn về chủ đề quen thuộc.",
+          "Viết: Viết câu đơn, câu nối đơn giản và đoạn ngắn có gợi ý.",
+        ],
+        cta: "Test trình độ miễn phí",
+      },
+      {
+        id: "hsk-3",
         glyph: "三",
-        tag: "Chứng chỉ",
-        title: "HSK 0 – 3",
-        intro: "Từ con số 0 đến chứng chỉ HSK3: lộ trình HSK1 → HSK2 → HSK3 theo chuẩn quốc tế.",
-        audience: "Người mới bắt đầu",
-        outcome: "Chứng chỉ HSK3",
-        syllabusTitle: "Khóa học giúp bạn",
+        tag: "Sơ cấp",
+        title: "HSK 3",
+        months: "40 buổi",
+        sessions: "khoảng 2.245 từ",
+        intro: "Củng cố ngữ pháp sơ cấp; mở rộng cấu trúc câu và cách diễn đạt ý kiến.",
+        audience: "Người mới bắt đầu và học viên trình độ sơ cấp",
+        schedule: "Du lịch, sinh hoạt và trao đổi cơ bản; tạo nền tảng học tập tiếp theo.",
+        outcome: "Nghe lấy ý chính; phỏng vấn/hội thoại; đọc hiểu; viết đoạn theo chủ đề.",
+        syllabusTitle: "Chuẩn đầu ra 4 kỹ năng",
+        scheduleLabel: "Ứng dụng thực tế",
+        outcomeLabel: "Đánh giá đầu ra",
         syllabus: [
-          "Biết bắt đầu từ đâu với lộ trình rõ ràng",
-          "Luyện đề đúng chiến lược, hết sai lặp lại",
-          "Luyện thi HSK & HSKK theo format mới",
-          "Test trình độ miễn phí trước khi xếp lớp",
+          "Nghe: Hiểu nội dung chính của hội thoại và thông tin quen thuộc có độ dài vừa phải.",
+          "Nói: Duy trì hội thoại về đời sống, học tập, công việc; kể trải nghiệm và kế hoạch.",
+          "Đọc: Đọc hiểu đoạn văn về chủ đề quen thuộc, xác định ý chính và thông tin cụ thể.",
+          "Viết: Viết đoạn ngắn, thư/tin nhắn và nội dung mô tả đơn giản.",
         ],
         cta: "Test trình độ miễn phí",
       },
       {
-        id: "hsk-0-4",
+        id: "hsk-4",
         glyph: "四",
-        tag: "Chứng chỉ",
-        title: "HSK 0 – 4",
-        intro: "Lộ trình trọn gói lên HSK4 – cấp độ mở cửa cho du học, học bổng và việc làm.",
-        audience: "Người mới bắt đầu hoặc đã có nền tảng",
-        outcome: "Chứng chỉ HSK4",
-        syllabusTitle: "Khóa học giúp bạn",
+        tag: "Trung cấp",
+        title: "HSK 4",
+        months: "45 buổi",
+        sessions: "khoảng 3.245 từ",
+        intro: "Ngữ pháp trung cấp; từ vựng xã hội, giáo dục, công việc; liên kết ý.",
+        audience: "Học viên đã có nền tảng sơ cấp, mục tiêu học tập – du học – công việc",
+        schedule: "Học tập, giao tiếp xã hội và xử lý công việc quen thuộc bằng tiếng Trung.",
+        outcome: "Nghe hiểu; thuyết trình ngắn; đọc văn bản; viết bài có bố cục.",
+        syllabusTitle: "Chuẩn đầu ra 4 kỹ năng",
+        scheduleLabel: "Ứng dụng thực tế",
+        outcomeLabel: "Đánh giá đầu ra",
         syllabus: [
-          "Lộ trình chuẩn quốc tế – chinh phục chứng chỉ nhanh chóng",
-          "Luyện thi HSK & HSKK bài bản theo format mới",
-          "Cam kết đầu ra – hỗ trợ thi thật",
-          "Nhận bộ đề HSK miễn phí khi đăng ký",
+          "Nghe: Hiểu hội thoại và nội dung trao đổi tương đối phong phú.",
+          "Nói: Trình bày ý kiến, giải thích vấn đề, kể lại sự việc và trao đổi công việc quen thuộc.",
+          "Đọc: Đọc bài viết, thông báo và tài liệu có nội dung đa dạng hơn.",
+          "Viết: Viết bài/đoạn có bố cục, mô tả và nêu quan điểm.",
         ],
         cta: "Test trình độ miễn phí",
       },
       {
-        id: "hsk-0-5",
+        id: "hsk-5",
         glyph: "五",
-        tag: "Chứng chỉ",
-        title: "HSK 0 – 5",
-        intro: "Chinh phục trình độ cao cấp HSK5 – điều kiện cho học bổng đại học và sau đại học tại Trung Quốc.",
-        audience: "Người học từ cơ bản đến nâng cao",
-        outcome: "Chứng chỉ HSK5",
-        syllabusTitle: "Khóa học giúp bạn",
+        tag: "Trung cấp",
+        title: "HSK 5",
+        months: "60 buổi",
+        sessions: "khoảng 4.316 từ",
+        intro: "Ngữ pháp trung – cao cấp; từ vựng trừu tượng và theo lĩnh vực; sắc thái diễn đạt.",
+        audience: "Học viên đã có nền tảng sơ cấp, mục tiêu học tập – du học – công việc",
+        schedule: "Sử dụng trong môi trường doanh nghiệp, học tập và giao tiếp chuyên sâu.",
+        outcome: "Nghe nội dung dài; thuyết trình; đọc phân tích; viết bài luận/báo cáo.",
+        syllabusTitle: "Chuẩn đầu ra 4 kỹ năng",
+        scheduleLabel: "Ứng dụng thực tế",
+        outcomeLabel: "Đánh giá đầu ra",
         syllabus: [
-          "Lộ trình chuẩn quốc tế từ cơ bản đến nâng cao",
-          "Luyện thi HSK & HSKK bài bản theo format mới",
-          "Cam kết đầu ra – hỗ trợ thi thật",
-          "Định hướng học bổng du học sau khi đạt chứng chỉ",
+          "Nghe: Hiểu nội dung dài hơn, thông tin truyền thông và trao đổi tương đối chuyên sâu.",
+          "Nói: Giao tiếp linh hoạt; thuyết trình, giải thích và bảo vệ quan điểm.",
+          "Đọc: Đọc báo chí, văn bản và tài liệu có cấu trúc, lập luận.",
+          "Viết: Viết bài luận, báo cáo, thư tín và văn bản có lập luận.",
         ],
         cta: "Test trình độ miễn phí",
+      },
+      {
+        id: "hsk-6",
+        glyph: "六",
+        tag: "Trung cấp",
+        title: "HSK 6",
+        months: "75 buổi",
+        sessions: "khoảng 5.456 từ",
+        intro: "Ngữ pháp cao cấp; từ vựng phong phú; cấu trúc phức; phong cách và sắc thái.",
+        audience: "Học viên đã có nền tảng sơ cấp, mục tiêu học tập – du học – công việc",
+        schedule: "Học thuật, doanh nghiệp, nghiên cứu và giao tiếp chuyên môn.",
+        outcome: "Nghe phân tích; tranh luận; đọc hiểu chuyên sâu; bài viết lập luận.",
+        syllabusTitle: "Chuẩn đầu ra 4 kỹ năng",
+        scheduleLabel: "Ứng dụng thực tế",
+        outcomeLabel: "Đánh giá đầu ra",
+        syllabus: [
+          "Nghe: Hiểu nội dung dài, tốc độ tự nhiên và nhiều lớp thông tin.",
+          "Nói: Diễn đạt tự nhiên; phân tích, tranh luận và bảo vệ quan điểm.",
+          "Đọc: Đọc văn bản dài, nội dung chuyên sâu và tài liệu học thuật phù hợp.",
+          "Viết: Viết bài phân tích, báo cáo và văn bản lập luận chặt chẽ.",
+        ],
+        cta: "Test trình độ miễn phí",
+      },
+      {
+        id: "hsk-7-9",
+        glyph: "高",
+        tag: "Cao cấp",
+        title: "HSK 7 – 9",
+        months: "230 buổi",
+        sessions: "khoảng 11.092 từ",
+        intro: "Hệ thống ngôn ngữ nâng cao; thành ngữ, sắc thái, phong cách; từ vựng học thuật và chuyên ngành.",
+        audience: "Học viên trình độ cao, mục tiêu học thuật, nghiên cứu, dịch thuật",
+        schedule: "Nghiên cứu, học thuật, quản lý, giao tiếp quốc tế và dịch thuật theo chuyên môn.",
+        outcome: "Bài nghe chuyên sâu; thuyết trình/phản biện; đọc phân tích; viết học thuật; bài dịch.",
+        syllabusTitle: "Chuẩn đầu ra 4 kỹ năng",
+        scheduleLabel: "Ứng dụng thực tế",
+        outcomeLabel: "Đánh giá đầu ra",
+        syllabus: [
+          "Nghe: Hiểu bài giảng, hội thảo, diễn thuyết và nội dung chuyên sâu.",
+          "Nói: Giao tiếp linh hoạt; trình bày, phản biện, tranh luận và diễn đạt tinh tế.",
+          "Đọc: Đọc tài liệu học thuật, nghiên cứu, văn bản chuyên ngành và tác phẩm văn học.",
+          "Viết: Viết luận chuyên sâu, báo cáo nghiên cứu và văn bản học thuật.",
+        ],
+        cta: "Test trình độ miễn phí",
+      },
+    ],
+  },
+  {
+    id: "yct",
+    tone: "light",
+    zh: "少儿汉语",
+    title: "Tiếng Trung trẻ em (YCT)",
+    intro:
+      "Lộ trình YCT 1 – 4 dành cho trẻ em; thời lượng là ước tính, điều chỉnh theo độ tuổi, năng lực đầu vào và tiến độ thực tế. Học phí trọn gói: YCT 0 – 2 là 4.599.000đ, YCT 0 – 3 là 6.999.000đ – giảm 499.000đ (còn 6.500.000đ) khi đăng ký ngay sau buổi học thử.",
+    courses: [
+      {
+        id: "yct-1",
+        glyph: "童",
+        tag: "Giai đoạn 1",
+        title: "YCT 1",
+        months: "18 buổi",
+        sessions: "ước tính",
+        intro: "Làm quen Pinyin, thanh mẫu, vận mẫu và 4 thanh điệu; từ vựng cơ bản về bản thân, gia đình, số đếm, đồ vật quen thuộc; mẫu câu chào hỏi và giới thiệu đơn giản.",
+        audience: "Trẻ em – xếp lớp theo độ tuổi và năng lực đầu vào",
+        schedule: "Chào hỏi, giới thiệu bản thân; nhận biết đồ vật, số đếm và thông tin quen thuộc trong lớp học.",
+        outcome: "Kiểm tra nghe nhận biết; phát âm từ/câu ngắn; hỏi – đáp theo mẫu; nhận diện từ và chữ Hán cơ bản.",
+        syllabusTitle: "Chuẩn đầu ra 4 kỹ năng",
+        scheduleLabel: "Ứng dụng thực tế",
+        outcomeLabel: "Đánh giá đầu ra",
+        syllabus: [
+          "Nghe: Nhận biết âm, từ và câu rất ngắn; nghe hiểu lời chào, số đếm, thông tin cá nhân quen thuộc.",
+          "Nói: Chào hỏi, giới thiệu tên; hỏi – đáp đơn giản về tuổi, đồ vật và thông tin cá nhân.",
+          "Đọc: Nhận diện chữ Hán và từ đã học; đọc từ, cụm từ và câu cực ngắn có hỗ trợ.",
+          "Viết: Tập viết nét cơ bản; nhận biết và viết một số chữ Hán/từ đơn giản theo mẫu.",
+        ],
+        cta: "Đăng ký học thử cho bé",
+      },
+      {
+        id: "yct-2",
+        glyph: "乐",
+        tag: "Giai đoạn 1",
+        title: "YCT 2",
+        months: "22 buổi",
+        sessions: "ước tính",
+        intro: "Mở rộng vốn từ và mẫu câu theo chủ đề gia đình, trường học, thời gian, hoạt động hằng ngày; củng cố Pinyin, thanh điệu và cấu trúc câu cơ bản.",
+        audience: "Trẻ em – xếp lớp theo độ tuổi và năng lực đầu vào",
+        schedule: "Giao tiếp trong lớp học, gia đình và sinh hoạt thường ngày; hỏi giờ, số lượng, sở thích và nhu cầu cơ bản.",
+        outcome: "Đánh giá nghe – nói – đọc – viết ở mức cơ bản; làm quen dạng bài YCT phù hợp; mục tiêu hướng tới YCT 2.",
+        syllabusTitle: "Chuẩn đầu ra 4 kỹ năng",
+        scheduleLabel: "Ứng dụng thực tế",
+        outcomeLabel: "Đánh giá đầu ra",
+        syllabus: [
+          "Nghe: Hiểu câu và hội thoại ngắn về chủ đề quen thuộc; nghe lấy thông tin đơn giản như người, đồ vật, số lượng và hoạt động.",
+          "Nói: Trao đổi thông tin cá nhân; nói về gia đình, sở thích, trường lớp và nhu cầu thường ngày bằng câu đơn giản.",
+          "Đọc: Đọc từ, câu và đoạn rất ngắn theo chủ đề; tìm thông tin trực tiếp trong nội dung đã học.",
+          "Viết: Viết từ và câu đơn giản theo mẫu; sắp xếp từ thành câu; hoàn thành thông tin cá nhân.",
+        ],
+        cta: "Đăng ký học thử cho bé",
+      },
+      {
+        id: "yct-3",
+        glyph: "趣",
+        tag: "Giai đoạn 2",
+        title: "YCT 3",
+        months: "30 buổi",
+        sessions: "ước tính",
+        intro: "Mở rộng vốn từ theo chủ đề đời sống; củng cố cấu trúc câu; học cách diễn đạt nhu cầu, sở thích, kế hoạch và trải nghiệm đơn giản.",
+        audience: "Trẻ em – xếp lớp theo độ tuổi và năng lực đầu vào",
+        schedule: "Trao đổi trong tình huống mua sắm, ăn uống, trường học, vui chơi và sinh hoạt hằng ngày.",
+        outcome: "Bài đánh giá theo kỹ năng; hội thoại theo tình huống; đọc hiểu và viết đoạn ngắn; đánh giá mức độ sẵn sàng YCT 3.",
+        syllabusTitle: "Chuẩn đầu ra 4 kỹ năng",
+        scheduleLabel: "Ứng dụng thực tế",
+        outcomeLabel: "Đánh giá đầu ra",
+        syllabus: [
+          "Nghe: Hiểu nội dung chính của hội thoại ngắn và thông tin quen thuộc; nghe xác định người, thời gian, địa điểm và hoạt động.",
+          "Nói: Duy trì hội thoại về học tập, gia đình, bạn bè và sinh hoạt; kể lại sự việc hoặc trình bày kế hoạch đơn giản.",
+          "Đọc: Đọc câu và đoạn ngắn về chủ đề quen thuộc; xác định ý chính và thông tin cụ thể.",
+          "Viết: Viết câu và đoạn ngắn có gợi ý; mô tả người, vật, hoạt động và thông tin quen thuộc.",
+        ],
+        cta: "Đăng ký học thử cho bé",
+      },
+      {
+        id: "yct-4",
+        glyph: "星",
+        tag: "Giai đoạn 2",
+        title: "YCT 4",
+        months: "35 buổi",
+        sessions: "ước tính",
+        intro: "Mở rộng và hệ thống hóa từ vựng; sử dụng cấu trúc câu đa dạng hơn; luyện diễn đạt, liên kết ý và xử lý tình huống giao tiếp quen thuộc.",
+        audience: "Trẻ em – xếp lớp theo độ tuổi và năng lực đầu vào",
+        schedule: "Giao tiếp tự tin hơn trong học tập, hoạt động xã hội, du lịch và các tình huống thường gặp.",
+        outcome: "Luyện đề mô phỏng; đánh giá đủ kỹ năng; chỉ khuyến nghị dự thi YCT 4 khi kết quả kiểm tra đầu ra đáp ứng yêu cầu.",
+        syllabusTitle: "Chuẩn đầu ra 4 kỹ năng",
+        scheduleLabel: "Ứng dụng thực tế",
+        outcomeLabel: "Đánh giá đầu ra",
+        syllabus: [
+          "Nghe: Hiểu hội thoại và đoạn nghe dài hơn về các chủ đề quen thuộc; xác định ý chính, chi tiết và mục đích giao tiếp.",
+          "Nói: Trình bày ý kiến, mô tả sự việc, kể trải nghiệm và trao đổi thông tin tương đối độc lập trong tình huống quen thuộc.",
+          "Đọc: Đọc hiểu đoạn văn phù hợp cấp độ; tìm thông tin, hiểu quan hệ giữa các ý và nội dung chính.",
+          "Viết: Viết câu và đoạn văn ngắn có bố cục; hoàn thành nội dung theo yêu cầu và sử dụng từ/cấu trúc phù hợp.",
+        ],
+        cta: "Đăng ký học thử cho bé",
       },
     ],
   },
@@ -343,7 +559,7 @@ export const STUDY_ABROAD_TILES = {
 };
 
 export const GENERAL_INFO =
-  "Lớp 3 – 7 học viên để giáo viên theo sát từng người. Học trực tuyến hoặc offline tại cơ sở, ca sáng – chiều – tối linh hoạt. Test trình độ và học thử miễn phí. Cam kết lớp không quá 7 học viên – hoàn tiền nếu không đạt đầu ra.";
+  "Lớp 8 – 12 học viên để giáo viên theo sát từng người. Học trực tuyến hoặc offline tại cơ sở, ca sáng – chiều – tối linh hoạt. Test trình độ và học thử miễn phí. Cam kết lớp không quá 12 học viên – hoàn tiền nếu không đạt đầu ra.";
 
 export const COMMITMENTS = [
   "Lộ trình cá nhân hóa – học đúng mục tiêu",
@@ -355,6 +571,7 @@ export const COMMITMENTS = [
 export const FOOTER_LINKS: NavLink[] = [
   { label: "Khóa học", href: "khoa-hoc.html" },
   { label: "Thi thử HSK", href: "thi-thu.html" },
+  { label: "Tin tức", href: "blog" },
   { label: "Tài liệu", href: "tai-lieu.html" },
   { label: "Ôn tập từ vựng", href: "tu-vung.html" },
   { label: "Luyện nói phản xạ", href: "luyen-noi.html" },

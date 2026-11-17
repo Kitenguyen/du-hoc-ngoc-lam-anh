@@ -7,6 +7,7 @@ import {
   FEE_PLACEHOLDER,
   GALLERY,
   GALLERY_HEAD,
+  HOME_COURSE_IDS,
   LEAD_TEACHER,
   ONLINE,
   PATH,
@@ -37,8 +38,8 @@ function Head({ zh, title, intro }: { zh: string; title: string; intro?: string 
 function HomeCourse({ course }: { course: Course }) {
   const facts = [
     { icon: "👤", label: "Đối tượng", value: course.audience },
-    { icon: "⏱", label: "Lịch học", value: course.schedule },
-    { icon: "🎯", label: "Đầu ra", value: course.outcome },
+    { icon: "⏱", label: course.scheduleLabel ?? "Lịch học", value: course.schedule },
+    { icon: "🎯", label: course.outcomeLabel ?? "Đầu ra", value: course.outcome },
   ].filter((f) => f.value);
   const fee = COURSE_FEES[course.id] ?? FEE_PLACEHOLDER;
   return (
@@ -88,7 +89,8 @@ function HomeCourse({ course }: { course: Course }) {
 
 export function HomePage() {
   const study = COURSE_GROUPS.filter((g) => g.id !== "du-hoc");
-  const courses = study.flatMap((g) => g.courses);
+  const all = study.flatMap((g) => g.courses);
+  const courses = HOME_COURSE_IDS.map((id) => all.find((c) => c.id === id)).filter((c): c is Course => Boolean(c));
   const total = COURSE_GROUPS.reduce((n, g) => n + g.courses.length, 0);
   return (
     <PageShell active="">

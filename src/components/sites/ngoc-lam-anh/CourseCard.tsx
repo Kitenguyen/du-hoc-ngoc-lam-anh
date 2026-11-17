@@ -3,8 +3,8 @@ import { REGISTER_HREF, href, type Course } from "./data";
 export function CourseCard({ course }: { course: Course }) {
   const facts = [
     { icon: "👤", label: "Đối tượng", value: course.audience },
-    { icon: "⏱", label: "Lịch học", value: course.schedule },
-    { icon: "🎯", label: "Đầu ra", value: course.outcome },
+    { icon: "⏱", label: course.scheduleLabel ?? "Lịch học", value: course.schedule },
+    { icon: "🎯", label: course.outcomeLabel ?? "Đầu ra", value: course.outcome },
   ].filter((f) => f.value);
   return (
     <article className="course" id={course.id}>
