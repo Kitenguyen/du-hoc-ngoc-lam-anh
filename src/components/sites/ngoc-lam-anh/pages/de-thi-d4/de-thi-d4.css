@@ -1,0 +1,69 @@
+/* Trang đề luyện thi D4 (de-thi-d4.html) — chép từ <style> của trang mẫu, thêm tiền tố .pg-de-thi-d4 */
+.pg-de-thi-d4 .dx{max-width:980px;margin:0 auto;padding:22px 16px 60px}
+.pg-de-thi-d4 .dx-top{position:sticky;top:0;z-index:30;background:#fff8ec;border:2px solid var(--gold);border-radius:14px;padding:10px 14px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;box-shadow:0 6px 18px rgba(0,0,0,.08)}
+.pg-de-thi-d4 .dx-top b.t{font:800 18px var(--display);color:var(--red-dk)}
+.pg-de-thi-d4 .dx-top .btn{margin-top:0;width:auto;align-self:center}
+.pg-de-thi-d4 .dx-clock{font:900 24px var(--display);color:var(--red);font-variant-numeric:tabular-nums}
+.pg-de-thi-d4 .dx-clock.low{color:#c00;animation:pgD4Blink 1s infinite}
+@keyframes pgD4Blink{50%{opacity:.4}}
+.pg-de-thi-d4 .dx-paper{background:#fff;border-radius:18px;padding:22px 20px;margin-top:14px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.pg-de-thi-d4 .dx-hd{text-align:center;border-bottom:2px solid var(--line);padding-bottom:12px;margin-bottom:14px}
+.pg-de-thi-d4 .dx-hd h1{margin:4px 0;font:900 22px var(--display);color:var(--red-dk)}
+.pg-de-thi-d4 .dx-hd p{margin:2px 0}
+.pg-de-thi-d4 .dx-part{margin:18px 0 8px}
+.pg-de-thi-d4 .dx-ins{font:600 17px "Noto Serif SC",serif;color:#5c070b;margin:12px 0 6px}
+.pg-de-thi-d4 .dx-txt{white-space:pre-wrap;font:19px/1.95 "Noto Serif SC","Noto Sans SC",serif;background:#fffdf8;border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.pg-de-thi-d4 .dx-txt .bl{background:#fde9b0;border-radius:6px;padding:0 4px;color:#7e0a10;font-weight:700}
+.pg-de-thi-d4 .dx-txt u{text-decoration:none;border-bottom:2px solid var(--red);font-weight:700}
+.pg-de-thi-d4 .dx-src{text-align:right;color:var(--muted);font-size:14px;margin:4px 0 0}
+.pg-de-thi-d4 .dx-q{display:block;margin:12px 0;padding:10px 12px;border-radius:12px;border:2px solid transparent}
+.pg-de-thi-d4 .dx-q .qq{font:18px "Noto Serif SC",serif}
+.pg-de-thi-d4 .dx-q .qq b{font-family:var(--display);color:var(--red-dk)}
+.pg-de-thi-d4 .dx-o{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:6px;margin-top:6px}
+.pg-de-thi-d4 .dx-o label{display:flex;gap:8px;align-items:flex-start;border:2px solid var(--line);border-radius:10px;padding:7px 10px;cursor:pointer;font:18px "Noto Serif SC",serif;background:#fff}
+.pg-de-thi-d4 .dx-o label:hover{border-color:var(--gold)}
+.pg-de-thi-d4 .dx-o input{margin-top:6px;accent-color:#b5121b}
+.pg-de-thi-d4 .dx-o label.sel{border-color:var(--red);background:#fff1f1}
+.pg-de-thi-d4 .dx-o label.right{border-color:#2f9e44;background:#ebfbee}
+.pg-de-thi-d4 .dx-o label.wrong{border-color:#e03131;background:#fff5f5}
+.pg-de-thi-d4 .dx-q.ok{border-color:#b2f2bb;background:transparent;color:inherit;font-size:inherit;font-weight:inherit;padding:10px 12px;border-radius:12px}
+.pg-de-thi-d4 .dx-q.no{border-color:#ffc9c9}
+.pg-de-thi-d4 .dx-ex{margin-top:8px;background:#f8f9fa;border-left:4px solid var(--gold);border-radius:8px;padding:8px 12px;font-size:15.5px;line-height:1.65;font-weight:400}
+.pg-de-thi-d4 .dx-ex .w{margin:3px 0}
+.pg-de-thi-d4 .dx-ex .w.c{color:#2b8a3e;font-weight:600}
+.pg-de-thi-d4 .dx-nav{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;flex-basis:100%}
+.pg-de-thi-d4 .dx-nav a,.pg-de-thi-d4 .dx-nav button{width:34px;height:30px;display:grid;place-items:center;border-radius:8px;border:1.5px solid var(--line);text-decoration:none;color:var(--ink);font:13.5px var(--sans);background:#fff;padding:0;cursor:pointer}
+.pg-de-thi-d4 .dx-nav .d{background:#ffe8a3;border-color:var(--gold)}
+.pg-de-thi-d4 .dx-nav .ok{background:#d3f9d8;border-color:#2f9e44;color:var(--ink);font-weight:400;border-radius:8px;padding:0}
+.pg-de-thi-d4 .dx-nav .no{background:#ffe3e3;border-color:#e03131}
+.pg-de-thi-d4 .dx-res{background:linear-gradient(135deg,#7e0a10,#b5121b);color:#fff;border-radius:18px;padding:20px;text-align:center;margin-top:14px}
+.pg-de-thi-d4 .dx-res .sc{font:900 54px var(--display);color:#ffd66b;line-height:1.2}
+.pg-de-thi-d4 .dx-res p{margin:4px 0}
+.pg-de-thi-d4 .dx-res .btn{margin-top:0;width:auto;align-self:center}
+.pg-de-thi-d4 .dx-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px}
+.pg-de-thi-d4 .dx-list a{display:grid;gap:2px;text-align:center;text-decoration:none;color:var(--ink);border:2px solid var(--line);border-radius:12px;padding:10px 6px;background:#fff}
+.pg-de-thi-d4 .dx-list a b{font:800 17px var(--display);color:var(--red-dk)}
+.pg-de-thi-d4 .dx-list a small{color:var(--muted)}
+.pg-de-thi-d4 .dx-list a.done{border-color:#2f9e44;background:#f4fff5}
+.pg-de-thi-d4 .dx-lock{background:#fff;border-radius:18px;padding:24px;text-align:center}
+.pg-de-thi-d4 .dx-q,.pg-de-thi-d4 .dx-txt u,.pg-de-thi-d4 .dx-txt .bl{scroll-margin-top:150px}
+@media(max-width:600px){
+  .pg-de-thi-d4 .dx-top{padding:8px 10px;gap:6px}
+  .pg-de-thi-d4 .dx-top b.t{font-size:15px}
+  .pg-de-thi-d4 .dx-nav{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;min-width:0;max-width:100%}
+  .pg-de-thi-d4 .dx-nav a,.pg-de-thi-d4 .dx-nav button{flex:0 0 32px}
+  .pg-de-thi-d4 .dx-q,.pg-de-thi-d4 .dx-txt u{scroll-margin-top:120px}
+  .pg-de-thi-d4 .dx-txt{font-size:17px}
+  .pg-de-thi-d4 .dx-o{grid-template-columns:1fr 1fr}
+  .pg-de-thi-d4 .dx-clock{font-size:20px}
+  .pg-de-thi-d4 .dx-paper{padding:18px 14px}
+  .pg-de-thi-d4 .dx-res .sc{font-size:42px}
+}
+
+/* Bổ sung */
+.pg-de-thi-d4 .dx-it{display:grid;gap:4px}
+.pg-de-thi-d4 .dx-soon{display:grid;gap:2px;text-align:center;border:2px dashed var(--line);border-radius:12px;padding:10px 6px;background:#fffdf8;color:var(--muted)}
+.pg-de-thi-d4 .dx-soon b{font:800 17px var(--display);color:var(--muted)}
+.pg-de-thi-d4 .dx-gnote{background:#fff8ec;border:1.5px dashed var(--gold);border-radius:12px;padding:10px 12px;margin-bottom:14px;font-size:15.5px}
+.pg-de-thi-d4 .dx-paper .btn,.pg-de-thi-d4 .dx-lock .btn{margin-top:0;width:auto;align-self:center}
+.pg-de-thi-d4 .dx-txt .bl.ok{display:inline;background:#d3f9d8;color:#2b8a3e;font-size:inherit;font-weight:700;padding:0 4px;border-radius:6px}

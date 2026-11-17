@@ -1,6 +1,5 @@
 import { CourseCard } from "./CourseCard";
-import { SiteFooter } from "./SiteFooter";
-import { SiteHeader, TopBar } from "./SiteHeader";
+import { PageHead, PageShell } from "./PageShell";
 import { CALL_HREF, COURSE_GROUPS, GENERAL_INFO, JUMP_LINKS, PAGE_HEAD, PHONE_LABEL, STUDY_ABROAD_TILES, href } from "./data";
 
 function StudyAbroadTiles() {
@@ -33,7 +32,7 @@ function StudyAbroadTiles() {
         ))}
       </div>
       <p className="muted" style={{ margin: "10px 0 0", fontSize: 14.5 }}>
-        {STUDY_ABROAD_TILES.note} <a href={href("du-hoc")}>Xem chi phí và học bổng chi tiết</a>.
+        {STUDY_ABROAD_TILES.note} <a href={href("index.html#du-hoc")}>Xem chi phí và học bổng chi tiết</a>.
       </p>
     </div>
   );
@@ -41,17 +40,8 @@ function StudyAbroadTiles() {
 
 export function CoursesPage() {
   return (
-    <>
-      <TopBar />
-      <SiteHeader />
-      <main>
-        <div className="page-head">
-          <div className="wrap">
-            <div className="zh">{PAGE_HEAD.zh}</div>
-            <h1>{PAGE_HEAD.title}</h1>
-            <p>{PAGE_HEAD.intro}</p>
-          </div>
-        </div>
+    <PageShell active="khoa-hoc">
+        <PageHead zh={PAGE_HEAD.zh} title={PAGE_HEAD.title} intro={PAGE_HEAD.intro} />
         <div className="jump">
           <div className="wrap">
             {JUMP_LINKS.map((j) => (
@@ -88,8 +78,6 @@ export function CoursesPage() {
             </div>
           </div>
         </section>
-      </main>
-      <SiteFooter />
-    </>
+    </PageShell>
   );
 }

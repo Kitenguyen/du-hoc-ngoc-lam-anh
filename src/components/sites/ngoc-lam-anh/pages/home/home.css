@@ -1,0 +1,40 @@
+/* Trang chủ — phần bổ sung cho site.css (mọi selector nằm dưới .pg-home) */
+
+/* Ảnh giáo viên có nền trong suốt → phủ nền kem */
+.pg-home .lead-t .ph img{background:var(--cream-2);object-position:center 20%}
+.pg-home .lead-acts{margin-top:24px}
+
+/* Thẻ giáo viên: là liên kết tới hồ sơ; hàng cuối căn giữa */
+.pg-home .teachers{display:flex;flex-wrap:wrap;justify-content:center}
+.pg-home .teacher{flex:0 0 calc((100% - 66px)/4);text-decoration:none;color:var(--ink)}
+.pg-home .teacher .ph img{object-position:center 18%}
+.pg-home .teacher .tbio{margin:0;padding:12px 14px 0;font-size:14px;line-height:1.55;color:var(--ink-2);text-align:center;flex:1}
+@media (max-width:980px){.pg-home .teacher{flex-basis:calc((100% - 44px)/3)}}
+@media (max-width:680px){.pg-home .teacher{flex-basis:calc((100% - 14px)/2)}.pg-home .teacher .tbio{font-size:13px;padding:10px 10px 0}}
+
+/* Du học: ô lý do (dùng lưới .unis của mẫu) */
+.pg-home .unis div{display:flex;flex-direction:column;gap:2px;justify-content:center}
+@media (max-width:600px){.pg-home .unis div.more{grid-column:1/-1}}
+.pg-home .unis strong{font:800 16px var(--display);color:var(--red-dk)}
+.pg-home .dh-sub{margin:40px 0 14px;text-align:center;font:800 clamp(20px,2.4vw,26px) var(--display);text-transform:uppercase;color:var(--gold-lt)}
+.pg-home .dh-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:860px){.pg-home .dh-cols{grid-template-columns:1fr}}
+.pg-home .dh-card{background:#fff;color:var(--ink);border-radius:var(--r);padding:18px 20px;border-top:5px solid var(--gold)}
+.pg-home .dh-card b{display:block;font:800 18px var(--display);color:var(--red-dk);margin-bottom:6px}
+.pg-home .dh-card ul{margin:0;padding-left:20px;font-size:15.5px;color:var(--ink-2)}
+.pg-home .dh-card li+li{margin-top:4px}
+.pg-home .dh-table{overflow-x:auto;background:#fff;border-radius:var(--r);border:2px solid var(--gold)}
+.pg-home .dh-table table{width:100%;border-collapse:collapse;font-size:15px;color:var(--ink);min-width:620px}
+.pg-home .dh-table th{background:linear-gradient(180deg,var(--gold-lt),var(--gold));color:var(--red-deep);font:800 14.5px var(--display);text-align:left;padding:10px 14px}
+.pg-home .dh-table td{padding:10px 14px;border-top:1px solid var(--line);vertical-align:top}
+.pg-home .dh-table td:first-child{font-weight:700;color:var(--red-dk)}
+.pg-home .dh-note{margin-top:12px;color:#ffdcd5;font-size:14.5px;text-align:center}
+.pg-home .dh-note a{color:var(--gold-lt);font-weight:700}
+
+/* Cảm nhận học viên: thẻ giữ chỗ */
+.pg-home .testi.ph-card blockquote{color:var(--muted);font-style:italic}
+.pg-home .testi .ph-tag{align-self:flex-start;font-size:12.5px;font-weight:800;color:var(--red);background:#fdeee0;border:1px dashed var(--gold-dk);border-radius:999px;padding:2px 10px}
+
+/* Hoạt động: ô ảnh giữ chỗ */
+.pg-home .gallery figure.ph-img{background:var(--cloud),linear-gradient(160deg,var(--red),var(--red-dk));display:grid;place-items:center}
+.pg-home .gallery .ph-glyph{font-family:var(--brush);font-size:clamp(60px,9vw,120px);line-height:1;color:rgba(247,220,148,.3)}

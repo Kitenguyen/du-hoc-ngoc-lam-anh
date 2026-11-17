@@ -1,0 +1,9 @@
+.pg-dang-ky .brush-name {
+  font-family: var(--brush);
+  color: var(--gold-lt);
+  font-size: 38px;
+  line-height: 1;
+}
+.pg-dang-ky .form[hidden] {
+  display: none;
+}

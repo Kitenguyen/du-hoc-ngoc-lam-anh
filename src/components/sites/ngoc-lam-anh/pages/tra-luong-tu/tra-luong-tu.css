@@ -1,0 +1,49 @@
+/* CSS chép từ <style> của trang mẫu, thêm tiền tố .pg-tra-luong-tu */
+.pg-tra-luong-tu{--c:#c92a2a;--blue:#1971c2;--line:#e7e0d6;--panel:#fff;--ink:#1f1a17;--muted:#8a807a;--bg:#f6f3ee}
+
+/* (bỏ khối dark-mode của trang mẫu: nó đổi màu chữ toàn trang trên nền kem) */
+.pg-tra-luong-tu .lt-wrap{max-width:900px;margin:0 auto;padding:0 16px}
+.pg-tra-luong-tu .lt-tools{position:sticky;top:0;z-index:5;background:var(--bg);padding:12px 0}
+.pg-tra-luong-tu .lt-search{width:100%;padding:12px 18px;border:1.5px solid var(--line);border-radius:999px;font-size:16px;font-family:inherit;background:var(--panel);color:var(--ink)}
+.pg-tra-luong-tu .lt-chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.pg-tra-luong-tu .lt-chip{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:5px 13px;font-size:13.5px;cursor:pointer;font-weight:600;color:var(--muted)}
+.pg-tra-luong-tu .lt-chip.on{background:var(--c);color:#fff;border-color:var(--c)}
+.pg-tra-luong-tu .lt-total{color:var(--muted);font-size:14px;margin:4px 2px 0}
+.pg-tra-luong-tu .lt-grp{display:flex;align-items:center;gap:10px;margin:18px 2px 10px;color:var(--c);font-weight:800;font-size:17px}
+.pg-tra-luong-tu .lt-grp .n{margin-left:auto;color:var(--muted);font-weight:600;font-size:13px}
+.pg-tra-luong-tu .lt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.pg-tra-luong-tu .lt-tile{border:1px solid var(--line);border-radius:14px;padding:14px 8px 16px;background:color-mix(in srgb,var(--blue) 4%,var(--panel));text-align:center;cursor:pointer;transition:transform .08s,box-shadow .12s}
+.pg-tra-luong-tu .lt-tile:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.08)}
+.pg-tra-luong-tu .lt-tile .py{color:var(--muted);font-size:15px;font-weight:600}
+.pg-tra-luong-tu .lt-tile .hz{font-family:"Noto Serif SC",serif;font-size:40px;font-weight:600;color:var(--ink);line-height:1.1;margin-top:4px}
+.pg-tra-luong-tu .lt-tile .tag{display:block;margin-top:6px;font-size:11px;color:var(--muted)}
+/* detail */
+.pg-tra-luong-tu .lt-detail{display:none}
+.pg-tra-luong-tu .lt-back{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:7px 14px;font-size:15px;font-weight:600;cursor:pointer;color:var(--ink);margin:8px 0}
+.pg-tra-luong-tu .lt-head{text-align:center;padding:14px 0 18px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.pg-tra-luong-tu .lt-head .py{color:var(--muted);font-size:20px;font-weight:600}
+.pg-tra-luong-tu .lt-head .hz{font-family:"Noto Serif SC",serif;font-size:72px;font-weight:600;line-height:1.1;color:var(--ink)}
+.pg-tra-luong-tu .lt-head .say{border:none;background:none;cursor:pointer;font-size:26px;vertical-align:middle;margin-left:6px}
+.pg-tra-luong-tu .lt-head .tp{display:inline-block;margin-top:6px;font-size:13px;color:var(--muted);background:color-mix(in srgb,var(--c) 7%,transparent);border-radius:999px;padding:3px 12px}
+.pg-tra-luong-tu .lt-sectitle{font-family:"Noto Serif SC",serif;font-weight:600;font-size:19px;margin:16px 2px 6px}
+.pg-tra-luong-tu .lt-sense{margin:14px 0}
+.pg-tra-luong-tu .lt-sense .sz{color:var(--blue);font-weight:700;font-size:17px;font-family:"Noto Sans SC",sans-serif;margin-bottom:2px}
+.pg-tra-luong-tu .lt-sense .sv{color:var(--ink);font-size:15px;margin-bottom:10px}
+.pg-tra-luong-tu .lt-exs{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.pg-tra-luong-tu .lt-exc{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:var(--panel)}
+.pg-tra-luong-tu .lt-exc .emo{font-size:38px;flex:none;width:52px;text-align:center}
+.pg-tra-luong-tu .lt-exc .tx{min-width:0}
+.pg-tra-luong-tu .lt-exc .epy{color:var(--muted);font-size:13px}
+.pg-tra-luong-tu .lt-exc .ezh{font-family:"Noto Sans SC",sans-serif;font-size:20px;line-height:1.3}
+.pg-tra-luong-tu .lt-exc .ezh b{color:var(--c);font-weight:700}
+.pg-tra-luong-tu .lt-exc .evi{font-size:14px;color:var(--ink);margin-top:1px}
+.pg-tra-luong-tu .lt-exc .say{border:none;background:none;cursor:pointer;font-size:17px;margin-left:auto;flex:none;align-self:flex-start;color:var(--muted)}
+
+/* Bổ sung: ô là <button>, nghĩa tiếng Việt, danh từ thường đi kèm; thanh tìm kiếm dính dưới header */
+.pg-tra-luong-tu .lt-tools{top:var(--lt-top,62px)}
+.pg-tra-luong-tu .lt-tile{font:inherit;color:inherit;width:100%}
+.pg-tra-luong-tu .lt-tile .tag{line-height:1.35}
+.pg-tra-luong-tu .lt-head .lt-vi{font-size:16px;color:var(--ink);margin-top:4px}
+.pg-tra-luong-tu .lt-nouns{font-size:14px;color:var(--muted);margin:-4px 0 10px}
+.pg-tra-luong-tu .lt-nouns span{font-family:"Noto Sans SC","Noto Serif SC",sans-serif;color:var(--ink)}
+.pg-tra-luong-tu .lt-exc .ezh b{color:var(--c)}

@@ -1,0 +1,46 @@
+/* CSS chép từ <style> của trang mẫu, thêm tiền tố .pg-tu-vung-chuyen-nganh */
+.pg-tu-vung-chuyen-nganh{--red:#9e1b1b;--red2:#c0392b;--bg:#faf7f2;--card:#fff;--line:#e7e0d4;--ink:#1b1f24;--muted:#6b7280}
+.pg-tu-vung-chuyen-nganh *,.pg-tu-vung-chuyen-nganh{box-sizing:border-box}
+.pg-tu-vung-chuyen-nganh{min-height:100vh;font-family:"Segoe UI",system-ui,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+.pg-tu-vung-chuyen-nganh header{background:linear-gradient(90deg,var(--red),var(--red2));color:#fff;padding:14px 18px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.pg-tu-vung-chuyen-nganh header .han{font-weight:800;font-size:18px}
+.pg-tu-vung-chuyen-nganh header h1{font-size:18px;margin:0;font-weight:800}
+.pg-tu-vung-chuyen-nganh header .sp{flex:1}
+.pg-tu-vung-chuyen-nganh header .who{font-size:13px;opacity:.95}
+.pg-tu-vung-chuyen-nganh header a.home{color:#fff;text-decoration:none;background:rgba(255,255,255,.18);padding:6px 12px;border-radius:999px;font-size:13px}
+.pg-tu-vung-chuyen-nganh .x-wrap{max-width:1100px;margin:0 auto;padding:16px}
+.pg-tu-vung-chuyen-nganh .note{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:10px;padding:10px 14px;font-size:14px;margin:12px 0}
+.pg-tu-vung-chuyen-nganh .note.adm{background:#ecfdf5;border-color:#a7f3d0;color:#065f46}
+.pg-tu-vung-chuyen-nganh .toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:12px 0}
+.pg-tu-vung-chuyen-nganh .toolbar input{padding:9px 12px;border:1px solid var(--line);border-radius:9px;font-size:14px;font-family:inherit;background:#fff;min-width:260px;flex:1}
+.pg-tu-vung-chuyen-nganh .count{color:var(--muted);font-size:13px}
+.pg-tu-vung-chuyen-nganh .x-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;margin-top:6px}
+.pg-tu-vung-chuyen-nganh .x-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.pg-tu-vung-chuyen-nganh .x-card .t{font-weight:700;font-size:15px;color:var(--red);line-height:1.35}
+.pg-tu-vung-chuyen-nganh .x-card .m{color:var(--muted);font-size:12.5px}
+.pg-tu-vung-chuyen-nganh .x-card .row{display:flex;gap:8px;margin-top:auto;flex-wrap:wrap}
+.pg-tu-vung-chuyen-nganh .x-btn{border:0;border-radius:9px;padding:8px 12px;font-size:13px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
+.pg-tu-vung-chuyen-nganh .x-btn.view{background:var(--red);color:#fff}
+.pg-tu-vung-chuyen-nganh .x-btn.dl{background:#15803d;color:#fff}
+.pg-tu-vung-chuyen-nganh .gate{max-width:520px;margin:60px auto;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px;text-align:center}
+.pg-tu-vung-chuyen-nganh .gate h2{color:var(--red);margin:0 0 8px}
+.pg-tu-vung-chuyen-nganh .gate a.x-btn{background:var(--red);color:#fff}
+.pg-tu-vung-chuyen-nganh .hide{display:none!important}
+.pg-tu-vung-chuyen-nganh .empty{color:var(--muted);text-align:center;padding:40px}
+/* modal viewer */
+.pg-tu-vung-chuyen-nganh .modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:50;padding:14px}
+.pg-tu-vung-chuyen-nganh .modal.on{display:flex}
+.pg-tu-vung-chuyen-nganh .box{background:#fff;border-radius:12px;width:min(1000px,100%);height:min(90vh,100%);display:flex;flex-direction:column;overflow:hidden}
+.pg-tu-vung-chuyen-nganh .box .bar{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.pg-tu-vung-chuyen-nganh .box .bar .ti{font-weight:700;color:var(--red);flex:1;font-size:15px}
+.pg-tu-vung-chuyen-nganh .box .bar .x{cursor:pointer;border:0;background:#eee;border-radius:8px;padding:6px 12px;font-weight:700}
+.pg-tu-vung-chuyen-nganh .box iframe{flex:1;border:0;width:100%}
+.pg-tu-vung-chuyen-nganh .spin{display:inline-block;width:14px;height:14px;border:2px solid #ccc;border-top-color:var(--red);border-radius:50%;animation:tvsp .7s linear infinite}
+
+@keyframes tvsp{to{transform:rotate(360deg)}}
+
+/* Bổ sung: nội dung modal khi tài liệu chưa có tệp */
+.pg-tu-vung-chuyen-nganh .tv-empty{flex:1;display:grid;place-content:center;text-align:center;padding:24px;color:var(--muted);gap:4px}
+.pg-tu-vung-chuyen-nganh .tv-empty p{margin:0}
+.pg-tu-vung-chuyen-nganh .tv-empty b{color:var(--red)}
+.pg-tu-vung-chuyen-nganh header h1{font-family:inherit;text-transform:none;line-height:1.3}

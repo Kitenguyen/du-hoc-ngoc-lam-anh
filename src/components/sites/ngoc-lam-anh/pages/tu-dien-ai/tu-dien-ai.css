@@ -1,0 +1,38 @@
+/* Từ điển AI Việt ⇄ Trung — cùng phong cách khung tra cứu của /tu-dien */
+.pg-tu-dien-ai .ai-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:18px;align-items:start}
+.pg-tu-dien-ai .ai-card{background:#fff;border:2px solid var(--line);border-radius:18px;padding:16px;box-shadow:0 6px 18px rgba(92,7,11,.08);min-width:0}
+.pg-tu-dien-ai .ai-in{position:sticky;top:6px;display:grid;gap:10px}
+.pg-tu-dien-ai .ai-dirs{display:flex;gap:6px;flex-wrap:wrap}
+.pg-tu-dien-ai .ai-dirs button{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font:600 14.5px var(--sans);cursor:pointer;color:var(--ink)}
+.pg-tu-dien-ai .ai-dirs button.on{background:var(--red);color:#fff;border-color:var(--red)}
+.pg-tu-dien-ai textarea{width:100%;font:500 18px/1.5 var(--sans);padding:12px 16px;border:2px solid var(--line);border-radius:12px;resize:vertical;color:var(--ink)}
+.pg-tu-dien-ai textarea:focus{border-color:var(--red);outline:0}
+.pg-tu-dien-ai .ai-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pg-tu-dien-ai .ai-row .btn{width:auto;margin:0}
+.pg-tu-dien-ai .ai-row .btn:disabled{opacity:.55;cursor:default}
+.pg-tu-dien-ai .ai-hint{font-size:13px}
+.pg-tu-dien-ai .ai-ex{display:flex;gap:6px;flex-wrap:wrap;align-items:center;font-size:13.5px}
+.pg-tu-dien-ai .ai-ex button{background:var(--cream-2);border:0;border-radius:999px;padding:4px 10px;font:500 13.5px var(--sans);cursor:pointer;color:var(--ink)}
+.pg-tu-dien-ai .ai-ex button:hover{background:var(--gold-lt)}
+.pg-tu-dien-ai .ai-ex .ai-clear{background:none;color:var(--muted);text-decoration:underline}
+.pg-tu-dien-ai .ai-out{min-height:320px}
+.pg-tu-dien-ai .ai-empty{text-align:center;color:var(--ink-2);padding:30px 10px}
+.pg-tu-dien-ai .ai-empty .i{font-size:44px}
+.pg-tu-dien-ai .z{font-family:"Noto Serif SC","Noto Sans SC",serif;font-weight:600}
+.pg-tu-dien-ai .z.big{font-size:30px}
+.pg-tu-dien-ai .ai-q{font-size:20px;border-bottom:1px dashed var(--line);padding-bottom:10px;margin-bottom:10px}
+.pg-tu-dien-ai .ai-q .z{font-size:26px}
+.pg-tu-dien-ai .ai-py{color:var(--red);font-weight:600;font-size:15px}
+.pg-tu-dien-ai .ai-say{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:2px 9px;font-size:13px;cursor:pointer;margin-left:6px;vertical-align:middle}
+.pg-tu-dien-ai .ai-say:hover{border-color:var(--red)}
+.pg-tu-dien-ai .ai-off{background:#fff7e6;border:1.5px solid var(--gold);border-radius:12px;padding:10px 14px;font-size:15px}
+.pg-tu-dien-ai .ai-h{font-size:17px;margin:16px 0 8px;border-left:5px solid var(--gold);padding-left:10px}
+.pg-tu-dien-ai .ai-list{display:grid;gap:8px}
+.pg-tu-dien-ai .ai-m{border:1.5px solid var(--line);border-radius:12px;padding:9px 12px;font-size:15px}
+.pg-tu-dien-ai .ai-m .z{font-size:21px}
+.pg-tu-dien-ai .ai-exs{background:var(--cream);border-radius:10px;padding:8px 12px;margin-top:6px;font-size:14.5px}
+.pg-tu-dien-ai .ai-exs .z{font-size:17px;font-weight:500}
+.pg-tu-dien-ai .ai-link{font-size:13px;font-weight:600;text-decoration:none;display:inline-block;margin-top:4px}
+.pg-tu-dien-ai .ai-ans .vi{font-size:18px;margin:4px 0 8px}
+.pg-tu-dien-ai .ai-foot{margin-top:18px;font-size:15px}
+@media (max-width:860px){.pg-tu-dien-ai .ai-grid{grid-template-columns:1fr}.pg-tu-dien-ai .ai-in{position:static}}

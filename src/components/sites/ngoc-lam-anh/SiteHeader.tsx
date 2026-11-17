@@ -1,7 +1,13 @@
 "use client";
 
 import { useEffect, useRef, useState, type MouseEvent } from "react";
-import { BRAND, CALL_HREF, CONTACT, NAV, PHONE_LABEL, REGISTER_HREF, href, type NavLink } from "./data";
+import { BRAND, CALL_HREF, CONTACT, NAV, PHONE_LABEL, REGISTER_HREF, href, slugOf, type NavItem, type NavLink } from "./data";
+
+/** Mục menu sáng khi trang hiện tại là chính nó hoặc một trang con (không tính link #neo) */
+function isActive(item: NavItem, active: string): boolean {
+  const own = (l: NavLink) => !l.href.includes("#") && slugOf(l.href) === active;
+  return own(item) || (item.children ?? []).some(own);
+}
 
 const MOBILE_MAX = 1100;
 
@@ -32,7 +38,7 @@ export function TopBar() {
   );
 }
 
-export function SiteHeader() {
+export function SiteHeader({ active = "" }: { active?: string }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDd, setOpenDd] = useState<number | null>(null);
   const navRef = useRef<HTMLElement>(null);
@@ -75,7 +81,7 @@ export function SiteHeader() {
   return (
     <header className="site">
       <div className="wrap">
-        <a className="brand" href={href("khoa-hoc")}>
+        <a className="brand" href={href("index.html")}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={BRAND.logoMark} alt={`Logo ${BRAND.fullName}`} width={48} height={48} />
           <div>
@@ -96,7 +102,7 @@ export function SiteHeader() {
           {NAV.map((item, i) =>
             item.children ? (
               <div className={`dd${openDd === i ? " open" : ""}`} key={item.label}>
-                <a href={href(item.href)} className={item.active ? "on" : undefined} onClick={onGroupClick(i)}>
+                <a href={href(item.href)} className={isActive(item, active) ? "on" : undefined} onClick={onGroupClick(i)}>
                   {item.label}{" "}
                   <span className="caret" aria-hidden="true">
                     ▾
@@ -109,12 +115,12 @@ export function SiteHeader() {
                 </div>
               </div>
             ) : (
-              <NavAnchor link={item} key={item.label} className={item.active ? "on" : undefined} />
+              <NavAnchor link={item} key={item.label} className={isActive(item, active) ? "on" : undefined} />
             ),
           )}
         </nav>
         <a className="btn gold sm cta" href={href(REGISTER_HREF)}>
-          Đăng ký tư vấn
+          Đăng ký học
         </a>
       </div>
     </header>

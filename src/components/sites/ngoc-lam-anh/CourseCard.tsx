@@ -45,7 +45,7 @@ export function CourseCard({ course }: { course: Course }) {
             ))}
           </ul>
         </div>
-        <a className="btn pri" href={href(course.ctaHref ?? REGISTER_HREF)}>
+        <a className="btn pri" href={href(course.ctaHref ?? `${REGISTER_HREF}?khoa=${course.id}`)}>
           {course.cta ?? "Đăng ký khóa này"}
         </a>
       </div>

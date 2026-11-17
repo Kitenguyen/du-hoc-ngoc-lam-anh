@@ -1,19 +1,31 @@
-# Tiếng Trung Ngọc Lâm Anh — trang Khóa học
+# Website Tiếng Trung Ngọc Lâm Anh — tổng quan
 
-## Route
-| Local | File |
-|---|---|
-| `/khoa-hoc` | `src/app/khoa-hoc/page.tsx` → `src/components/sites/ngoc-lam-anh/CoursesPage.tsx` |
-| `/` → chuyển hướng tới `/khoa-hoc` | `src/app/page.tsx` |
+Giao diện dựng lại từ https://hoangdatqnhsk.vn/moi/ (28 trang). Nội dung là của Ngọc Lâm Anh
+(lấy từ https://tiengtrungchuongmy.com/) hoặc ô giữ chỗ `[...]` để trung tâm điền. Quy ước code: xem `BUILD-GUIDE.md`.
 
-## Nguồn
-- **Giao diện:** dựng lại từ https://hoangdatqnhsk.vn/moi/khoa-hoc.html (CSS gốc ở `site.css`, thêm vài rule cho logo NLA ở cuối file).
-- **Nội dung:** lấy từ https://tiengtrungchuongmy.com/ (trang chủ, `/tieng-trung-giao-tiep/`, `/luyen-thi-hsk/`, `/ytc-cap-1-nguoi-moi/`, `/ytc-cap-2/`, `/du-hoc/`). Tất cả nằm trong `data.ts`.
-- **Logo:** ảnh NLA người dùng cung cấp → `public/sites/ngoc-lam-anh/logo-original.png` (gốc), `logo-mark.png` (256×256, cắt bỏ slogan, dùng ở header/favicon), `logo.png` (800×540, có slogan, dùng ở chân trang).
+## Các trang
+| Nhóm | Route | Thư mục component (`src/components/sites/ngoc-lam-anh/…`) |
+|---|---|---|
+| Giới thiệu | `/` | `pages/home/` |
+| | `/khoa-hoc` | `CoursesPage.tsx`, `CourseCard.tsx` (dữ liệu trong `data.ts`) |
+| | `/luyen-thi-d4`, `/khoa-hoc-online` | `pages/luyen-thi-d4/`, `pages/khoa-hoc-online/` |
+| Thi thử | `/thi-thu`, `/de-thi`, `/de-thi-d4` | `pages/thi-thu/`, `pages/de-thi/` (đề trong `exams.ts`), `pages/de-thi-d4/` |
+| Tài liệu | `/tai-lieu`, `/giao-trinh`, `/giao-trinh-dich-thuat`, `/sach-tieng-trung`, `/video-giang-day`, `/tu-vung-chuyen-nganh`, `/tra-luong-tu` | `pages/<slug>/` |
+| Form | `/dang-ky`, `/dang-nhap`, `/reg-tu-van` (màn nhân viên), `/mua-tai-khoan`, `/dk-hoc-sinh` | `pages/<slug>/` |
+| Công cụ học | `/tu-vung`, `/tro-choi`, `/luyen-noi` | `pages/<slug>/`, từ vựng HSK chung: `lib/hsk-vocab.ts` |
+| Công cụ giáo viên | `/tu-dien`, `/tu-dien-ai`, `/tu-dien-cua-toi`, `/bang-den`, `/bang-word`, `/trinh-chieu` | `pages/<slug>/` |
 
-## Còn thiếu / cần người dùng điền
-- `CONTACT.phone`, `CONTACT.zalo`, `CONTACT.email`, `CONTACT.address` trong `data.ts`: trang tiengtrungchuongmy.com không công bố. Khi trống, nút Gọi/Zalo dẫn tới Facebook.
-- `BRAND.zh` = 玉林英汉语 là tên chữ Hán tự đặt (Ngọc 玉, Lâm 林, Anh 英) — đổi nếu trung tâm dùng tên khác.
-- Trang nguồn không công bố thời lượng các khóa HSK 0–3 / 0–4 / 0–5 và YTC cấp 2 nên các thẻ đó không ghi số buổi.
-- Các mục menu khác (Trang chủ, Thư viện, Tin tức, Liên hệ, Đội ngũ giáo viên) đang dẫn sang tiengtrungchuongmy.com.
-- Link "Du học Đài Loan" trên trang nguồn trỏ nhầm sang mục phần mềm/app nên không đưa vào menu.
+Dùng chung: `data.ts` (thương hiệu, liên hệ, menu, khóa học), `PageShell.tsx`, `SiteHeader.tsx`, `SiteFooter.tsx`, `site.css`.
+
+## Cần trung tâm điền (tìm chuỗi `[` trong các file sau)
+- `data.ts` → `CONTACT`: số điện thoại, Zalo, email, địa chỉ (khi trống, nút Gọi/Zalo mở Facebook).
+- `pages/home/data.ts` → `COURSE_FEES`, `TESTIMONIALS`, `GALLERY`.
+- `pages/luyen-thi-d4/data.ts`, `pages/mua-tai-khoan/data.ts` → giá gói, thời hạn, thông tin chuyển khoản, mã QR.
+- `pages/giao-trinh/`, `giao-trinh-dich-thuat/`, `sach-tieng-trung/`, `video-giang-day/`, `tu-vung-chuyen-nganh/`, `tai-lieu/`, `khoa-hoc-online/` `data.ts` → tên và tệp tài liệu, sách, video.
+- `pages/luyen-noi/data.ts`, `pages/tu-dien/data.ts` → tệp tài liệu tải về.
+- Mở rộng dữ liệu học: `lib/hsk-vocab.ts` (HSK3–6), `pages/de-thi/exams.ts`, `pages/de-thi-d4/exams.ts`, `pages/tu-dien/data.ts`, `pages/trinh-chieu/decks.ts`, `pages/luyen-noi/data.ts`.
+
+## Cần máy chủ (chưa có — các trang hiện thông báo rõ ràng)
+Đăng nhập, gửi form đăng ký về trung tâm (hiện chuyển qua Zalo/điện thoại), thanh toán, lưu điểm lên tài khoản,
+chấm bài nói HSKK, Từ điển AI, dịch đoạn trong Bảng Word, mở tài liệu/video có phân quyền.
+Mỗi trang gom lời gọi máy chủ trong file `api.ts` riêng để nối backend sau.

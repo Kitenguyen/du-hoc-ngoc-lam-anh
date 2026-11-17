@@ -1,0 +1,73 @@
+/* Khóa học online — trang độc lập (không dùng header/footer của site).
+   Chép từ <style> của khoa-hoc-online.html; tên class thêm tiền tố ko- để không trùng site.css,
+   biến màu đặt trong .pg-khoa-hoc-online. */
+.pg-khoa-hoc-online{--red:#9e1b1b;--red2:#c0392b;--bg:#faf7f2;--card:#fff;--line:#e7e0d4;--ink:#1b1f24;--muted:#6b7280;--gold:#b8860b;--ok:#15803d;--blue:#1d4ed8;
+  min-height:100vh;min-height:100dvh;background:var(--bg);color:var(--ink);font:16px/1.5 "Segoe UI",system-ui,Arial,sans-serif}
+.pg-khoa-hoc-online *{box-sizing:border-box}
+.pg-khoa-hoc-online a{color:var(--red)}
+.pg-khoa-hoc-online h1,.pg-khoa-hoc-online h2{font-family:inherit;line-height:1.25}
+.pg-khoa-hoc-online .ko-header{background:linear-gradient(90deg,var(--red),var(--red2));color:#fff;padding:14px 18px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.pg-khoa-hoc-online .ko-header h1{font-size:19px;margin:0;font-weight:800;letter-spacing:.3px}
+.pg-khoa-hoc-online .ko-han{font-weight:800}
+.pg-khoa-hoc-online .ko-who{font-size:13px;opacity:.95}
+.pg-khoa-hoc-online .ko-header a.ko-home{color:#fff;text-decoration:none;background:rgba(255,255,255,.18);padding:6px 12px;border-radius:999px;font-size:13px}
+.pg-khoa-hoc-online .ko-spacer{flex:1}
+.pg-khoa-hoc-online .ko-wrap{max-width:1050px;margin:0 auto;padding:16px}
+.pg-khoa-hoc-online .ko-note{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:10px;padding:10px 14px;font-size:14px;margin:12px 0}
+.pg-khoa-hoc-online .ko-gate{max-width:520px;margin:40px auto 24px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px;text-align:center}
+.pg-khoa-hoc-online .ko-gate h2{color:var(--red);margin:0 0 8px;font-size:22px}
+.pg-khoa-hoc-online .ko-gate p{color:var(--muted);margin:0 0 6px}
+.pg-khoa-hoc-online .ko-gate .ko-gate-note{font-size:13.5px;margin-bottom:14px}
+.pg-khoa-hoc-online .ko-btn{border:0;border-radius:9px;padding:9px 16px;font-size:14px;font-weight:700;cursor:pointer;background:var(--red);color:#fff;text-decoration:none;display:inline-block}
+.pg-khoa-hoc-online .ko-av{position:relative;width:30px;height:30px;border-radius:50%;flex:none;background:#f3e8e8;border:1px solid var(--line);display:inline-flex;align-items:center;justify-content:center;overflow:hidden;vertical-align:middle}
+.pg-khoa-hoc-online .ko-av.big{width:38px;height:38px}
+.pg-khoa-hoc-online .ko-av svg{width:60%;height:60%;fill:#b9a3a3}
+.pg-khoa-hoc-online .ko-toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:14px 0}
+.pg-khoa-hoc-online .ko-toolbar select,.pg-khoa-hoc-online .ko-toolbar input{padding:8px 10px;border:1px solid var(--line);border-radius:8px;font-size:14px;font-family:inherit;background:#fff;color:var(--ink)}
+.pg-khoa-hoc-online .ko-toolbar select{width:auto;min-width:150px}
+.pg-khoa-hoc-online .ko-toolbar input{width:100%;max-width:260px}
+.pg-khoa-hoc-online .ko-count{color:var(--muted);font-size:13px}
+.pg-khoa-hoc-online .ko-course{background:#fff;border:1px solid var(--line);border-radius:14px;margin:12px 0;overflow:hidden}
+.pg-khoa-hoc-online .ko-gt-head{background:#f6efe6;padding:12px 16px;font-weight:800;color:#6a3a16;font-size:16px;display:flex;align-items:center;gap:8px;justify-content:space-between}
+.pg-khoa-hoc-online .ko-gt-count{font-weight:600;color:var(--muted);font-size:13px}
+.pg-khoa-hoc-online .ko-level{border-top:1px solid var(--line)}
+.pg-khoa-hoc-online .ko-lv-head{padding:10px 16px;background:#fbf7f1;font-weight:700;color:var(--red);display:flex;align-items:center;gap:8px}
+.pg-khoa-hoc-online .ko-lv-n{font-weight:600;color:var(--muted)}
+.pg-khoa-hoc-online .ko-badge{background:var(--red);color:#fff;border-radius:999px;font-size:11px;padding:2px 9px;font-weight:700}
+.pg-khoa-hoc-online .ko-lessons{padding:6px 10px 12px}
+.pg-khoa-hoc-online .ko-lesson{display:flex;gap:12px;align-items:center;padding:9px 8px;border-bottom:1px dashed var(--line)}
+.pg-khoa-hoc-online .ko-lesson:last-child{border-bottom:0}
+.pg-khoa-hoc-online .ko-idx{width:34px;height:34px;flex:none;border-radius:8px;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}
+.pg-khoa-hoc-online .ko-ti{flex:1;min-width:0}
+.pg-khoa-hoc-online .ko-ti b{display:block;font-size:14.5px}
+.pg-khoa-hoc-online .ko-ti small{color:var(--muted);font-size:13px}
+.pg-khoa-hoc-online .ko-prog{font-size:12px;margin-top:3px;font-weight:700}
+.pg-khoa-hoc-online .ko-prog.none{color:var(--muted);font-weight:600}
+.pg-khoa-hoc-online .ko-act{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.pg-khoa-hoc-online .ko-play{background:var(--red);color:#fff;border:0;border-radius:8px;padding:7px 12px;font-weight:700;cursor:pointer;font-size:13px;font-family:inherit}
+.pg-khoa-hoc-online .ko-empty{color:var(--muted);text-align:center;padding:40px}
+.pg-khoa-hoc-online .ko-modal{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:flex-start;justify-content:center;z-index:50;padding:14px;overflow:auto}
+.pg-khoa-hoc-online .ko-box{background:#fff;border-radius:12px;width:min(960px,100%);overflow:hidden;margin:auto}
+.pg-khoa-hoc-online .ko-vhead{display:flex;align-items:center;gap:10px;padding:10px 14px;background:#111;color:#fff}
+.pg-khoa-hoc-online .ko-vhead b{flex:1;font-size:15px}
+.pg-khoa-hoc-online .ko-vhead button{background:rgba(255,255,255,.15);border:0;color:#fff;border-radius:8px;padding:6px 12px;cursor:pointer;font-size:14px;font-family:inherit}
+.pg-khoa-hoc-online .ko-ratio{position:relative;width:100%;padding-top:56.25%;background:#000}
+.pg-khoa-hoc-online .ko-ratio iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.pg-khoa-hoc-online .ko-novid{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:#d1d5db;text-align:center}
+.pg-khoa-hoc-online .ko-novid-ic{width:64px;height:64px;border-radius:50%;border:2px solid #6b7280;display:grid;place-items:center;font-size:24px;color:#9ca3af}
+.pg-khoa-hoc-online .ko-novid b{font-size:17px;color:#fff}
+.pg-khoa-hoc-online .ko-novid small{color:#fca5a5;font-weight:700}
+.pg-khoa-hoc-online .ko-mbody{padding:14px 16px 20px}
+.pg-khoa-hoc-online .ko-bar{height:10px;background:#eee;border-radius:99px;overflow:hidden;margin:8px 0 6px}
+.pg-khoa-hoc-online .ko-bar>i{display:block;height:100%;background:linear-gradient(90deg,var(--red),var(--red2));width:0}
+.pg-khoa-hoc-online .ko-mnote{font-size:13.5px;min-height:18px}
+.pg-khoa-hoc-online .ko-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:9px;margin-top:14px}
+.pg-khoa-hoc-online .ko-tile{border:1px solid var(--line);border-radius:11px;padding:12px;background:#fff;cursor:pointer;text-align:left;font:inherit;font-weight:700;color:var(--ink)}
+.pg-khoa-hoc-online .ko-tile small{display:block;font-weight:500;color:var(--muted);margin-top:3px}
+.pg-khoa-hoc-online .ko-tile.lock{background:#f3f4f6;color:#9ca3af;cursor:not-allowed}
+.pg-khoa-hoc-online .ko-hist{margin-top:14px;font-size:13px;color:var(--muted)}
+@media (max-width:620px){
+  .pg-khoa-hoc-online .ko-toolbar select,.pg-khoa-hoc-online .ko-toolbar input{flex:1;max-width:none}
+  .pg-khoa-hoc-online .ko-lesson{flex-wrap:wrap}
+  .pg-khoa-hoc-online .ko-act{width:100%;justify-content:flex-start}
+}

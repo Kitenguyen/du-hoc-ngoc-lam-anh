@@ -1,0 +1,51 @@
+/* CSS chép từ <style> của trang mẫu, thêm tiền tố .pg-video-giang-day */
+.pg-video-giang-day .vd-who[hidden],.pg-video-giang-day .vd-play[hidden],.pg-video-giang-day #vgate[hidden]{display:none!important}
+.pg-video-giang-day .vd-gate{background:#fff;border:2px solid var(--gold);border-radius:18px;padding:22px 18px;max-width:620px;margin:0 auto 24px}
+.pg-video-giang-day .vd-gate h2{margin:0 0 4px;font:700 21px var(--display);color:var(--red-dk);text-align:center}
+.pg-video-giang-day .vd-gate>p{text-align:center;margin:0 0 14px}
+.pg-video-giang-day .vd-tabs{display:flex;gap:6px;justify-content:center;margin-bottom:14px}
+.pg-video-giang-day .vd-tabs button{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:8px 18px;font:700 15px var(--sans);cursor:pointer;color:var(--ink)}
+.pg-video-giang-day .vd-tabs button.on{background:var(--red);border-color:var(--red);color:#fff}
+.pg-video-giang-day .vd-f{display:grid;gap:10px}
+.pg-video-giang-day .vd-f label{display:grid;gap:4px;font-weight:600;font-size:15px}
+.pg-video-giang-day .vd-f input,.pg-video-giang-day .vd-f select{font:16px var(--sans);padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;width:100%;box-sizing:border-box;background:#fff}
+.pg-video-giang-day .vd-f .btn{justify-self:start;margin:0;width:auto}
+.pg-video-giang-day .vd-msg{min-height:1.4em;font-size:14.5px}
+.pg-video-giang-day .vd-msg.err{color:var(--red);font-weight:600}
+.pg-video-giang-day .vd-who{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;background:#ecfdf3;border:1.5px solid #86efac;border-radius:12px;padding:10px 14px;margin:0 0 18px;font-size:15px}
+.pg-video-giang-day .vd-who .btn{margin:0;width:auto;padding:6px 14px;font-size:14px}
+.pg-video-giang-day .vd-play{background:#1d1412;border-radius:16px;overflow:hidden;margin:0 0 20px;position:sticky;top:calc(70px + env(safe-area-inset-top,0px));z-index:5;box-shadow:0 8px 28px rgba(0,0,0,.25)}
+.pg-video-giang-day .vd-ph{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 12px;background:#fff}
+.pg-video-giang-day .vd-ph>div{display:grid;min-width:0}
+.pg-video-giang-day .vd-ph b{color:var(--red-dk);font-family:var(--han)}
+.pg-video-giang-day .vd-ph .btn{margin:0;width:auto;padding:6px 12px;font-size:13.5px}
+.pg-video-giang-day .vd-play video{display:block;width:100%;max-height:70vh;background:#000}
+.pg-video-giang-day .vd-bk{margin:0 0 28px}
+.pg-video-giang-day .vd-bh{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:2px solid var(--gold);padding-bottom:6px;margin-bottom:12px}
+.pg-video-giang-day .vd-bh .zh{font-family:var(--han);font-size:22px;color:var(--red)}
+.pg-video-giang-day .vd-bh h2{margin:0;font:700 20px var(--display)}
+.pg-video-giang-day .vd-ls{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:12px}
+.pg-video-giang-day .vd-l{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-left:4px solid var(--red);border-radius:14px;padding:12px 14px;cursor:pointer;text-align:left;font:inherit;color:inherit;width:100%}
+.pg-video-giang-day .vd-l:hover{box-shadow:0 4px 14px rgba(0,0,0,.08)}
+.pg-video-giang-day .vd-l.lock{border-left-color:#bbb;cursor:default;opacity:.7}
+.pg-video-giang-day .vd-l.on{background:#fff8e6;border-color:var(--gold)}
+.pg-video-giang-day .vd-n{flex:none;width:44px;height:44px;border-radius:12px;background:var(--red);color:#fff;display:grid;place-items:center;font-weight:800;font-size:17px}
+.pg-video-giang-day .vd-l.lock .vd-n{background:#bbb}
+.pg-video-giang-day .vd-t{display:grid;gap:2px;min-width:0}
+.pg-video-giang-day .vd-t b{font-family:var(--han);font-size:17px;color:var(--red-dk)}
+.pg-video-giang-day .vd-t span{font-size:13.5px}
+.pg-video-giang-day .vd-t small{color:var(--muted);font-size:12.5px}
+.pg-video-giang-day .vd-up{background:#fff;border:2px dashed var(--gold);border-radius:18px;padding:16px 18px;margin:0 0 22px}
+.pg-video-giang-day .vd-up h3{margin:0 0 4px;font:800 19px var(--display);color:var(--red-dk)}
+.pg-video-giang-day .vd-up .g2{display:grid;grid-template-columns:2fr 1fr;gap:10px}
+@media(max-width:620px){.pg-video-giang-day .vd-up .g2{grid-template-columns:1fr}
+}
+.pg-video-giang-day .vd-drop{display:grid;place-items:center;text-align:center;border:2px dashed var(--line);border-radius:14px;padding:18px;cursor:pointer;background:var(--cream)}
+.pg-video-giang-day .vd-drop.on{border-color:var(--red);background:#fff1f0}
+.pg-video-giang-day .vd-drop b{color:var(--red-dk)}
+.pg-video-giang-day .vd-bar{height:12px;background:#eee;border-radius:99px;overflow:hidden}
+.pg-video-giang-day .vd-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ffd43b,#e8590c);transition:width .3s}
+
+/* Bổ sung: thông báo "không tua nhanh" (trang mẫu tạo bằng JS với style inline) */
+.pg-video-giang-day .vd-noff{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,.78);color:#fff;padding:10px 16px;border-radius:12px;font:600 15px var(--sans);pointer-events:none;z-index:3;text-align:center}
+.pg-video-giang-day .vd-l:disabled{color:inherit}

@@ -29,78 +29,88 @@ export const PHONE_LABEL = CONTACT.phone || "[Số điện thoại]";
 export const CALL_HREF = CONTACT.phone ? `tel:${CONTACT.phone}` : CONTACT.facebook;
 export const ZALO_HREF = CONTACT.zalo || (CONTACT.phone ? `https://zalo.me/${CONTACT.phone}` : CONTACT.facebook);
 
-export const SOURCE_ORIGIN = "https://tiengtrungchuongmy.com/";
+/** Trang bài viết/blog của trung tâm (chưa có trong dự án này) */
+export const BLOG_ORIGIN = "https://tiengtrungchuongmy.com/";
 
-/** Trang đã có trong dự án → đường dẫn nội bộ. Còn lại → trang tương ứng trên tiengtrungchuongmy.com. */
-const LOCAL_ROUTES: Record<string, string> = {
-  "khoa-hoc": "/khoa-hoc",
-};
-
+/**
+ * Chuyển link kiểu trang gốc sang route nội bộ:
+ *   "index.html" → "/",  "thi-thu.html#hskk" → "/thi-thu#hskk",  "dang-ky?khoa=x" → "/dang-ky?khoa=x"
+ * Link http(s), tel:, mailto:, #anchor và "/..." giữ nguyên.
+ */
 export function href(path: string): string {
   if (/^(https?:|tel:|mailto:|#|\/)/.test(path)) return path;
-  const [slug, rest = ""] = path.split(/(?=[?#])/);
-  const local = LOCAL_ROUTES[slug];
-  return local ? local + rest : SOURCE_ORIGIN + slug + (slug && !slug.endsWith("/") ? "/" : "") + rest;
+  const [file, rest = ""] = path.split(/(?=[?#])/);
+  const slug = file.replace(/\.(html|php)$/, "");
+  return (slug === "" || slug === "index" ? "/" : `/${slug}`) + rest;
 }
 
-export const REGISTER_HREF = "lien-he";
+/** Slug của route hiện tại từ một href ("thi-thu.html#x" → "thi-thu") */
+export function slugOf(path: string): string {
+  return href(path).split(/[?#]/)[0].replace(/^\//, "");
+}
+
+export const REGISTER_HREF = "dang-ky";
 
 export type NavLink = { label: string; href: string; className?: string; external?: boolean; id?: string };
-export type NavItem = NavLink & { children?: NavLink[]; active?: boolean };
+export type NavItem = NavLink & { children?: NavLink[] };
 
+// Cấu trúc menu giống trang mẫu; mọi trang đều nằm trong dự án này.
 export const NAV: NavItem[] = [
-  { label: "Trang chủ", href: "" },
+  { label: "Trang chủ", href: "index.html" },
   {
     label: "Khóa học",
-    href: "khoa-hoc",
-    active: true,
+    href: "khoa-hoc.html",
     children: [
-      { label: "Tiếng Trung giao tiếp", href: "khoa-hoc#giao-tiep" },
-      { label: "Luyện thi HSK", href: "khoa-hoc#hsk" },
-      { label: "YTC cấp 1 (người mới)", href: "khoa-hoc#ytc-cap-1" },
-      { label: "YTC cấp 2", href: "khoa-hoc#ytc-cap-2" },
-      { label: "Lịch khai giảng", href: "lich-khai-giang" },
+      { label: "Tiếng Trung giao tiếp", href: "khoa-hoc.html#giao-tiep" },
+      { label: "Luyện thi HSK", href: "khoa-hoc.html#hsk" },
+      { label: "Luyện thi khối D4", href: "luyen-thi-d4.html" },
+      { label: "Đăng ký học", href: "dang-ky.html" },
     ],
   },
   {
-    label: "Du học",
-    href: "khoa-hoc#du-hoc",
+    label: "Đội ngũ",
+    href: "index.html#doi-ngu",
     children: [
-      { label: "Tư vấn du học & học bổng", href: "khoa-hoc#du-hoc" },
-      { label: "Du học Trung Quốc", href: "du-hoc" },
-      { label: "Tin du học Trung Quốc", href: "category/blog/khoa-hoc-tieng-trung/du-hoc-trung-quoc" },
+      { label: "Đội ngũ giáo viên", href: "index.html#doi-ngu" },
+      { label: "Cảm nhận học viên", href: "index.html#cam-nhan" },
     ],
   },
-  { label: "Đội ngũ giáo viên", href: "doi-ngu-giao-vien" },
+  { label: "Du học", href: "index.html#du-hoc" },
   {
-    label: "Thư viện",
-    href: "category/thu-vien",
+    label: "Thi thử HSK",
+    href: "thi-thu.html",
     children: [
-      { label: "HSK 9 cấp", href: "category/thu-vien/hsk-9-cap" },
-      { label: "Phương pháp học", href: "category/thu-vien/phuong-phap-hoc" },
-      { label: "Tin tức HSK và HSKK", href: "category/thu-vien/tin-tuc-hsk-va-hskk" },
-      { label: "Từ vựng", href: "category/thu-vien/tu-vung" },
-      { label: "Ngữ pháp", href: "category/thu-vien/ngu-phap" },
-      { label: "Thành ngữ", href: "category/thu-vien/thanh-ngu" },
-      { label: "Học qua bài hát và phim ảnh", href: "category/thu-vien/hoc-tieng-trung-qua-bai-hat-va-phim-anh" },
-      { label: "Kho sách & tài liệu", href: "category/thu-vien/kho-sach-tai-lieu-hoc-tieng-trung" },
-      { label: "Thư viện online", href: "category/thu-vien/thu-vien-online" },
-      { label: "Văn hóa – Ẩm thực Trung Quốc", href: "category/thu-vien/van-hoa-am-thuc-trung-quoc" },
+      { label: "HSK 2.0 (6 cấp)", href: "thi-thu.html#hsk20" },
+      { label: "Thi nói HSKK (3 cấp)", href: "thi-thu.html#hskk" },
+      { label: "HSK 3.0 (9 cấp)", href: "thi-thu.html#hsk30" },
+      { label: "Thi nói HSK 3.0 (cấp 3–6)", href: "thi-thu.html#hskk30" },
     ],
   },
   {
-    label: "Tin tức",
-    href: "category/tin-tuc",
+    label: "Tài liệu",
+    href: "tai-lieu.html",
     children: [
-      { label: "Lịch khai giảng", href: "lich-khai-giang" },
-      { label: "Hội thảo khoa học", href: "category/tin-tuc/hoi-thao-khoa-hoc" },
-      { label: "Sự kiện trung tâm", href: "category/tin-tuc/su-kien-quynh-chinese" },
+      { label: "Giáo án giảng dạy", href: "tai-lieu.html#giao-an" },
+      { label: "Video giảng dạy", href: "video-giang-day.html" },
+      { label: "🎓 Khóa học online", href: "khoa-hoc-online.html" },
+      { label: "Bài giảng trình chiếu", href: "trinh-chieu.html" },
+      { label: "Tài liệu giáo trình", href: "tai-lieu.html#giao-trinh" },
+      { label: "Tài liệu tiếng Trung", href: "sach-tieng-trung.html" },
+      { label: "Tài liệu chuyên ngành", href: "tai-lieu.html#chuyen-nganh" },
+      { label: "📚 Từ vựng chuyên ngành (PDF)", href: "tu-vung-chuyen-nganh.html" },
+      { label: "Từ điển chuyên ngành", href: "tu-dien.html" },
+      { label: "Từ điển AI Việt ⇄ Trung", href: "tu-dien-ai.html" },
+      { label: "📒 Từ điển của tôi", href: "tu-dien-cua-toi.html" },
+      { label: "Luyện nói phản xạ HSK1–6", href: "luyen-noi.html" },
     ],
   },
-  { label: "Liên hệ", href: "lien-he" },
-  { label: "📝 Đăng ký tư vấn", href: REGISTER_HREF, className: "m-only m-cta" },
+  { label: "Ôn tập từ vựng", href: "tu-vung.html" },
+  { label: "Trò chơi", href: "tro-choi.html" },
+  { label: "Bảng đen", href: "bang-den.html" },
+  { label: "📝 Đăng ký học", href: "dang-ky.html", className: "m-only m-cta" },
   { label: `☎ Gọi ${PHONE_LABEL}`, href: CALL_HREF, className: "m-only" },
-  { label: "💬 Facebook", href: CONTACT.facebook, className: "m-only", external: true },
+  { label: "💬 Nhắn Zalo", href: ZALO_HREF, className: "m-only", external: true },
+  { label: "Đăng nhập", href: "dang-nhap.html", id: "navlogin" },
 ];
 
 export type Course = {
@@ -173,7 +183,6 @@ export const COURSE_GROUPS: CourseGroup[] = [
           "Giáo trình 160 hội thoại, biên soạn theo chuẩn Đại học Bắc Kinh",
         ],
         cta: "Đăng ký tư vấn miễn phí",
-        ctaHref: "tieng-trung-giao-tiep",
       },
       {
         id: "ytc-cap-1",
@@ -190,7 +199,6 @@ export const COURSE_GROUPS: CourseGroup[] = [
         syllabusTitle: "Lộ trình 30 ngày",
         syllabus: ["Tuần 1 – 2: phát âm và thanh điệu", "Tuần 3 – 4: giao tiếp cơ bản"],
         cta: "Học thử miễn phí",
-        ctaHref: "ytc-cap-1-nguoi-moi",
       },
       {
         id: "ytc-cap-2",
@@ -206,7 +214,6 @@ export const COURSE_GROUPS: CourseGroup[] = [
         syllabusTitle: "Lộ trình nâng cao",
         syllabus: ["Mở rộng từ vựng", "Hội thoại nâng cao", "Nghe thực tế"],
         cta: "Kiểm tra trình độ miễn phí",
-        ctaHref: "ytc-cap-2",
       },
     ],
   },
@@ -234,7 +241,6 @@ export const COURSE_GROUPS: CourseGroup[] = [
           "Test trình độ miễn phí trước khi xếp lớp",
         ],
         cta: "Test trình độ miễn phí",
-        ctaHref: "luyen-thi-hsk",
       },
       {
         id: "hsk-0-4",
@@ -252,7 +258,6 @@ export const COURSE_GROUPS: CourseGroup[] = [
           "Nhận bộ đề HSK miễn phí khi đăng ký",
         ],
         cta: "Test trình độ miễn phí",
-        ctaHref: "luyen-thi-hsk",
       },
       {
         id: "hsk-0-5",
@@ -270,7 +275,6 @@ export const COURSE_GROUPS: CourseGroup[] = [
           "Định hướng học bổng du học sau khi đạt chứng chỉ",
         ],
         cta: "Test trình độ miễn phí",
-        ctaHref: "luyen-thi-hsk",
       },
     ],
   },
@@ -302,7 +306,6 @@ export const COURSE_GROUPS: CourseGroup[] = [
           "Hộ chiếu và giấy khám sức khỏe",
         ],
         cta: "Đăng ký tư vấn du học",
-        ctaHref: "du-hoc",
       },
     ],
   },
@@ -316,21 +319,21 @@ export const STUDY_ABROAD_TILES = {
       icon: "💰",
       title: "Chi phí hợp lý",
       text: "Học phí và sinh hoạt khoảng 7.000 – 8.000 USD/năm tùy chương trình và thành phố.",
-      href: "du-hoc",
+      href: "index.html#du-hoc",
       accent: "var(--red)",
     },
     {
       icon: "🎓",
       title: "Học bổng đến 100%",
       text: "Nhiều suất miễn học phí, miễn ký túc xá, miễn bảo hiểm, trợ cấp 2.500 NDT/tháng.",
-      href: "du-hoc",
+      href: "index.html#du-hoc",
       accent: "var(--gold)",
     },
     {
       icon: "📄",
       title: "Hồ sơ đơn giản",
       text: "Điều kiện hồ sơ và chứng minh tài chính đơn giản. Chưa có tiếng Trung có thể học 1 năm tiếng.",
-      href: "du-hoc",
+      href: "index.html#du-hoc",
       accent: "#2f9e44",
     },
   ],
@@ -348,11 +351,13 @@ export const COMMITMENTS = [
 ];
 
 export const FOOTER_LINKS: NavLink[] = [
-  { label: "Khóa học", href: "khoa-hoc" },
-  { label: "Luyện thi HSK", href: "luyen-thi-hsk" },
-  { label: "Du học Trung Quốc", href: "du-hoc" },
-  { label: "Đội ngũ giáo viên", href: "doi-ngu-giao-vien" },
-  { label: "Lịch khai giảng", href: "lich-khai-giang" },
-  { label: "Thư viện", href: "category/thu-vien" },
-  { label: "Liên hệ", href: "lien-he" },
+  { label: "Khóa học", href: "khoa-hoc.html" },
+  { label: "Thi thử HSK", href: "thi-thu.html" },
+  { label: "Tài liệu", href: "tai-lieu.html" },
+  { label: "Ôn tập từ vựng", href: "tu-vung.html" },
+  { label: "Luyện nói phản xạ", href: "luyen-noi.html" },
+  { label: "Từ điển chuyên ngành", href: "tu-dien.html" },
+  { label: "Từ điển AI Việt ⇄ Trung", href: "tu-dien-ai.html" },
+  { label: "Đăng ký học", href: "dang-ky.html" },
+  { label: "Đăng nhập", href: "dang-nhap.html" },
 ];

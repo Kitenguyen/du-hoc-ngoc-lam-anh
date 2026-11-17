@@ -1,0 +1,4 @@
+/* Trang Thi thử HSK — hầu hết kiểu có sẵn trong site.css (.lv-grid .lv-card .lv30 .soon); chỉ chỉnh nhỏ ở đây */
+.pg-thi-thu .lv-card .btn{margin-top:auto;width:auto;align-self:center}
+.pg-thi-thu .lv-card small{line-height:1.4}
+.pg-thi-thu section.block{scroll-margin-top:80px}

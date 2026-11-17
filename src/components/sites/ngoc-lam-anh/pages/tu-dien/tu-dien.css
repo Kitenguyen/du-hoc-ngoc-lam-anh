@@ -1,0 +1,102 @@
+/* Từ điển chuyên ngành — CSS chép từ trang mẫu, thêm tiền tố .pg-tu-dien */
+.pg-tu-dien .td-search{background:#fff;border:2px solid var(--line);border-radius:18px;padding:14px;display:grid;gap:10px;position:sticky;top:6px;z-index:5;box-shadow:0 6px 18px rgba(92,7,11,.08)}
+.pg-tu-dien #tdQ{width:100%;box-sizing:border-box;font:500 18px var(--sans);padding:12px 16px;border:2px solid var(--line);border-radius:12px}
+.pg-tu-dien #tdQ:focus{border-color:var(--red);outline:0}
+.pg-tu-dien .td-f{display:flex;flex-wrap:wrap;gap:8px}
+.pg-tu-dien .td-f select{flex:1 1 180px;min-width:0;font:15px var(--sans);padding:9px 10px;border:1.5px solid var(--line);border-radius:10px;background:#fff}
+.pg-tu-dien .td-legend{font-size:13.5px;color:var(--muted);margin:10px 2px 16px;line-height:1.7}
+.pg-tu-dien .lv{display:inline-block;min-width:20px;text-align:center;border-radius:6px;font:700 12px/20px var(--sans);color:#fff;padding:0 4px}
+.pg-tu-dien .lvA{background:#15803d}
+.pg-tu-dien .lvB{background:#1d4ed8}
+.pg-tu-dien .lvC{background:#b45309}
+.pg-tu-dien .lvD{background:#7e0a10}
+.pg-tu-dien .td-load{padding:30px;text-align:center;color:var(--muted)}
+.pg-tu-dien .td-taps{display:grid;gap:18px}
+.pg-tu-dien .td-tap h2{margin:0 0 8px;font-size:22px}
+.pg-tu-dien .td-tap h2 small{font:600 16px "Noto Serif SC",serif;color:var(--red);margin-left:8px}
+.pg-tu-dien .td-secs{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.pg-tu-dien .td-sec{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;cursor:pointer;text-align:left;font:inherit;color:inherit;transition:border-color .15s,transform .15s}
+.pg-tu-dien .td-sec:hover{border-color:var(--red);transform:translateY(-2px)}
+.pg-tu-dien .td-sec b{display:block;font-size:16px}
+.pg-tu-dien .td-sec .z{font:600 15px "Noto Serif SC",serif;color:var(--red)}
+.pg-tu-dien .td-sec small{display:block;color:var(--muted);font-size:13px}
+.pg-tu-dien .td-head{background:#fff;border-radius:18px;padding:16px 18px;border:1.5px solid var(--line);margin-bottom:12px}
+.pg-tu-dien .td-head h2{margin:0;font-size:24px}
+.pg-tu-dien .td-head h2 .z{font:600 20px "Noto Serif SC",serif;color:var(--red);margin-left:8px}
+.pg-tu-dien .td-head .alt{color:var(--ink-2);font-size:14px;margin:4px 0}
+.pg-tu-dien .td-head p{font-size:15px;margin:6px 0 0;color:var(--ink-2)}
+.pg-tu-dien .td-back{background:none;border:0;color:var(--red);font:700 15px var(--sans);cursor:pointer;padding:4px 0;margin-bottom:6px}
+.pg-tu-dien .td-tabs{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 12px}
+.pg-tu-dien .td-tabs button{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font:600 14.5px var(--sans);cursor:pointer;color:var(--ink)}
+.pg-tu-dien .td-tabs button.on{background:var(--red);color:#fff;border-color:var(--red)}
+.pg-tu-dien .td-gnav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.pg-tu-dien .td-gnav a{font-size:13.5px;background:var(--cream-2);border-radius:999px;padding:4px 10px;text-decoration:none;color:var(--ink)}
+.pg-tu-dien .td-gnav a.on{background:var(--red);color:#fff}
+.pg-tu-dien .td-g h3{margin:18px 0 8px;font-size:18px;border-left:5px solid var(--gold);padding-left:10px}
+.pg-tu-dien .td-g h3 .z{font:600 16px "Noto Serif SC",serif;color:var(--red);margin-left:6px}
+.pg-tu-dien .td-list{display:grid;gap:6px}
+.pg-tu-dien .td-e{background:#fff;border:1.5px solid var(--line);border-radius:12px;overflow:hidden}
+.pg-tu-dien .td-eh{display:grid;grid-template-columns:auto 1fr auto;gap:4px 12px;align-items:center;padding:9px 12px;cursor:pointer;width:100%;background:none;border:0;text-align:left;font:inherit;color:inherit}
+.pg-tu-dien .td-eh .w{white-space:nowrap;font:600 22px/1.25 "Noto Serif SC","Noto Sans SC",serif;color:var(--ink)}
+.pg-tu-dien .td-eh .p{color:var(--red);font-weight:600;font-size:15px;margin-right:6px}
+.pg-tu-dien .td-eh .m{font-size:15px;color:var(--ink-2)}
+.pg-tu-dien .td-eh .c{font-size:12px;color:var(--muted)}
+.pg-tu-dien .td-e.open{border-color:var(--red)}
+.pg-tu-dien .td-d{padding:4px 14px 14px;border-top:1px dashed var(--line)}
+.pg-tu-dien .td-d .card.wc{border:0;padding:0;margin:0;background:none;box-shadow:none}
+.pg-tu-dien .td-d dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 12px;margin:8px 0;font-size:15px}
+.pg-tu-dien .td-d dt{color:var(--muted)}
+.pg-tu-dien .td-d dd{margin:0}
+.pg-tu-dien .td-ex{background:var(--cream);border-radius:10px;padding:8px 12px;margin-top:6px}
+.pg-tu-dien .td-ex .z{font:500 18px "Noto Serif SC",serif}
+.pg-tu-dien .td-ex .py{color:var(--red);font-size:14px}
+.pg-tu-dien .td-ex .v{font-size:15px}
+.pg-tu-dien .td-btn{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:4px 11px;font:600 13.5px var(--sans);cursor:pointer;margin:4px 6px 0 0;color:var(--ink)}
+.pg-tu-dien .td-btn:hover{border-color:var(--red);color:var(--red)}
+.pg-tu-dien .td-s{background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:10px 14px;margin-bottom:6px}
+.pg-tu-dien .td-s .z{font:500 18px "Noto Serif SC",serif}
+.pg-tu-dien .td-s .py{color:var(--red);font-size:14px}
+.pg-tu-dien .td-s .v{font-size:15px}
+.pg-tu-dien .td-s .r{font-size:12px;color:var(--muted);float:right}
+.pg-tu-dien .td-dlg{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:12px 16px;margin-bottom:12px}
+.pg-tu-dien .td-dlg h4{margin:0;font-size:18px}
+.pg-tu-dien .td-dlg h4 .z{font:600 16px "Noto Serif SC",serif;color:var(--red);margin-left:6px}
+.pg-tu-dien .td-dlg .sc{font-size:14px;color:var(--muted);margin:2px 0 8px}
+.pg-tu-dien .td-ln{display:grid;grid-template-columns:110px 1fr;gap:8px;padding:6px 0;border-top:1px dashed var(--line)}
+.pg-tu-dien .td-ln .sp{font:600 14px "Noto Serif SC",serif;color:var(--red-dk)}
+.pg-tu-dien .td-ln .z{font:500 17px "Noto Serif SC",serif}
+.pg-tu-dien .td-ln .py{color:var(--red);font-size:13.5px}
+.pg-tu-dien .td-ln .v{font-size:14.5px;color:var(--ink-2)}
+.pg-tu-dien .td-res-h{margin:4px 0 10px;color:var(--ink-2);font-size:15px}
+.pg-tu-dien .td-dl{margin-top:30px}
+.pg-tu-dien .td-dl h2{margin:0 0 4px}
+.pg-tu-dien .td-files{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px;margin:10px 0 18px}
+.pg-tu-dien .td-file{display:flex;justify-content:space-between;gap:8px;align-items:center;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:9px 12px;font-size:14.5px}
+.pg-tu-dien .td-file a{white-space:nowrap;font-weight:700;text-decoration:none}
+.pg-tu-dien .td-dl h3{margin:16px 0 4px;font-size:17px}
+.pg-tu-dien mark{background:var(--gold-lt);color:inherit;border-radius:3px}
+@media (max-width:640px){.pg-tu-dien .td-eh{grid-template-columns:1fr auto}
+.pg-tu-dien .td-eh .c{grid-column:1/-1}
+.pg-tu-dien .td-ln{grid-template-columns:1fr}
+.pg-tu-dien .td-search{position:static}
+}
+/* Ô cách viết (giống .hzx của trang mẫu) */
+.pg-tu-dien .hzx{margin:10px 0 4px}
+.pg-tu-dien .hzx-l{font-weight:700;color:#7f1d1d;margin-bottom:6px;font-size:14px}
+.pg-tu-dien .td-file .td-btn{margin:0}
+/* Trò chơi ôn tập (theo giao diện HDVT của trang mẫu) */
+.pg-tu-dien .td-qbox{background:#fff;border:2px solid var(--line);border-radius:18px;padding:20px 16px;text-align:center;max-width:640px;margin:0 auto}
+.pg-tu-dien .td-qtop{display:flex;justify-content:space-between;font-size:13.5px;color:var(--muted);margin-bottom:8px;gap:8px}
+.pg-tu-dien .td-qhan{font:600 44px/1.3 "Noto Serif SC","Noto Sans SC",serif;margin:6px 0}
+.pg-tu-dien .td-qpy{color:var(--red);font-size:16px;min-height:1.4em}
+.pg-tu-dien .td-qmean{font-weight:600;font-size:21px;line-height:1.4;margin:10px 0}
+.pg-tu-dien .td-qbig{font-size:44px}
+.pg-tu-dien .td-qopts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.pg-tu-dien .td-qopts button{border:2px solid var(--line);background:#fff;border-radius:12px;padding:12px 10px;font:500 16px var(--sans);cursor:pointer;color:var(--ink)}
+.pg-tu-dien .td-qopts button .z{font:600 24px "Noto Serif SC",serif}
+.pg-tu-dien .td-qopts button:hover{border-color:var(--red)}
+.pg-tu-dien .td-qopts button.ok{border-color:#15803d;background:#ecfdf3}
+.pg-tu-dien .td-qopts button.no{border-color:#dc2626;background:#fef2f2}
+.pg-tu-dien .td-next{margin-top:14px}
+.pg-tu-dien .td-qbox .btn{width:auto;margin-top:10px}
+@media (max-width:480px){.pg-tu-dien .td-qopts{grid-template-columns:1fr}}

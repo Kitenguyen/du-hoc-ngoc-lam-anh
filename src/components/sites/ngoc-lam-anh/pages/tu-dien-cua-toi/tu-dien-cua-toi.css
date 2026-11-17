@@ -1,0 +1,46 @@
+/* Từ điển của tôi — ứng dụng riêng (không header/footer) như trang mẫu; mọi selector dưới .pg-tu-dien-cua-toi */
+.pg-tu-dien-cua-toi{--red:#c0392b;--red2:#9e1b1b;--ink:#1b1f24;--muted:#6b7280;--line:#e6e2da;--bg:#f6f2ec;--blue:#1d6fd0;--green:#1e7a34;
+  position:relative;min-height:100vh;font-family:'Be Vietnam Pro','Segoe UI',system-ui,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;font-size:16px}
+.pg-tu-dien-cua-toi *{box-sizing:border-box}
+.pg-tu-dien-cua-toi .top{background:linear-gradient(135deg,var(--red2),var(--red) 70%);color:#fff;padding:12px 18px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.pg-tu-dien-cua-toi .top .ti{font-weight:800;font-size:18px}
+.pg-tu-dien-cua-toi .top .sp{flex:1}
+.pg-tu-dien-cua-toi .top a{color:#ffe;font-size:13px;text-decoration:none;background:rgba(255,255,255,.16);padding:5px 11px;border-radius:8px}
+.pg-tu-dien-cua-toi .top a:hover{background:rgba(255,255,255,.28)}
+.pg-tu-dien-cua-toi .mwrap{max-width:1000px;margin:0 auto;padding:16px}
+.pg-tu-dien-cua-toi .note{font-size:13.5px;color:var(--muted);margin:0 0 12px}
+.pg-tu-dien-cua-toi .card{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 1px 5px rgba(0,0,0,.05);margin:0 0 16px;overflow:hidden;padding:0}
+.pg-tu-dien-cua-toi .card>.hd{background:#fbf3ee;border-bottom:1px solid var(--line);padding:10px 14px;font-weight:800;color:var(--red2);font-size:15px}
+.pg-tu-dien-cua-toi .card>.bd{padding:14px}
+.pg-tu-dien-cua-toi .muted{color:var(--muted);font-size:13px}
+.pg-tu-dien-cua-toi label.fld{display:block;font-size:13px;color:var(--muted);margin:8px 0 3px}
+.pg-tu-dien-cua-toi textarea,.pg-tu-dien-cua-toi input[type=text],.pg-tu-dien-cua-toi input[type=search]{width:100%;padding:9px 11px;border:1px solid var(--line);border-radius:9px;font-size:14px;font-family:inherit;color:var(--ink);background:#fff}
+.pg-tu-dien-cua-toi textarea{min-height:120px;resize:vertical}
+.pg-tu-dien-cua-toi .btn{display:inline-block;width:auto;margin:0;background:var(--red);color:#fff;border:none;border-radius:9px;padding:9px 16px;font:700 14px/1.4 inherit;font-family:inherit;cursor:pointer;white-space:nowrap}
+.pg-tu-dien-cua-toi .btn:hover{background:var(--red2)}
+.pg-tu-dien-cua-toi .btn.sec{background:#eef0f3;color:#333}
+.pg-tu-dien-cua-toi .btn.sec:hover{background:#e2e5ea}
+.pg-tu-dien-cua-toi .btn.sec.danger{color:var(--red)}
+.pg-tu-dien-cua-toi .btn.gr{background:var(--green)}
+.pg-tu-dien-cua-toi .btn.gr:hover{background:#166128}
+.pg-tu-dien-cua-toi .btn:disabled{opacity:.5;cursor:default}
+.pg-tu-dien-cua-toi .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.pg-tu-dien-cua-toi .status{font-size:13px;margin-top:8px;min-height:18px}
+.pg-tu-dien-cua-toi .status.err{color:var(--red)}
+.pg-tu-dien-cua-toi .status.ok{color:var(--green)}
+.pg-tu-dien-cua-toi table{border-collapse:collapse;width:100%;font-size:13.5px}
+.pg-tu-dien-cua-toi th,.pg-tu-dien-cua-toi td{border:1px solid #e3ded2;padding:5px 7px;vertical-align:top;text-align:left}
+.pg-tu-dien-cua-toi th{background:#f3ede3;color:#6a3a16;font-weight:700;position:sticky;top:0;z-index:1}
+.pg-tu-dien-cua-toi td input{width:100%;border:none;padding:3px 4px;font-size:13.5px;font-family:inherit;background:transparent;color:var(--ink)}
+.pg-tu-dien-cua-toi td input:focus{outline:1px solid var(--red);background:#fff}
+.pg-tu-dien-cua-toi td.zh,.pg-tu-dien-cua-toi td.zh input{font-size:18px;font-family:"Noto Serif SC","Noto Sans SC",serif}
+.pg-tu-dien-cua-toi td.del{width:34px;text-align:center}
+.pg-tu-dien-cua-toi td.act,.pg-tu-dien-cua-toi th.act{width:96px;text-align:center;white-space:nowrap}
+.pg-tu-dien-cua-toi tr.editing td{background:#fffbea}
+.pg-tu-dien-cua-toi .x{color:var(--red);cursor:pointer;font-weight:800;border:none;background:none;font-size:15px;padding:2px 4px}
+.pg-tu-dien-cua-toi .tbox{max-height:60vh;overflow:auto;border:1px solid var(--line);border-radius:10px}
+.pg-tu-dien-cua-toi .pill{display:inline-block;background:#eef5ff;color:var(--blue);border:1px solid #cfe0f5;border-radius:999px;padding:2px 9px;font-size:12px;margin-left:6px}
+.pg-tu-dien-cua-toi .spin{display:inline-block;width:14px;height:14px;border:2px solid #ddd;border-top-color:var(--red);border-radius:50%;animation:pgtdct-sp .7s linear infinite;vertical-align:-2px}
+@keyframes pgtdct-sp{to{transform:rotate(360deg)}}
+@media (max-width:640px){.pg-tu-dien-cua-toi .tbox table{min-width:620px}}
+.pg-tu-dien-cua-toi .btn.file{white-space:normal;max-width:100%}

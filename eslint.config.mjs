@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Thư viện đã đóng gói sẵn (vd pdf.js) — không phải code của dự án
+    "public/**",
   ]),
 ]);
 

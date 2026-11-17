@@ -1,0 +1,8 @@
+/* /tai-lieu — khung "Video giảng dạy" (trang mẫu viết inline style) */
+.pg-tai-lieu .vd-banner{display:flex;gap:14px;align-items:center;flex-wrap:wrap;background:#fff;border:2px solid var(--gold);border-radius:16px;padding:14px 18px;margin:0 0 20px}
+.pg-tai-lieu .vd-banner .vd-ic{font-size:34px}
+.pg-tai-lieu .vd-banner .vd-tx{flex:1 1 260px;min-width:0}
+.pg-tai-lieu .vd-banner .vd-tx b{font-size:18px;color:var(--red-dk)}
+.pg-tai-lieu .vd-banner .muted{font-size:14.5px}
+.pg-tai-lieu .vd-banner .btn{width:auto;margin:0}
+.pg-tai-lieu section[id]{scroll-margin-top:80px}

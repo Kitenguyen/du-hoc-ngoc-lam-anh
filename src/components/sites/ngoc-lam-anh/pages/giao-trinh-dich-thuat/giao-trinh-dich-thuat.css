@@ -1,0 +1,59 @@
+/* CSS chép từ <style> của trang mẫu, thêm tiền tố .pg-giao-trinh-dich-thuat */
+.pg-giao-trinh-dich-thuat{--red:#9e1b1b;--red2:#c0392b;--bg:#faf7f2;--card:#fff;--line:#e7e0d4;--ink:#1b1f24;--muted:#6b7280;--green:#15803d}
+.pg-giao-trinh-dich-thuat *,.pg-giao-trinh-dich-thuat{box-sizing:border-box}
+.pg-giao-trinh-dich-thuat{min-height:100vh;font-family:"Segoe UI",system-ui,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+.pg-giao-trinh-dich-thuat header{background:linear-gradient(90deg,var(--red),var(--red2));color:#fff;padding:14px 18px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.pg-giao-trinh-dich-thuat header .han{font-weight:800;font-size:18px}
+.pg-giao-trinh-dich-thuat header h1{font-size:17px;margin:0;font-weight:800}
+.pg-giao-trinh-dich-thuat header .sp{flex:1}
+.pg-giao-trinh-dich-thuat header .who{font-size:13px;opacity:.95}
+.pg-giao-trinh-dich-thuat header a.home{color:#fff;text-decoration:none;background:rgba(255,255,255,.18);padding:6px 12px;border-radius:999px;font-size:13px}
+.pg-giao-trinh-dich-thuat .x-wrap{max-width:1150px;margin:0 auto;padding:16px;display:grid;grid-template-columns:220px 1fr;gap:16px}
+
+@media(max-width:760px){.pg-giao-trinh-dich-thuat .x-wrap{grid-template-columns:1fr}
+}
+.pg-giao-trinh-dich-thuat .side{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px;align-self:start}
+.pg-giao-trinh-dich-thuat .side h3{margin:4px 6px 8px;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.03em}
+.pg-giao-trinh-dich-thuat .side a{display:block;padding:8px 10px;border-radius:8px;text-decoration:none;color:var(--ink);font-size:14px;margin-bottom:2px}
+.pg-giao-trinh-dich-thuat .side a:hover{background:#f3ece0}
+.pg-giao-trinh-dich-thuat .side a.on{background:var(--red);color:#fff;font-weight:700}
+.pg-giao-trinh-dich-thuat .main{min-width:0}
+.pg-giao-trinh-dich-thuat .badge{display:inline-block;background:#ecfdf5;color:var(--green);border:1px solid #a7f3d0;border-radius:999px;padding:2px 10px;font-size:12px;font-weight:700}
+.pg-giao-trinh-dich-thuat .badge.adm{background:#fef3c7;color:#92400e;border-color:#fde68a}
+.pg-giao-trinh-dich-thuat .note{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:10px;padding:10px 14px;font-size:13.5px;margin:10px 0}
+.pg-giao-trinh-dich-thuat .gate{max-width:520px;margin:60px auto;background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px;text-align:center}
+.pg-giao-trinh-dich-thuat .gate h2{color:var(--red);margin:0 0 8px}
+.pg-giao-trinh-dich-thuat .x-btn{border:0;border-radius:9px;padding:8px 14px;font-size:14px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;background:var(--red);color:#fff}
+.pg-giao-trinh-dich-thuat .hide{display:none!important}
+.pg-giao-trinh-dich-thuat .ltitle{font-size:20px;font-weight:800;color:var(--red);margin:4px 0 2px}
+.pg-giao-trinh-dich-thuat .lsub{color:var(--muted);font-size:13.5px;margin-bottom:10px}
+.pg-giao-trinh-dich-thuat .sec{margin:18px 0 6px;font-weight:800;color:var(--red2);font-size:16px;border-bottom:2px solid #ead9c8;padding-bottom:4px}
+.pg-giao-trinh-dich-thuat .han{font-family:"KaiTi","STKaiti","SimSun",serif}
+.pg-giao-trinh-dich-thuat .zh{font-size:18px;line-height:1.7}
+.pg-giao-trinh-dich-thuat .zhblock{font-size:18px;line-height:2;background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.pg-giao-trinh-dich-thuat .py{color:var(--muted);font-style:italic;font-size:13px;line-height:1.5}
+.pg-giao-trinh-dich-thuat .vi{color:#334455;font-size:15px}
+.pg-giao-trinh-dich-thuat .x-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:8px 0}
+.pg-giao-trinh-dich-thuat table.vocab{width:100%;border-collapse:collapse;margin:6px 0;font-size:14px;background:#fff}
+.pg-giao-trinh-dich-thuat table.vocab th,.pg-giao-trinh-dich-thuat table.vocab td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+.pg-giao-trinh-dich-thuat table.vocab th{background:var(--red);color:#fff;font-weight:700}
+.pg-giao-trinh-dich-thuat table.vocab tr:nth-child(even) td{background:#faf6ef}
+.pg-giao-trinh-dich-thuat .sent{border-left:3px solid var(--red2);padding:6px 0 6px 12px;margin:12px 0}
+.pg-giao-trinh-dich-thuat .sent .lab{font-weight:800;color:var(--red)}
+.pg-giao-trinh-dich-thuat .gloss{font-size:13.5px;margin:4px 0;line-height:1.9}
+.pg-giao-trinh-dich-thuat .gloss .w{font-weight:700}
+.pg-giao-trinh-dich-thuat .gloss .gp{color:var(--muted);font-style:italic;font-size:12px}
+.pg-giao-trinh-dich-thuat .struct{background:#faf6ef;border:1px solid #ead9c8;border-radius:8px;padding:6px 10px;margin:5px 0;font-size:13.5px}
+.pg-giao-trinh-dich-thuat .struct .nm{font-weight:800;color:var(--red2)}
+.pg-giao-trinh-dich-thuat .struct .ex{color:#334455;margin-top:2px}
+.pg-giao-trinh-dich-thuat .ans{color:var(--green)}
+.pg-giao-trinh-dich-thuat textarea.dich{width:100%;min-height:160px;border:1px dashed var(--red2);border-radius:10px;padding:12px;font-size:15px;font-family:inherit;background:#fffdf8;resize:vertical}
+.pg-giao-trinh-dich-thuat .small{color:var(--muted);font-size:12.5px}
+.pg-giao-trinh-dich-thuat .spin{display:inline-block;width:14px;height:14px;border:2px solid #ccc;border-top-color:var(--red);border-radius:50%;animation:dtsp .7s linear infinite;vertical-align:-2px}
+
+@keyframes dtsp{to{transform:rotate(360deg)}}
+
+/* Bổ sung: bảng từ vựng cuộn ngang trên màn hình hẹp, tiêu đề header không bị style h1 chung */
+.pg-giao-trinh-dich-thuat .dt-scroll{overflow-x:auto}
+.pg-giao-trinh-dich-thuat header h1{font-family:inherit;text-transform:none;line-height:1.3}
+.pg-giao-trinh-dich-thuat .side a.on:hover{background:var(--red)}

@@ -1,0 +1,97 @@
+/* Trang /luyen-noi — chép từ <style> của trang mẫu, thêm tiền tố .pg-luyen-noi */
+.pg-luyen-noi .ln-stat{font-size:14.5px;color:var(--ink-2);margin:0 2px 14px}
+.pg-luyen-noi .ln-lv{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.pg-luyen-noi .ln-lv button{border:2px solid var(--line);background:#fff;border-radius:999px;padding:9px 18px;font:700 16px var(--sans);cursor:pointer;color:var(--ink)}
+.pg-luyen-noi .ln-lv button.on{background:var(--red);border-color:var(--red);color:#fff}
+.pg-luyen-noi .ln-lv small{font-weight:500;opacity:.8;margin-left:6px}
+.pg-luyen-noi .ln-main{scroll-margin-top:90px}
+.pg-luyen-noi .ln-info{font-size:14.5px;color:var(--ink-2);margin:0 2px 12px}
+.pg-luyen-noi .ln-zh{font-family:"Noto Serif SC",serif;color:var(--red)}
+.pg-luyen-noi .ln-p{margin:0 0 6px}
+.pg-luyen-noi .ln-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.pg-luyen-noi .ln-t{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;cursor:pointer;text-align:left;font:inherit;color:inherit;transition:border-color .15s,transform .15s}
+.pg-luyen-noi .ln-t:hover{border-color:var(--red);transform:translateY(-2px)}
+.pg-luyen-noi .ln-t .n{font:700 13px var(--sans);color:var(--muted)}
+.pg-luyen-noi .ln-t b{display:block;font-size:16px}
+.pg-luyen-noi .ln-t .z{font:600 15px "Noto Serif SC",serif;color:var(--red)}
+.pg-luyen-noi .ln-t small{display:block;color:var(--muted);font-size:13px}
+.pg-luyen-noi .ln-head{background:#fff;border-radius:18px;padding:16px 18px;border:1.5px solid var(--line);margin-bottom:10px}
+.pg-luyen-noi .ln-head h2{margin:0;font-size:23px}
+.pg-luyen-noi .ln-head h2 .z{font:600 20px "Noto Serif SC",serif;color:var(--red);margin-left:8px}
+.pg-luyen-noi .ln-head .py{color:var(--red);font-size:14px}
+.pg-luyen-noi .ln-back{background:none;border:0;color:var(--red);font:700 15px var(--sans);cursor:pointer;padding:4px 0;margin-bottom:6px}
+.pg-luyen-noi .ln-tabs{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+.pg-luyen-noi .ln-tabs button{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font:700 14.5px var(--sans);cursor:pointer;color:var(--ink)}
+.pg-luyen-noi .ln-tabs button.on{background:var(--red);color:#fff;border-color:var(--red)}
+.pg-luyen-noi .ln-opts{display:flex;gap:14px;flex-wrap:wrap;align-items:center;font-size:14px;margin:6px 2px 12px;color:var(--ink-2)}
+.pg-luyen-noi .ln-opts label{display:flex;gap:6px;align-items:center;cursor:pointer}
+.pg-luyen-noi .ln-opts select{font:inherit;padding:3px 6px;border:1.5px solid var(--line);border-radius:8px;background:#fff}
+.pg-luyen-noi .ln-card{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:12px 16px;margin-bottom:10px}
+.pg-luyen-noi .ln-code{font:700 12px var(--sans);color:var(--muted);letter-spacing:.3px}
+.pg-luyen-noi .ln-q{font:600 21px/1.45 "Noto Serif SC","Noto Sans SC",serif;margin:4px 0}
+.pg-luyen-noi .py{color:var(--red);font-size:14.5px}
+.pg-luyen-noi .vi{color:var(--ink-2);font-size:15px}
+.pg-luyen-noi .hide-py .py{display:none}
+.pg-luyen-noi .hide-vi .vi{display:none}
+.pg-luyen-noi .ln-btn{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:6px 13px;font:600 14px var(--sans);cursor:pointer;margin:6px 6px 0 0;color:var(--ink)}
+.pg-luyen-noi .ln-btn:hover{border-color:var(--red);color:var(--red)}
+.pg-luyen-noi .ln-btn.pri{background:var(--red);border-color:var(--red);color:#fff}
+.pg-luyen-noi .ln-btn.pri:hover{color:#fff}
+.pg-luyen-noi .ln-btn.has{border-color:var(--gold);background:var(--gold-lt)}
+.pg-luyen-noi .ln-btn.ln-say{padding:2px 8px;margin:0 0 0 4px;font-size:13px;vertical-align:middle}
+.pg-luyen-noi .ln-ans{margin-top:8px;border-top:1px dashed var(--line);padding-top:8px}
+.pg-luyen-noi .ln-ans h4{margin:8px 0 2px;font-size:13.5px;color:var(--red-dk);text-transform:uppercase;letter-spacing:.3px}
+.pg-luyen-noi .ln-z{font:500 18px/1.5 "Noto Serif SC",serif}
+.pg-luyen-noi .ln-zbig{font-size:30px}
+.pg-luyen-noi .ln-note{font-size:13.5px;color:var(--muted);font-style:italic;margin-top:6px}
+.pg-luyen-noi .ln-nt{margin-top:8px}
+.pg-luyen-noi .ln-nt textarea{width:100%;min-height:80px;border:1.5px solid var(--gold);border-radius:10px;padding:8px 10px;font:15px/1.5 var(--sans);background:#fffdf5;resize:vertical}
+.pg-luyen-noi .ln-nt small{color:var(--muted)}
+.pg-luyen-noi .ln-timer{display:inline-block;min-width:46px;text-align:center;font:800 19px var(--sans);color:#fff;background:var(--red);border-radius:10px;padding:2px 9px;vertical-align:middle;margin-top:10px}
+.pg-luyen-noi .ln-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.pg-luyen-noi .ln-tbl{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;font-size:15px}
+.pg-luyen-noi .ln-tbl th,.pg-luyen-noi .ln-tbl td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.pg-luyen-noi .ln-tbl th{background:var(--cream-2);font-size:13.5px}
+.pg-luyen-noi .ln-ln{display:grid;grid-template-columns:44px 1fr;gap:8px;padding:7px 4px;border-top:1px dashed var(--line)}
+.pg-luyen-noi .ln-ln .sp{font:800 16px "Noto Serif SC",serif}
+.pg-luyen-noi .ln-ln .sp.a{color:var(--red)}
+.pg-luyen-noi .ln-ln .sp.b{color:#1457b5}
+.pg-luyen-noi .ln-ln.now{background:var(--gold-lt);border-radius:8px}
+.pg-luyen-noi .ln-flash{background:#fff;border:2px solid var(--gold);border-radius:18px;padding:22px 18px;text-align:center;max-width:680px;margin:6px auto}
+.pg-luyen-noi .ln-flash .k{font-size:13px;color:var(--muted)}
+.pg-luyen-noi .ln-flash .ln-q{font-size:25px}
+.pg-luyen-noi .ln-flash .ln-wait{font-size:22px;color:var(--muted)}
+.pg-luyen-noi .ln-bar{height:6px;background:var(--cream-2);border-radius:6px;overflow:hidden;margin:6px 0 10px}
+.pg-luyen-noi .ln-bar i{display:block;height:100%;background:var(--gold);transition:width .3s}
+.pg-luyen-noi .ln-mic{display:inline-flex;align-items:center;gap:8px;font:700 15px var(--sans);color:#b91c1c;margin-top:10px}
+.pg-luyen-noi .ln-mic i{width:14px;height:14px;border-radius:50%;background:#dc2626;animation:pgLuyenNoiPulse 1s infinite}
+@keyframes pgLuyenNoiPulse{50%{opacity:.25}}
+.pg-luyen-noi .ln-heard{min-height:1.6em;margin-top:8px;font:500 19px "Noto Serif SC",serif;color:var(--ink)}
+.pg-luyen-noi .ok{color:#15803d;font-weight:700}
+.pg-luyen-noi .bad{color:#b91c1c;font-weight:700}
+.pg-luyen-noi .ln-res{margin-top:8px}
+.pg-luyen-noi .ln-mt{margin-top:6px}
+.pg-luyen-noi .ln-sample{font-size:13.5px;margin-top:4px}
+.pg-luyen-noi .ln-miss{background:#fee2e2;color:#b91c1c;border-radius:3px}
+.pg-luyen-noi .ln-big{font:800 30px/1.3 var(--sans);color:var(--red-dk);text-align:center;margin-bottom:8px}
+.pg-luyen-noi .ln-hist{font-size:13.5px;color:var(--ink-2);margin-top:8px}
+.pg-luyen-noi .ln-essay{width:100%;border:2px solid var(--line);border-radius:12px;padding:10px 12px;font:18px/1.7 "Noto Sans SC",var(--sans)}
+.pg-luyen-noi .ln-essay:focus{outline:0;border-color:var(--red)}
+.pg-luyen-noi .ln-one{height:46px;margin-top:6px}
+.pg-luyen-noi .ln-lbl{display:block;margin-top:8px;font-size:15px}
+.pg-luyen-noi .ln-kvi{font-size:16px;margin:2px 0 6px}
+.pg-luyen-noi .ln-fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.pg-luyen-noi .center{text-align:center}
+.pg-luyen-noi .ln-dl{margin-top:30px}
+.pg-luyen-noi .ln-dl h2{margin:0 0 4px}
+.pg-luyen-noi .ln-files{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px;margin:10px 0}
+.pg-luyen-noi .ln-file{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:9px 12px;font-size:14.5px}
+.pg-luyen-noi .ln-lock{background:#fff;border:2px solid var(--gold);border-radius:16px;padding:20px;text-align:center}
+.pg-luyen-noi .ln-ic{font-size:40px}
+.pg-luyen-noi .ln-warn{background:#fff7ed;border:1.5px solid #fdba74;border-radius:12px;padding:10px 14px;font-size:14.5px;margin-bottom:10px}
+@media (max-width:640px){
+  .pg-luyen-noi .ln-q{font-size:19px}
+  .pg-luyen-noi .ln-flash{padding:16px 10px}
+  .pg-luyen-noi .ln-big{font-size:24px}
+  .pg-luyen-noi .ln-lv button{padding:8px 14px;font-size:15px}
+}

@@ -1,0 +1,285 @@
+/* Trang độc lập (không có header/footer chung) — CSS theo trang mẫu, bọc dưới .pg-dk-hoc-sinh */
+.pg-dk-hoc-sinh {
+  --mr: #7e0a10;
+  --dk-gold: #e2b04a;
+  min-height: 100vh;
+  min-height: 100dvh;
+  font: 15px/1.55 system-ui, "Segoe UI", sans-serif;
+  background: #f3efe7;
+  color: #2b1916;
+}
+.pg-dk-hoc-sinh *,
+.pg-dk-hoc-sinh *::before,
+.pg-dk-hoc-sinh *::after {
+  box-sizing: border-box;
+}
+.pg-dk-hoc-sinh .top {
+  background: var(--mr);
+  color: #fff;
+  padding: 16px;
+  text-align: center;
+}
+.pg-dk-hoc-sinh .top h1 {
+  margin: 0;
+  font: 700 19px system-ui, "Segoe UI", sans-serif;
+}
+.pg-dk-hoc-sinh .top p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #f3d79a;
+}
+.pg-dk-hoc-sinh .wrap {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 16px;
+}
+.pg-dk-hoc-sinh .card {
+  background: #fff;
+  border: 1px solid #e3d9c6;
+  border-radius: 14px;
+  padding: 18px;
+}
+.pg-dk-hoc-sinh label {
+  display: block;
+  font-size: 13px;
+  color: #6a5a48;
+  margin: 12px 0 3px;
+  font-weight: 600;
+}
+.pg-dk-hoc-sinh label .sub {
+  font-weight: 400;
+  color: #999;
+}
+.pg-dk-hoc-sinh input,
+.pg-dk-hoc-sinh select {
+  width: 100%;
+  font: 15px system-ui, "Segoe UI", sans-serif;
+  padding: 10px 12px;
+  border: 1px solid #cdbfa6;
+  border-radius: 9px;
+  background: #fff;
+  color: #2b1916;
+}
+.pg-dk-hoc-sinh .req {
+  color: #b5121b;
+}
+.pg-dk-hoc-sinh .row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.pg-dk-hoc-sinh .row > div {
+  flex: 1;
+  min-width: 180px;
+}
+.pg-dk-hoc-sinh .btn {
+  display: block;
+  font: 600 15px system-ui, "Segoe UI", sans-serif;
+  padding: 11px 20px;
+  border-radius: 999px;
+  border: 0;
+  cursor: pointer;
+  background: var(--mr);
+  color: #fff;
+  margin-top: 16px;
+  width: 100%;
+  transform: none;
+  box-shadow: none;
+}
+.pg-dk-hoc-sinh .btn:disabled {
+  opacity: 0.5;
+}
+.pg-dk-hoc-sinh .note {
+  background: #fff7e6;
+  border: 1px solid var(--dk-gold);
+  border-radius: 10px;
+  padding: 10px 13px;
+  font-size: 13px;
+  color: #6b4a07;
+  margin-bottom: 14px;
+}
+.pg-dk-hoc-sinh .msg {
+  margin-top: 12px;
+  font-weight: 600;
+}
+.pg-dk-hoc-sinh .msg.ok {
+  color: #1b7a3d;
+}
+.pg-dk-hoc-sinh .msg.err {
+  color: #b5121b;
+}
+.pg-dk-hoc-sinh .sched {
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.pg-dk-hoc-sinh .srow {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.pg-dk-hoc-sinh .chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #cdbfa6;
+  border-radius: 999px;
+  padding: 7px 13px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #2b1916;
+  background: #fff;
+  cursor: pointer;
+  margin: 0;
+  min-width: 96px;
+}
+.pg-dk-hoc-sinh .chip input {
+  width: auto;
+  margin: 0;
+}
+.pg-dk-hoc-sinh .srow select {
+  flex: 1;
+  min-width: 120px;
+  width: auto;
+}
+.pg-dk-hoc-sinh .srow .dash {
+  color: #6a5a48;
+}
+.pg-dk-hoc-sinh .srow select:disabled {
+  background: #f1ece2;
+  color: #aaa;
+}
+.pg-dk-hoc-sinh .photo {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-top: 3px;
+}
+.pg-dk-hoc-sinh .photo .pv {
+  width: 116px;
+  height: 174px;
+  flex: none;
+  border: 1px solid #cdbfa6;
+  border-radius: 10px;
+  background: #f1ece2 center / cover no-repeat;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.pg-dk-hoc-sinh .photo .pv span {
+  font-size: 12px;
+  color: #a2927c;
+  text-align: center;
+  padding: 6px;
+}
+.pg-dk-hoc-sinh .photo .pbtn {
+  flex: 1;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.pg-dk-hoc-sinh .mini {
+  display: inline-block;
+  font: 600 14px system-ui, "Segoe UI", sans-serif;
+  padding: 9px 14px;
+  border-radius: 9px;
+  border: 1px solid #cdbfa6;
+  background: #fff;
+  color: #2b1916;
+  cursor: pointer;
+  align-self: flex-start;
+  text-decoration: none;
+}
+.pg-dk-hoc-sinh .mini.pri {
+  background: var(--mr);
+  color: #fff;
+  border-color: var(--mr);
+}
+.pg-dk-hoc-sinh .mini.ghost {
+  background: #f3efe7;
+}
+.pg-dk-hoc-sinh .phint {
+  font-size: 12px;
+  color: #8a7760;
+  line-height: 1.5;
+}
+.pg-dk-hoc-sinh .cmodal {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 10, 8, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 60;
+}
+.pg-dk-hoc-sinh .cbox {
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px;
+  max-width: 460px;
+  width: 100%;
+}
+.pg-dk-hoc-sinh .ctitle {
+  font-weight: 700;
+  color: var(--mr);
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+.pg-dk-hoc-sinh .carea {
+  height: 58vh;
+  max-height: 58vh;
+  background: #222;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.pg-dk-hoc-sinh .carea img {
+  max-width: 100%;
+  display: block;
+}
+.pg-dk-hoc-sinh .cmsg {
+  color: #b5121b;
+  font-size: 13px;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+.pg-dk-hoc-sinh .crow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+.pg-dk-hoc-sinh .crow .flex1 {
+  flex: 1;
+}
+.pg-dk-hoc-sinh .ho-photo {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.pg-dk-hoc-sinh .ho-photo img {
+  width: 80px;
+  height: 120px;
+  object-fit: cover;
+  border: 1px solid #cdbfa6;
+  border-radius: 8px;
+}
+.pg-dk-hoc-sinh .ho-photo > div {
+  flex: 1;
+  min-width: 180px;
+}
+.pg-dk-hoc-sinh .ho-photo p {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+@media (max-width: 420px) {
+  .pg-dk-hoc-sinh .crow .mini {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+}

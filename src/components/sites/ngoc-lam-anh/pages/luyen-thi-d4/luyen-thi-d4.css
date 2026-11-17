@@ -1,0 +1,92 @@
+/* Luyện thi khối D4 — chép từ <style> của luyen-thi-d4.html, thêm tiền tố .pg-luyen-thi-d4 */
+.pg-luyen-thi-d4 .d4-wrap{max-width:1080px;margin:0 auto;padding:24px 20px 60px}
+.pg-luyen-thi-d4 .d4-st{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:12px 16px;margin:0 0 16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.pg-luyen-thi-d4 .d4-st.ok{background:#ecfdf3;border-color:#86efac}
+.pg-luyen-thi-d4 .d4-st .btn{margin:0 0 0 auto;width:auto}
+.pg-luyen-thi-d4 .d4-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 16px;position:sticky;top:70px;z-index:6;background:var(--cream);padding:8px 0}
+.pg-luyen-thi-d4 .d4-tabs button{border:2px solid var(--line);background:#fff;border-radius:999px;padding:10px 18px;font:800 15.5px var(--sans);cursor:pointer;color:var(--ink)}
+.pg-luyen-thi-d4 .d4-tabs button.on{background:var(--red);border-color:var(--red);color:#fff}
+.pg-luyen-thi-d4 .d4-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:20px;box-shadow:0 10px 30px rgba(92,7,11,.06);margin-bottom:16px}
+.pg-luyen-thi-d4 .d4-card h2{margin:0 0 6px;font:800 22px var(--display);color:var(--red-dk)}
+.pg-luyen-thi-d4 .d4-list{display:grid;gap:10px;margin-top:12px}
+.pg-luyen-thi-d4 .d4-it{display:flex;gap:12px;align-items:center;border:1px solid var(--line);border-left:4px solid var(--red);border-radius:12px;padding:10px 12px;background:#fff}
+.pg-luyen-thi-d4 .d4-it .ic{font-size:26px;flex:none}
+.pg-luyen-thi-d4 .d4-it .tx{display:grid;min-width:0;flex:1}
+.pg-luyen-thi-d4 .d4-it .tx b{color:var(--red-dk)}
+.pg-luyen-thi-d4 .d4-it .tx small{color:var(--muted)}
+.pg-luyen-thi-d4 .d4-it .btn{margin:0;width:auto;padding:7px 14px;font-size:14px}
+.pg-luyen-thi-d4 .d4-it.lock{opacity:.6;border-left-color:#bbb}
+.pg-luyen-thi-d4 .d4-bar{height:12px;background:#eee;border-radius:99px;overflow:hidden}
+.pg-luyen-thi-d4 .d4-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ffd43b,#e8590c);transition:width .3s}
+.pg-luyen-thi-d4 .d4-f{display:grid;gap:10px}
+.pg-luyen-thi-d4 .d4-f h3{margin:6px 0 0}
+.pg-luyen-thi-d4 .d4-f label{display:grid;gap:4px;font-weight:600;font-size:15px}
+.pg-luyen-thi-d4 .d4-f input,.pg-luyen-thi-d4 .d4-f select,.pg-luyen-thi-d4 .d4-f textarea{font:16px var(--sans);padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;width:100%;box-sizing:border-box;background:#fff}
+.pg-luyen-thi-d4 .d4-f .btn{justify-self:start;margin:0;width:auto}
+.pg-luyen-thi-d4 .d4-msg{min-height:1.3em;font-size:14.5px}
+.pg-luyen-thi-d4 .d4-msg.err{color:var(--red);font-weight:700}
+.pg-luyen-thi-d4 .d4-msg .d4-zalo{margin-left:6px;vertical-align:middle;color:#0068ff;border-color:#0068ff}
+.pg-luyen-thi-d4 .d4-voc{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
+.pg-luyen-thi-d4 .d4-voc a{display:grid;gap:4px;text-decoration:none;color:var(--ink);border:2px solid var(--line);border-radius:14px;padding:14px;background:var(--cream)}
+.pg-luyen-thi-d4 .d4-voc a:hover,.pg-luyen-thi-d4 .d4-voc a.on{border-color:var(--gold)}
+.pg-luyen-thi-d4 .d4-voc a b{font-size:17px;color:var(--red-dk)}
+.pg-luyen-thi-d4 .d4-voc a span{font-size:14px;color:var(--ink-2)}
+.pg-luyen-thi-d4 .d4-pay{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start}
+.pg-luyen-thi-d4 .d4-qr{width:220px;height:220px;border:2px dashed var(--gold);border-radius:12px;background:#fffdf7;display:grid;place-content:center;gap:4px;text-align:center;color:var(--muted);font-weight:700}
+.pg-luyen-thi-d4 .d4-qr small{font-weight:600;color:var(--red)}
+.pg-luyen-thi-d4 .d4-pay dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:0}
+.pg-luyen-thi-d4 .d4-pay dt{color:var(--muted)}
+.pg-luyen-thi-d4 .d4-pay dd{margin:0}
+.pg-luyen-thi-d4 .d4-pay .big{font-size:19px;color:var(--red)}
+.pg-luyen-thi-d4 .d4-copy{margin:0;padding:4px 10px}
+.pg-luyen-thi-d4 .d4-price{font:900 30px var(--display);color:var(--red)}
+.pg-luyen-thi-d4 .d4-small{font-size:14px}
+.pg-luyen-thi-d4 .d4-tiny{font-size:13.5px}
+.pg-luyen-thi-d4 .d4-note{background:#fff8e6;border:1px solid var(--gold);border-radius:12px;padding:10px 14px;color:#6b4a07;font-size:14.5px;margin:8px 0 12px}
+.pg-luyen-thi-d4 .d4-h3{margin:18px 0 6px}
+.pg-luyen-thi-d4 .d4-online{display:flex;gap:14px;align-items:center;text-decoration:none;color:var(--ink);background:linear-gradient(135deg,#fff8ec,#fff);border:2px solid var(--gold);border-radius:16px;padding:14px 16px;margin:10px 0}
+.pg-luyen-thi-d4 .d4-online>span:first-child{font-size:36px}
+.pg-luyen-thi-d4 .d4-online b{display:block;font:800 19px var(--display);color:var(--red-dk)}
+.pg-luyen-thi-d4 .d4-online small{color:var(--muted)}
+.pg-luyen-thi-d4 .d4-online .btn{margin-left:auto;white-space:nowrap}
+.pg-luyen-thi-d4 [hidden]{display:none!important}
+@media (max-width:560px){.pg-luyen-thi-d4 .d4-online{flex-wrap:wrap}.pg-luyen-thi-d4 .d4-online .btn{margin-left:0;width:100%}}
+
+/* Khung luyện từ vựng (thay cho trang vocab/d4.html của mẫu) */
+.pg-luyen-thi-d4 .vp{margin-top:16px;border:2px solid var(--gold);border-radius:16px;padding:16px;background:#fffdf7;scroll-margin-top:140px}
+.pg-luyen-thi-d4 .vp-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.pg-luyen-thi-d4 .vp-head b{flex:1;font:800 18px var(--display);color:var(--red-dk)}
+.pg-luyen-thi-d4 .vp .btn{margin:0}
+.pg-luyen-thi-d4 .vp-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:12px}
+.pg-luyen-thi-d4 .vp-count{text-align:center;font-size:14px;margin-top:8px}
+.pg-luyen-thi-d4 .vp-flash{position:relative;display:grid;place-items:center;align-content:center;gap:8px;width:100%;max-width:420px;min-height:230px;margin:0 auto;border:3px solid var(--gold);border-radius:20px;background:#fff;cursor:pointer;font:inherit;color:var(--ink);box-shadow:0 10px 24px rgba(92,7,11,.1)}
+.pg-luyen-thi-d4 .vp-flash.back{background:var(--cream)}
+.pg-luyen-thi-d4 .vp-flash .hz{font-family:var(--han);font-size:64px;line-height:1.1;color:var(--red-dk)}
+.pg-luyen-thi-d4 .vp-flash .ans{display:grid;gap:2px;text-align:center}
+.pg-luyen-thi-d4 .vp-flash .py{color:#1d4ed8;font-size:20px;font-weight:700}
+.pg-luyen-thi-d4 .vp-flash .vi{font-size:18px;font-weight:700}
+.pg-luyen-thi-d4 .vp-flash .hint{color:var(--muted);font-size:14px}
+.pg-luyen-thi-d4 .vp-flash .known{position:absolute;top:10px;right:12px;font-size:13px;font-weight:800;color:#15803d}
+.pg-luyen-thi-d4 .vp-prog{display:flex;justify-content:space-between;font-weight:700;font-size:14.5px;margin-bottom:6px;color:var(--ink-2)}
+.pg-luyen-thi-d4 .vp-ask{display:flex;align-items:center;justify-content:center;gap:12px;min-height:110px;margin:12px 0}
+.pg-luyen-thi-d4 .vp-ask .hz{font-family:var(--han);font-size:56px;color:var(--red-dk)}
+.pg-luyen-thi-d4 .vp-ask .vi{font:800 26px var(--display);color:var(--red-dk);text-align:center}
+.pg-luyen-thi-d4 .vp-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pg-luyen-thi-d4 .vp-opt{border:2px solid var(--line);background:#fff;border-radius:14px;padding:14px 12px;font:700 17px var(--sans);color:var(--ink);cursor:pointer}
+.pg-luyen-thi-d4 .vp-opt .hz{font-family:var(--han);font-size:28px}
+.pg-luyen-thi-d4 .vp-opt:hover:not(:disabled){border-color:var(--gold)}
+.pg-luyen-thi-d4 .vp-opt.ok{background:#ecfdf3;border-color:#22c55e}
+.pg-luyen-thi-d4 .vp-opt.no{background:#fef2f2;border-color:var(--red)}
+.pg-luyen-thi-d4 .vp-opt:disabled{cursor:default}
+.pg-luyen-thi-d4 .vp-type{display:flex;gap:8px;max-width:460px;margin:0 auto}
+.pg-luyen-thi-d4 .vp-type input{flex:1;min-width:0;font:22px var(--han);padding:10px 12px;border:2px solid var(--line);border-radius:12px}
+.pg-luyen-thi-d4 .vp-feedback{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-top:14px;padding:10px 14px;background:#fff;border:1px solid var(--line);border-radius:12px}
+.pg-luyen-thi-d4 .vp-feedback b{font-family:var(--han);font-size:20px;color:var(--red-dk)}
+.pg-luyen-thi-d4 .vp-result{text-align:center}
+.pg-luyen-thi-d4 .vp-score{font:900 48px var(--display);color:var(--red)}
+.pg-luyen-thi-d4 .vp-wrong{list-style:none;padding:0;margin:12px auto 0;max-width:460px;text-align:left;display:grid;gap:6px}
+.pg-luyen-thi-d4 .vp-wrong li{background:#fff;border:1px solid var(--line);border-left:4px solid var(--red);border-radius:10px;padding:6px 12px}
+.pg-luyen-thi-d4 .vp-wrong b{font-family:var(--han);color:var(--red-dk)}
+.pg-luyen-thi-d4 .vp-wrong span{color:#1d4ed8}
+@media (max-width:520px){.pg-luyen-thi-d4 .vp-opts{grid-template-columns:1fr}.pg-luyen-thi-d4 .vp-flash .hz{font-size:52px}}
+.pg-luyen-thi-d4 .d4-msg .d4-compose{display:block;margin-top:8px;font:14.5px/1.5 var(--sans);color:var(--ink);font-weight:400;background:#fffdf7;border-color:var(--gold)}

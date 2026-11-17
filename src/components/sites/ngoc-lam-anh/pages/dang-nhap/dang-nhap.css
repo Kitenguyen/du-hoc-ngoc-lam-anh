@@ -1,0 +1,6 @@
+.pg-dang-nhap .brush-name {
+  font-family: var(--brush);
+  color: var(--gold-lt);
+  font-size: 38px;
+  line-height: 1;
+}
