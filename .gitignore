@@ -52,3 +52,9 @@ temp/
 .env.*
 !.env.example
 desktop.ini
+
+# Cloudflare / OpenNext
+.open-next/
+.wrangler/
+.dev.vars*
+!.dev.vars.example

@@ -73,11 +73,13 @@ export function VocabQuiz({ words, pool, mode, bestKey }: Props) {
   );
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- đọc dữ liệu lưu trên máy sau khi mount, tránh lệch khi hydrate
     setBest(lsGet<number>(bestKey, 0));
   }, [bestKey]);
 
   // dựng bộ câu khi đổi nhóm từ / dạng (nạp phía trình duyệt vì có ngẫu nhiên)
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- câu hỏi xáo ngẫu nhiên nên chỉ dựng ở trình duyệt
     restart(words, kind);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [words, kind, mode]);
@@ -124,6 +126,7 @@ export function VocabQuiz({ words, pool, mode, bestKey }: Props) {
     if (!finished || mode !== "test" || !qs.length) return;
     const pct = Math.round((score / qs.length) * 100);
     if (pct > best) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- lưu điểm cao nhất khi bài vừa xong
       setBest(pct);
       lsSet(bestKey, pct);
     }

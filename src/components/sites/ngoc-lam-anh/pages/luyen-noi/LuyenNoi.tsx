@@ -319,6 +319,7 @@ export function LuyenNoi() {
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- đọc dữ liệu lưu trên máy sau khi mount, tránh lệch khi hydrate
     setOpt({ ...DEFAULT_OPT, ...lsGet<Partial<Opt>>("nla_ln_opt", {}) });
     sync();
     window.addEventListener("hashchange", sync);
@@ -334,6 +335,7 @@ export function LuyenNoi() {
 
   const go = (hash: string) => {
     if (window.location.hash === hash) sync();
+    // eslint-disable-next-line react-hooks/immutability -- đổi hash URL là chủ ý điều hướng
     else window.location.hash = hash;
   };
 

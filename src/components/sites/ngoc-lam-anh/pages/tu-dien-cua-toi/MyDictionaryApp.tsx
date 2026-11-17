@@ -67,6 +67,7 @@ export function MyDictionaryApp() {
 
   useEffect(() => {
     // Đọc dữ liệu đã lưu trên máy (localStorage chỉ có ở trình duyệt)
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- đọc dữ liệu lưu trên máy sau khi mount, tránh lệch khi hydrate
     setWords(loadWords());
     setReady(true);
   }, []);

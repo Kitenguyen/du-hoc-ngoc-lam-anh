@@ -54,6 +54,7 @@ export function SpeakSession({ kind, items, rate, showQ, histKey }: Props) {
     const rid = runId;
     const hd = handle;
     const tmr = timer;
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- kiểm tra API trình duyệt và đọc dữ liệu lưu trên máy sau khi mount, tránh lệch khi hydrate
     setHasSR(!!getSR());
     setHist(lsGet<Hist[]>(histKey, []));
     if (kind === "repeat") void loadPinyin();
