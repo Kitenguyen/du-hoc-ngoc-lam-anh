@@ -18,8 +18,9 @@ Giao diện dựng lại từ https://hoangdatqnhsk.vn/moi/ (28 trang). Nội du
 Dùng chung: `data.ts` (thương hiệu, liên hệ, menu, khóa học), `PageShell.tsx`, `SiteHeader.tsx`, `SiteFooter.tsx`, `site.css`.
 
 ## Cần trung tâm điền (tìm chuỗi `[` trong các file sau)
-- `data.ts` → `CONTACT`: số điện thoại, Zalo, email, địa chỉ (khi trống, nút Gọi/Zalo mở Facebook).
+- `data.ts` → `CONTACT`: đã có số điện thoại, địa chỉ; Zalo đang giả định cùng số hotline; còn thiếu email.
 - `pages/home/data.ts` → `COURSE_FEES`, `TESTIMONIALS`, `GALLERY`.
+- `pages/home/offer-data.ts` → `OFFER.terms`: điều kiện áp dụng, thời hạn, nội dung quà tặng 1 tỷ đồng.
 - `pages/luyen-thi-d4/data.ts`, `pages/mua-tai-khoan/data.ts` → giá gói, thời hạn, thông tin chuyển khoản, mã QR.
 - `pages/giao-trinh/`, `giao-trinh-dich-thuat/`, `sach-tieng-trung/`, `video-giang-day/`, `tu-vung-chuyen-nganh/`, `tai-lieu/`, `khoa-hoc-online/` `data.ts` → tên và tệp tài liệu, sách, video.
 - `pages/luyen-noi/data.ts`, `pages/tu-dien/data.ts` → tệp tài liệu tải về.

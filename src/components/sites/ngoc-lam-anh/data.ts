@@ -17,15 +17,16 @@ export const BRAND = {
 // Trang tiengtrungchuongmy.com không công bố số điện thoại / địa chỉ / email.
 // Khi `phone` còn để trống, nút "Gọi" và "Zalo" tạm dẫn tới trang Facebook.
 export const CONTACT = {
-  phone: "", // ví dụ: "0912345678"
-  zalo: "", // ví dụ: "https://zalo.me/0912345678"
+  phone: "+84818814444", // dùng cho link gọi (tel:)
+  phoneLabel: "(+84) 81 881 4444", // cách hiển thị
+  zalo: "https://zalo.me/0818814444", // giả định Zalo dùng cùng số hotline
   email: "", // ví dụ: "tiengtrungngoclamanh@gmail.com"
-  address: "[Địa chỉ cơ sở]",
+  address: "Tổ dân phố Cao Sơn, Phường Chương Mỹ, Hà Nội, Việt Nam",
   hours: "Ca sáng – chiều – tối",
   facebook: "https://www.facebook.com/HoaNguQuynhChinese",
 };
 
-export const PHONE_LABEL = CONTACT.phone || "[Số điện thoại]";
+export const PHONE_LABEL = CONTACT.phoneLabel || CONTACT.phone || "[Số điện thoại]";
 export const CALL_HREF = CONTACT.phone ? `tel:${CONTACT.phone}` : CONTACT.facebook;
 export const ZALO_HREF = CONTACT.zalo || (CONTACT.phone ? `https://zalo.me/${CONTACT.phone}` : CONTACT.facebook);
 

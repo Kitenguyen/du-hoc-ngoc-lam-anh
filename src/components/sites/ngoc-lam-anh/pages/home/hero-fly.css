@@ -1,0 +1,150 @@
+/* Trang chủ — hero động "Mở cánh cửa du học – Cất cánh ước mơ", khối ưu đãi và hiệu ứng cuộn (mọi selector dưới .pg-home) */
+
+/* ===== Hero ===== */
+.pg-home .hero.fly{background:var(--cloud),radial-gradient(620px 460px at 76% 46%,rgba(247,220,148,.26),transparent 62%),radial-gradient(900px 520px at 78% 30%,var(--red-br),transparent 65%),linear-gradient(160deg,var(--red) 0%,var(--red-dk) 100%)}
+.pg-home .hero.fly .wrap{grid-template-columns:1.1fr .9fr;gap:80px;position:relative;z-index:1;padding-block:64px 84px}
+.pg-home .hero.fly h1 .l1{display:block;font:900 clamp(32px,4.6vw,58px)/1.14 var(--display);text-transform:uppercase;letter-spacing:.01em}
+.pg-home .hero.fly h1 .l2{display:block;font:900 clamp(36px,5.3vw,68px)/1.14 var(--display);text-transform:uppercase;padding-bottom:.06em;
+  background:linear-gradient(100deg,var(--gold) 20%,#fff6d0 40%,var(--gold-lt) 50%,var(--gold) 70%);background-size:250% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;animation:nla-rise .8s cubic-bezier(.2,.7,.2,1) .5s forwards,nla-shine 4.5s linear infinite}
+.pg-home .hero.fly .lead{max-width:50ch;margin:16px 0 18px}
+
+.pg-home .rise{opacity:0;transform:translateY(22px);animation:nla-rise .8s cubic-bezier(.2,.7,.2,1) forwards}
+.pg-home .r1{animation-delay:.1s}.pg-home .r2{animation-delay:.22s}.pg-home .r3{animation-delay:.36s}
+.pg-home .r4{animation-delay:.5s}.pg-home .r5{animation-delay:.68s}.pg-home .r6{animation-delay:.86s}
+
+.pg-home .offer-pill{display:inline-flex;align-items:center;gap:10px;margin-bottom:22px;padding:8px 16px 8px 10px;border:1.5px solid var(--gold);border-radius:999px;
+  background:rgba(92,7,11,.45);color:#fff;text-decoration:none;font-size:15.5px;box-shadow:0 0 0 0 rgba(247,220,148,.5);transition:background .2s}
+.pg-home .offer-pill.rise{animation:nla-rise .8s cubic-bezier(.2,.7,.2,1) .68s forwards,nla-ring 2.4s ease-out 1.6s infinite}
+.pg-home .offer-pill:hover{background:rgba(92,7,11,.7)}
+.pg-home .offer-pill .gift{font-size:22px;display:inline-block;animation:nla-wiggle 2.4s ease-in-out infinite}
+.pg-home .offer-pill b{color:var(--gold-lt)}
+.pg-home .offer-pill strong{color:var(--gold-lt);font:900 17px var(--display)}
+.pg-home .offer-pill .arr{color:var(--gold-lt);font-weight:800}
+
+/* Máy bay giấy lướt nền hero */
+.pg-home .sky-plane{position:absolute;width:46px;opacity:.22;left:-80px;animation:nla-glide 22s linear infinite;pointer-events:none}
+.pg-home .sky-plane svg{display:block;width:100%;transform:rotate(-8deg)}
+.pg-home .sky-plane.p1{top:16%}
+.pg-home .sky-plane.p2{top:72%;width:34px;animation-duration:30s;animation-delay:-12s}
+
+/* Cửa sổ */
+.pg-home .window-art{justify-self:center;width:min(100%,400px);max-width:none;margin-bottom:26px}
+.pg-home .window{position:relative;aspect-ratio:4/5;perspective:2400px}
+.pg-home .window .sky{position:absolute;inset:0;overflow:hidden;border-radius:50% 50% 14px 14px/38% 38% 14px 14px;
+  background:linear-gradient(180deg,#3b8bd4 0%,#7fc2ee 44%,#ffdcae 80%,#ffb88a 100%)}
+.pg-home .window .sun{position:absolute;right:16%;bottom:22%;width:110px;height:110px;border-radius:50%;
+  background:radial-gradient(circle,#fffbe6 0 34%,rgba(255,230,160,.7) 50%,transparent 70%);animation:nla-sun 5s ease-in-out infinite alternate}
+.pg-home .window .cloud{position:absolute;left:-30%;width:120px;opacity:.92;animation:nla-drift 28s linear infinite}
+.pg-home .window .c1{top:12%;animation-delay:-6s}
+.pg-home .window .c2{top:33%;width:80px;opacity:.72;animation-duration:36s;animation-delay:-20s}
+.pg-home .window .c3{top:50%;width:100px;opacity:.55;animation-duration:31s;animation-delay:-12s}
+.pg-home .window .sign{position:absolute;top:21%;left:0;right:0;text-align:center;font-family:var(--brush);font-size:clamp(30px,4vw,46px);
+  letter-spacing:.14em;color:rgba(255,255,255,.92);text-shadow:0 2px 14px rgba(0,50,110,.4);opacity:0;animation:nla-fade 1.2s 2s forwards}
+.pg-home .window .skyline{position:absolute;left:0;right:0;bottom:0;width:100%;height:34%}
+.pg-home .window .plane{position:absolute;left:-25%;top:82%;width:118px;opacity:0;animation:nla-takeoff 7.5s 1.8s cubic-bezier(.45,.05,.55,.95) infinite}
+.pg-home .window .plane svg{position:relative;display:block;width:100%;transform:rotate(-17deg);filter:drop-shadow(0 4px 6px rgba(0,40,90,.35))}
+.pg-home .window .trail{position:absolute;right:90%;top:58%;width:280px;height:4px;border-radius:3px;transform-origin:right center;transform:rotate(-17deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.95))}
+.pg-home .window .flash{position:absolute;inset:0;background:radial-gradient(circle at 50% 58%,#fff 0,rgba(255,255,255,.6) 35%,rgba(255,255,255,0) 72%);opacity:0;animation:nla-flash 1.6s .9s ease-out forwards}
+
+/* Hai cánh cửa chạm song cửa, mở ra lúc tải trang */
+.pg-home .shutters{position:absolute;inset:0;display:flex;transform-style:preserve-3d;pointer-events:none}
+.pg-home .sh{flex:1;display:grid;place-items:center;border:6px solid var(--gold);
+  background:repeating-linear-gradient(0deg,transparent 0 30px,rgba(226,176,74,.85) 30px 34px),repeating-linear-gradient(90deg,transparent 0 30px,rgba(226,176,74,.85) 30px 34px),linear-gradient(160deg,#c3161f,#7e0a10);
+  box-shadow:inset 0 0 0 4px var(--red-deep),inset 0 0 50px rgba(0,0,0,.4)}
+.pg-home .sh.left{border-radius:100% 0 0 0/38% 0 0 0;transform-origin:left center;animation:nla-open-l 1.7s cubic-bezier(.6,.05,.25,1) .55s forwards}
+.pg-home .sh.right{border-radius:0 100% 0 0/0 38% 0 0;transform-origin:right center;animation:nla-open-r 1.7s cubic-bezier(.6,.05,.25,1) .55s forwards}
+.pg-home .sh i{font-style:normal;font-family:var(--brush);font-size:clamp(50px,6.4vw,78px);line-height:1;width:1.45em;height:1.45em;display:grid;place-items:center;border-radius:50%;
+  color:var(--gold-lt);background:radial-gradient(circle,var(--red) 60%,var(--gold) 61% 66%,transparent 67%);text-shadow:0 2px 0 var(--red-deep)}
+
+.pg-home .window .arch{position:absolute;inset:-12px;border:12px solid var(--gold);border-radius:50% 50% 18px 18px/38% 38% 18px 18px;pointer-events:none;
+  box-shadow:0 0 0 3px var(--gold-dk),inset 0 0 0 3px var(--gold-dk),0 26px 60px rgba(0,0,0,.4)}
+.pg-home .window .sill{position:absolute;left:-30px;right:-30px;bottom:-34px;height:22px;border-radius:6px;background:linear-gradient(var(--gold-lt),var(--gold-dk));box-shadow:0 12px 22px rgba(0,0,0,.35)}
+
+.pg-home .gift-badge{position:absolute;right:-26px;top:8%;z-index:2;width:112px;height:112px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-decoration:none;color:var(--red-deep);background:radial-gradient(circle at 35% 30%,#fff6d0,var(--gold-lt) 40%,var(--gold) 75%,var(--gold-dk));
+  border:3px solid #fff3c4;box-shadow:0 12px 26px rgba(0,0,0,.35);animation:nla-badge 3s ease-in-out infinite}
+.pg-home .gift-badge::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--gold-lt);animation:nla-pulse 2s ease-out infinite}
+.pg-home .gift-badge b{font:900 30px/1 var(--display)}
+.pg-home .gift-badge small{font:800 12px/1.2 var(--display);text-transform:uppercase;letter-spacing:.06em}
+.pg-home .window-art .seal{left:-34px;bottom:12%;z-index:2}
+
+@media (max-width:880px){
+  .pg-home .hero.fly .wrap{grid-template-columns:1fr;padding-block:36px 64px}
+  .pg-home .window-art{width:min(82%,340px)}
+  .pg-home .gift-badge{right:-18px;width:92px;height:92px}
+  .pg-home .gift-badge b{font-size:24px}
+  .pg-home .window-art .seal{left:-20px;font-size:24px}
+}
+@media (max-width:480px){.pg-home .offer-pill{font-size:14px}.pg-home .sh{border-width:4px}}
+
+/* ===== Khối ưu đãi ===== */
+.pg-home section.block.offer{color:#fff;overflow:hidden;
+  background:var(--cloud),radial-gradient(560px 320px at 18% 50%,rgba(247,220,148,.24),transparent 70%),linear-gradient(135deg,var(--red-deep),var(--red-dk) 55%,var(--red))}
+.pg-home .offer-card{display:grid;grid-template-columns:270px 1fr;gap:44px;align-items:center;padding:38px 44px;border:2px solid var(--gold);border-radius:var(--r-lg);
+  background:rgba(0,0,0,.18);box-shadow:0 0 0 6px rgba(226,176,74,.14),0 30px 60px rgba(0,0,0,.3)}
+.pg-home .gift-art{position:relative;width:240px;aspect-ratio:1;margin:auto}
+.pg-home .gift-art svg{position:relative;width:100%;animation:nla-bob 3.2s ease-in-out infinite}
+.pg-home .gift-art .lid{animation:nla-lid 3.2s ease-in-out infinite}
+.pg-home .gift-art .rays{position:absolute;inset:-22%;border-radius:50%;
+  background:repeating-conic-gradient(rgba(247,220,148,.38) 0 10deg,transparent 10deg 30deg);
+  -webkit-mask:radial-gradient(circle,#000 25%,transparent 68%);mask:radial-gradient(circle,#000 25%,transparent 68%);animation:nla-spin 20s linear infinite}
+.pg-home .spark{position:absolute;color:var(--gold-lt);font-size:24px;line-height:1;animation:nla-twinkle 2.4s ease-in-out infinite}
+.pg-home .spark.s1{top:4%;left:8%}.pg-home .spark.s2{top:16%;right:2%;animation-delay:.6s;font-size:18px}
+.pg-home .spark.s3{bottom:16%;left:-2%;animation-delay:1.2s}.pg-home .spark.s4{bottom:2%;right:12%;animation-delay:1.8s;font-size:18px}
+.pg-home .offer-copy .zh{font-family:var(--brush);color:var(--gold-lt);font-size:clamp(18px,2vw,24px)}
+.pg-home .offer-copy .kicker{display:inline-block;margin:10px 0 6px;padding:4px 14px;border-radius:999px;background:var(--gold);color:var(--red-deep);font:800 13px var(--display);text-transform:uppercase;letter-spacing:.08em}
+.pg-home .offer-copy h2{font:900 clamp(34px,4.6vw,56px)/1.1 var(--display);text-transform:uppercase}
+.pg-home .gift-line{margin-top:6px;font:700 clamp(18px,2vw,22px) var(--display);color:#ffe3dd}
+.pg-home .shine{display:inline-block;font:900 clamp(40px,6vw,74px)/1.05 var(--display);vertical-align:middle;
+  background:linear-gradient(100deg,var(--gold) 20%,#fff6d0 40%,var(--gold-lt) 50%,var(--gold) 70%);background-size:250% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;animation:nla-shine 3s linear infinite;filter:drop-shadow(0 3px 0 rgba(92,7,11,.6))}
+.pg-home .offer-copy .desc{margin-top:12px;max-width:58ch;color:#ffe3dd}
+.pg-home .offer-copy .terms{margin-top:8px;font-size:14px;font-style:italic;color:var(--gold-lt);opacity:.85}
+.pg-home .offer-copy .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+@media (max-width:820px){
+  .pg-home .offer-card{grid-template-columns:1fr;gap:20px;text-align:center;padding:28px 20px}
+  .pg-home .gift-art{width:170px}
+  .pg-home .offer-copy .desc{margin-inline:auto}
+  .pg-home .offer-copy .acts{justify-content:center}
+}
+
+/* ===== Hiện dần khi cuộn (chỉ khi JS đã chạy) ===== */
+.pg-home.js-reveal :is(.block .head,.reveal,.course,.why,.teacher,.tile,.step,.dh-card,.testi,.unis>div){opacity:0;translate:0 30px;
+  transition:opacity .7s ease var(--d,0ms),translate .8s cubic-bezier(.2,.7,.2,1) var(--d,0ms)}
+.pg-home.js-reveal :is(.block .head,.reveal,.course,.why,.teacher,.tile,.step,.dh-card,.testi,.unis>div).in{opacity:1;translate:0 0}
+
+/* ===== Keyframes ===== */
+@keyframes nla-rise{to{opacity:1;transform:none}}
+@keyframes nla-fade{to{opacity:1}}
+@keyframes nla-shine{from{background-position:100% 0}to{background-position:-150% 0}}
+@keyframes nla-open-l{to{transform:rotateY(-100deg)}}
+@keyframes nla-open-r{to{transform:rotateY(100deg)}}
+@keyframes nla-flash{0%{opacity:0}25%{opacity:.95}100%{opacity:0}}
+@keyframes nla-drift{from{transform:translateX(0)}to{transform:translateX(620px)}}
+@keyframes nla-sun{from{transform:scale(.94);opacity:.85}to{transform:scale(1.08);opacity:1}}
+@keyframes nla-takeoff{
+  0%{left:-25%;top:84%;opacity:0;transform:scale(1.15)}
+  7%{opacity:1}
+  68%{left:88%;top:8%;opacity:1;transform:scale(.55)}
+  76%,100%{left:112%;top:-6%;opacity:0;transform:scale(.45)}
+}
+@keyframes nla-glide{from{left:-80px;transform:translateY(0)}50%{transform:translateY(-30px)}to{left:105%;transform:translateY(-60px)}}
+@keyframes nla-wiggle{0%,70%,100%{transform:none}75%{transform:rotate(-14deg)}85%{transform:rotate(12deg)}92%{transform:rotate(-6deg)}}
+@keyframes nla-ring{0%{box-shadow:0 0 0 0 rgba(247,220,148,.55)}100%{box-shadow:0 0 0 14px rgba(247,220,148,0)}}
+@keyframes nla-badge{0%,100%{transform:rotate(-8deg) scale(1)}50%{transform:rotate(6deg) scale(1.06)}}
+@keyframes nla-pulse{from{transform:scale(1);opacity:.9}to{transform:scale(1.35);opacity:0}}
+@keyframes nla-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes nla-lid{0%,58%,100%{transform:none}68%{transform:translateY(-16px) rotate(-5deg)}80%{transform:translateY(-10px) rotate(3deg)}90%{transform:translateY(-2px)}}
+@keyframes nla-spin{to{transform:rotate(1turn)}}
+@keyframes nla-twinkle{0%,100%{opacity:.2;transform:scale(.7)}50%{opacity:1;transform:scale(1.15)}}
+
+/* Người dùng tắt chuyển động: site.css đã tắt mọi animation → đặt sẵn trạng thái cuối */
+@media (prefers-reduced-motion:reduce){
+  .pg-home .rise,.pg-home .window .sign{opacity:1;transform:none}
+  .pg-home .sh.left{transform:rotateY(-100deg)}
+  .pg-home .sh.right{transform:rotateY(100deg)}
+  .pg-home .window .plane{opacity:1;left:58%;top:22%;transform:scale(.7)}
+  .pg-home .window .cloud{transform:translateX(40%)}
+}

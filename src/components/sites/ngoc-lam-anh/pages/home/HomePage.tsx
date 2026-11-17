@@ -7,7 +7,6 @@ import {
   FEE_PLACEHOLDER,
   GALLERY,
   GALLERY_HEAD,
-  HERO,
   LEAD_TEACHER,
   ONLINE,
   PATH,
@@ -19,7 +18,11 @@ import {
   TESTIMONIALS_HEAD,
   WHYS,
 } from "./data";
+import { HeroFly } from "./HeroFly";
+import { OfferBlock } from "./OfferBlock";
+import { ScrollReveal } from "./ScrollReveal";
 import "./home.css";
+import "./hero-fly.css";
 
 function Head({ zh, title, intro }: { zh: string; title: string; intro?: string }) {
   return (
@@ -87,72 +90,11 @@ export function HomePage() {
   const study = COURSE_GROUPS.filter((g) => g.id !== "du-hoc");
   const courses = study.flatMap((g) => g.courses);
   const total = COURSE_GROUPS.reduce((n, g) => n + g.courses.length, 0);
-  const [brandFirst, ...brandRest] = BRAND.name.split(" ");
   return (
     <PageShell active="">
       <div className="pg-home">
-        <section className="hero">
-          <div className="wrap">
-            <div>
-              <div className="motto">{HERO.motto}</div>
-              <h1>
-                <span className="pre">{HERO.pre}</span>
-                <span className="brandname">
-                  <span className="nw">Tiếng Trung</span>{" "}
-                  <span className="nw">
-                    {brandFirst} {brandRest.join(" ")}
-                  </span>
-                </span>
-              </h1>
-              <div className="zh">{BRAND.zh}</div>
-              <p className="lead">{HERO.lead}</p>
-              <div className="cta">
-                <a className="btn gold" href={href(REGISTER_HREF)}>
-                  Đăng ký học thử miễn phí
-                </a>
-                <a className="btn gold" href={href("dk-hoc-sinh.php")}>
-                  Đăng ký tài khoản
-                </a>
-                <a className="btn gold" href={href("mua-tai-khoan.php")}>
-                  Đăng ký mua tài khoản
-                </a>
-                <a className="btn ghost" href={href("thi-thu.html")}>
-                  Thi thử HSK online
-                </a>
-              </div>
-              <div className="places">
-                {HERO.places.map((p) => (
-                  <span key={p.label}>
-                    <b>{p.label}</b>
-                    {p.text}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div className="art">
-              <div className="frame stage">
-                <span className="bigchar" aria-hidden="true">
-                  {HERO.art.bigChar}
-                </span>
-                <span className="halo" aria-hidden="true" />
-                <span className="floor" aria-hidden="true" />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img className="person" src={HERO.art.person} alt={HERO.art.personAlt} width={575} height={786} />
-                <span className="nameplate">
-                  <b>{HERO.art.name}</b>
-                  <small>{HERO.art.role}</small>
-                </span>
-              </div>
-              <div className="seal" aria-hidden="true">
-                {HERO.art.seal}
-              </div>
-              <div className="badge">
-                <b>{HERO.art.badge.value}</b>
-                <span>{HERO.art.badge.label}</span>
-              </div>
-            </div>
-          </div>
-        </section>
+        <ScrollReveal />
+        <HeroFly />
 
         <div className="stats">
           <div className="wrap">
@@ -164,6 +106,8 @@ export function HomePage() {
             ))}
           </div>
         </div>
+
+        <OfferBlock />
 
         <section className="block light">
           <div className="wrap">
