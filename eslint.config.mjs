@@ -17,6 +17,8 @@ const eslintConfig = defineConfig([
     // Kết quả build cho Cloudflare (OpenNext) và wrangler
     ".open-next/**",
     ".wrangler/**",
+    // Kiểu do `wrangler types` sinh ra
+    "cloudflare-env.d.ts",
   ]),
 ]);
 

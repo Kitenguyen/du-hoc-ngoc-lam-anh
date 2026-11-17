@@ -16,6 +16,23 @@
       "service": "du-hoc-ngoc-lam-anh"
     }
   ],
+  "d1_databases": [
+    {
+      // Cơ sở dữ liệu dashboard (tài khoản, bài viết, đăng ký học).
+      // Tạo bằng: npx wrangler d1 create du-hoc-ngoc-lam-anh  → dán database_id vào đây
+      "binding": "DB",
+      "database_name": "du-hoc-ngoc-lam-anh",
+      "database_id": "347fd7ff-95db-48df-ab4d-22e6158eff86",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "vars": {
+    // Email được tự tạo tài khoản admin ở lần đăng nhập Google đầu tiên (phân cách bằng dấu phẩy)
+    "ADMIN_EMAILS": "trungtamquynhchinese@gmail.com",
+    // Kho GitHub chứa code web – dashboard ghi nội dung trang vào đây
+    "GITHUB_REPO": "Kitenguyen/du-hoc-ngoc-lam-anh",
+    "GITHUB_BRANCH": "main"
+  },
   "images": {
     "binding": "IMAGES"
   },

@@ -1,6 +1,7 @@
 import { PageHead, PageShell } from "../../PageShell";
 import { BLOG, ZALO_HREF } from "../../data";
-import { BlogNotConfiguredError, formatDate, listPosts, type BlogPage } from "./blogger";
+import { formatDate } from "./blogger";
+import { listAllPosts } from "./source";
 import "./blog.css";
 
 function pageHref(page: number, label?: string): string {
@@ -12,13 +13,8 @@ function pageHref(page: number, label?: string): string {
 }
 
 export async function BlogList({ page, label }: { page: number; label?: string }) {
-  let data: BlogPage | null = null;
-  let state: "ok" | "empty-config" | "error" = "ok";
-  try {
-    data = await listPosts(page, label);
-  } catch (e) {
-    state = e instanceof BlogNotConfiguredError ? "empty-config" : "error";
-  }
+  const { data, state: st } = await listAllPosts(page, label);
+  const state: "ok" | "empty-config" | "error" = st === "error" ? "error" : st === "empty" ? "empty-config" : "ok";
   const pages = data ? Math.max(1, Math.ceil(data.total / BLOG.perPage)) : 1;
   const labels = Array.from(new Set((data?.posts ?? []).flatMap((p) => p.labels))).slice(0, 12);
 

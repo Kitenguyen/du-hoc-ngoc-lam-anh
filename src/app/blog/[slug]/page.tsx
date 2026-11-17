@@ -1,16 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { BlogArticle } from "@/components/sites/ngoc-lam-anh/pages/blog/BlogArticle";
-import { getPost, type BlogPost } from "@/components/sites/ngoc-lam-anh/pages/blog/blogger";
+import { type BlogPost } from "@/components/sites/ngoc-lam-anh/pages/blog/blogger";
+import { findPost } from "@/components/sites/ngoc-lam-anh/pages/blog/source";
 
 type Props = { params: Promise<{ slug: string }> };
 
 async function load(slug: string): Promise<BlogPost | null> {
-  try {
-    return await getPost(slug);
-  } catch {
-    return null;
-  }
+  return findPost(decodeURIComponent(slug));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

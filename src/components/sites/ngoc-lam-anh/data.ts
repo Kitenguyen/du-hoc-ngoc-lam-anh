@@ -1,6 +1,8 @@
 // Nội dung website Du học Ngọc Lâm Anh.
 // Thông tin khóa học lấy từ https://tiengtrungchuongmy.com/ — sửa chữ tại đây, giao diện tự cập nhật.
 
+import SITE from "@/content/site.json";
+
 export const BRAND = {
   name: "Ngọc Lâm Anh",
   headerName: "DU HỌC NGỌC LÂM ANH",
@@ -18,15 +20,8 @@ export const BRAND = {
 // ⚠️ ĐIỀN THÔNG TIN LIÊN HỆ THẬT VÀO ĐÂY.
 // Trang tiengtrungchuongmy.com không công bố số điện thoại / địa chỉ / email.
 // Khi `phone` còn để trống, nút "Gọi" và "Zalo" tạm dẫn tới trang Facebook.
-export const CONTACT = {
-  phone: "+84818814444", // dùng cho link gọi (tel:)
-  phoneLabel: "(+84) 81 881 4444", // cách hiển thị
-  zalo: "https://zalo.me/0818814444", // giả định Zalo dùng cùng số hotline
-  email: "trungtamquynhchinese@gmail.com",
-  address: "Tổ dân phố Cao Sơn, Phường Chương Mỹ, Hà Nội, Việt Nam",
-  hours: "Ca sáng – chiều – tối",
-  facebook: "https://www.facebook.com/HoaNguQuynhChinese",
-};
+/** Liên hệ: sửa trong dashboard (Nội dung trang) hoặc file src/content/site.json */
+export const CONTACT = SITE.contact;
 
 export const PHONE_LABEL = CONTACT.phoneLabel || CONTACT.phone || "[Số điện thoại]";
 export const CALL_HREF = CONTACT.phone ? `tel:${CONTACT.phone}` : CONTACT.facebook;

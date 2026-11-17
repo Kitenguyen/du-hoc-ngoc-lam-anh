@@ -1,0 +1,152 @@
+/* Dashboard quản trị – mọi selector dưới .adm */
+body:has(.adm){background:#f5f0e8}
+.adm{--a-bg:#f5f0e8;--a-card:#fff;--a-ink:#2b1916;--a-ink2:#5a4440;--a-mute:#8a7470;--a-line:#ecdfd0;--a-red:#b5121b;--a-red-dk:#7e0a10;--a-deep:#4a0609;--a-gold:#e2b04a;--a-gold-lt:#f7dc94;--a-ok:#2f855a;--a-warn:#b7791f;--a-info:#2b6cb0;
+  min-height:100vh;background:var(--a-bg);color:var(--a-ink);font:15px/1.55 var(--sans);display:grid;grid-template-columns:248px 1fr}
+.adm *{box-sizing:border-box}
+.adm a{color:var(--a-red)}
+.adm h1,.adm h2,.adm h3{font-family:var(--display);margin:0;line-height:1.25}
+
+/* Thanh bên */
+.adm .side{position:sticky;top:0;height:100vh;overflow-y:auto;background:linear-gradient(180deg,var(--a-deep),#2e0305);color:#f3e3dc;display:flex;flex-direction:column;padding:18px 14px}
+.adm .side .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;padding:4px 6px 18px;border-bottom:1px solid rgba(247,220,148,.18);margin-bottom:12px}
+.adm .side .logo img{width:40px;height:40px;border-radius:50%;background:#fff;border:2px solid var(--a-gold);object-fit:contain;padding:2px}
+.adm .side .logo b{display:block;font:800 14px/1.2 var(--display);letter-spacing:.04em}
+.adm .side .logo small{color:var(--a-gold-lt);font-size:12px}
+.adm .side nav{display:flex;flex-direction:column;gap:2px}
+.adm .side nav a{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;color:#f3e3dc;text-decoration:none;font-weight:600}
+.adm .side nav a:hover{background:rgba(255,255,255,.07)}
+.adm .side nav a.on{background:linear-gradient(90deg,rgba(226,176,74,.28),rgba(226,176,74,.08));color:#fff;box-shadow:inset 3px 0 0 var(--a-gold)}
+.adm .side nav a .ic{width:22px;text-align:center}
+.adm .side nav a .count{margin-left:auto;background:var(--a-gold);color:var(--a-deep);border-radius:999px;font-size:12px;font-weight:800;padding:0 8px}
+.adm .side .who{margin-top:auto;padding:12px 6px 0;border-top:1px solid rgba(247,220,148,.18);display:flex;align-items:center;gap:10px;font-size:13px}
+.adm .side .who img,.adm .side .who .av{width:34px;height:34px;border-radius:50%;flex:none;background:var(--a-gold);color:var(--a-deep);display:grid;place-items:center;font-weight:800}
+.adm .side .who b{display:block;color:#fff;font-size:13.5px}
+.adm .side .who form{margin-left:auto}
+.adm .side .who button{background:none;border:1px solid rgba(247,220,148,.4);color:var(--a-gold-lt);border-radius:8px;padding:4px 8px;cursor:pointer;font-size:12px}
+.adm .side .site-link{display:block;margin:10px 6px 0;font-size:13px;color:var(--a-gold-lt)}
+
+/* Nội dung */
+.adm .main{min-width:0;padding:26px clamp(16px,3vw,36px) 60px}
+.adm .top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.adm .top h1{font-size:24px;color:var(--a-red-dk)}
+.adm .top .sp{flex:1}
+.adm .card{background:var(--a-card);border:1px solid var(--a-line);border-radius:14px;padding:18px 20px;box-shadow:0 2px 10px rgba(60,0,0,.04)}
+.adm .card+.card{margin-top:16px}
+.adm .card h2{font-size:17px;color:var(--a-red-dk);margin-bottom:12px}
+.adm .muted{color:var(--a-mute)}
+.adm .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media (max-width:1100px){.adm .grid4{grid-template-columns:repeat(2,1fr)}}
+.adm .stat{display:block;text-decoration:none;color:inherit}
+.adm .stat b{display:block;font:900 30px/1.1 var(--display);color:var(--a-red)}
+.adm .stat span{color:var(--a-ink2);font-weight:600}
+.adm .stat small{display:block;color:var(--a-mute);margin-top:4px}
+
+/* Nút, ô nhập */
+.adm .btn{display:inline-flex;align-items:center;gap:6px;border:1px solid transparent;border-radius:10px;padding:8px 14px;font:700 14px var(--sans);cursor:pointer;text-decoration:none;background:var(--a-red);color:#fff;white-space:nowrap}
+.adm .btn:hover{filter:brightness(1.07)}
+.adm .btn:disabled{opacity:.55;cursor:default}
+.adm .btn.sec{background:#fff;color:var(--a-red-dk);border-color:var(--a-line)}
+.adm .btn.gold{background:var(--a-gold);color:var(--a-deep)}
+.adm .btn.ok{background:var(--a-ok)}
+.adm .btn.ghost{background:transparent;color:var(--a-ink2);border-color:transparent}
+.adm .btn.danger{background:#fff;color:#c53030;border-color:#f3c5c5}
+.adm .btn.sm{padding:5px 10px;font-size:13px;border-radius:8px}
+.adm label.f{display:block;font-weight:700;font-size:13.5px;color:var(--a-ink2);margin-bottom:12px}
+.adm label.f>span{display:block;margin-bottom:5px}
+.adm label.f small{font-weight:500;color:var(--a-mute)}
+.adm input[type=text],.adm input[type=email],.adm input[type=url],.adm input[type=search],.adm select,.adm textarea{width:100%;border:1px solid #dccbb8;border-radius:10px;padding:9px 12px;font:15px var(--sans);color:var(--a-ink);background:#fff}
+.adm textarea{min-height:80px;resize:vertical}
+.adm input:focus,.adm select:focus,.adm textarea:focus{outline:2px solid var(--a-gold);outline-offset:0;border-color:var(--a-gold)}
+.adm .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.adm .cols2{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+@media (max-width:760px){.adm .cols2{grid-template-columns:1fr}}
+.adm .check{display:flex;gap:8px;align-items:flex-start;font-weight:600;margin:6px 0;cursor:pointer}
+.adm .check input{margin-top:4px;accent-color:var(--a-red)}
+.adm .check small{display:block;font-weight:500;color:var(--a-mute)}
+
+/* Thông báo */
+.adm .flash{border-radius:10px;padding:10px 14px;margin-bottom:14px;font-weight:600}
+.adm .flash.ok{background:#e6f6ec;color:#22543d;border:1px solid #b7e2c6}
+.adm .flash.err{background:#fdecec;color:#9b2c2c;border:1px solid #f5c2c2}
+.adm .flash.info{background:#fff7e6;color:#7b4a05;border:1px solid #f3dca8}
+
+/* Bảng & nhãn trạng thái */
+.adm table.t{width:100%;border-collapse:collapse}
+.adm table.t th{text-align:left;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--a-mute);padding:8px 10px;border-bottom:1px solid var(--a-line)}
+.adm table.t td{padding:10px;border-bottom:1px solid #f3e8dc;vertical-align:top}
+.adm table.t tr:hover td{background:#fffaf3}
+.adm .tbl-wrap{overflow-x:auto}
+.adm .pill{display:inline-block;border-radius:999px;padding:1px 10px;font-size:12.5px;font-weight:800;white-space:nowrap}
+.adm .pill.draft{background:#eef0f3;color:#4a5568}
+.adm .pill.pending{background:#fff4d6;color:#8a5a00}
+.adm .pill.published{background:#e3f5ea;color:#22543d}
+.adm .pill.hidden{background:#f1e8e8;color:#7b3b3b}
+.adm .pill.new{background:#fde8e8;color:#b5121b}
+.adm .pill.contacted{background:#e6f0fb;color:#2b6cb0}
+.adm .pill.enrolled{background:#e3f5ea;color:#22543d}
+.adm .pill.closed{background:#eef0f3;color:#4a5568}
+.adm .pill.admin{background:var(--a-gold-lt);color:var(--a-deep)}
+.adm .pill.staff{background:#eef0f3;color:#4a5568}
+.adm .tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.adm .tabs a{padding:6px 12px;border-radius:999px;text-decoration:none;color:var(--a-ink2);background:#fff;border:1px solid var(--a-line);font-weight:700;font-size:13.5px}
+.adm .tabs a.on{background:var(--a-red);color:#fff;border-color:var(--a-red)}
+
+/* Trình soạn bài */
+.adm .editor-layout{display:grid;grid-template-columns:1fr 300px;gap:18px;align-items:start}
+@media (max-width:1100px){.adm .editor-layout{grid-template-columns:1fr}}
+.adm .title-input{width:100%;border:0;border-bottom:2px solid var(--a-line);font:800 26px/1.3 var(--display);color:var(--a-red-dk);padding:6px 2px 10px;background:transparent}
+.adm .title-input:focus{outline:none;border-color:var(--a-gold)}
+.adm .toolbar{position:sticky;top:0;z-index:2;display:flex;flex-wrap:wrap;gap:4px;padding:8px;background:#fffaf3;border:1px solid var(--a-line);border-radius:10px 10px 0 0;margin-top:14px}
+.adm .toolbar button{border:1px solid transparent;background:none;border-radius:7px;min-width:34px;height:32px;padding:0 8px;cursor:pointer;font:700 14px var(--sans);color:var(--a-ink2)}
+.adm .toolbar button:hover{background:#fff;border-color:var(--a-line)}
+.adm .toolbar button.on{background:var(--a-red);color:#fff}
+.adm .toolbar .sep{width:1px;background:var(--a-line);margin:4px 4px}
+.adm .rte{border:1px solid var(--a-line);border-top:0;border-radius:0 0 10px 10px;background:#fff;min-height:420px;padding:18px 22px}
+.adm .rte .ProseMirror{outline:none;min-height:380px;font-size:17px;line-height:1.75}
+.adm .rte .ProseMirror p.is-editor-empty:first-child::before{content:attr(data-placeholder);color:#b9a8a2;float:left;height:0;pointer-events:none}
+.adm .rte .ProseMirror img{max-width:100%;height:auto;border-radius:10px}
+.adm .rte .ProseMirror img.ProseMirror-selectednode{outline:3px solid var(--a-gold)}
+.adm .rte .ProseMirror h2{font-size:24px;margin:22px 0 10px;color:var(--a-red-dk)}
+.adm .rte .ProseMirror h3{font-size:20px;margin:18px 0 8px;color:var(--a-red-dk)}
+.adm .rte .ProseMirror blockquote{border-left:4px solid var(--a-gold);margin:0 0 14px;padding:4px 14px;color:var(--a-ink2);background:#fffaf3}
+.adm .rte .ProseMirror a{color:var(--a-red);text-decoration:underline}
+.adm .side-box h3{font-size:14px;color:var(--a-ink2);margin-bottom:8px;text-transform:uppercase;letter-spacing:.04em}
+.adm .side-box .actions{display:grid;gap:8px}
+.adm .cover-prev{margin-top:8px;border-radius:10px;overflow:hidden;aspect-ratio:16/9;background:#f3e8dc;display:grid;place-items:center;color:var(--a-mute);font-size:13px}
+.adm .cover-prev img{width:100%;height:100%;object-fit:cover}
+.adm .review-note{background:#fff4d6;border:1px solid #f3dca8;border-radius:10px;padding:10px 12px;color:#7b4a05;font-size:14px;margin-bottom:12px}
+
+/* Đăng ký học */
+.adm details.lead{border:1px solid var(--a-line);border-radius:12px;background:#fff;margin-bottom:10px}
+.adm details.lead>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1.3fr 1fr 1.3fr auto auto;gap:12px;align-items:center;padding:12px 16px}
+.adm details.lead>summary::-webkit-details-marker{display:none}
+.adm details.lead[open]>summary{border-bottom:1px solid var(--a-line);background:#fffaf3;border-radius:12px 12px 0 0}
+.adm details.lead .body{padding:14px 16px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:860px){.adm details.lead>summary{grid-template-columns:1fr auto}.adm details.lead>summary .hide-sm{display:none}.adm details.lead .body{grid-template-columns:1fr}}
+.adm dl.kv{display:grid;grid-template-columns:110px 1fr;gap:6px 10px;margin:0}
+.adm dl.kv dt{color:var(--a-mute);font-weight:600}
+.adm dl.kv dd{margin:0}
+
+/* Đăng nhập */
+.adm-login{min-height:100vh;display:grid;place-items:center;background:radial-gradient(800px 500px at 70% 20%,#d61f27,transparent 60%),linear-gradient(160deg,#b5121b,#4a0609);padding:20px;font-family:var(--sans)}
+.adm-login .box{width:min(420px,100%);background:#fff;border-radius:20px;padding:32px 28px;text-align:center;box-shadow:0 30px 60px rgba(0,0,0,.35)}
+.adm-login .box img{width:76px;height:76px;border-radius:50%;border:3px solid #e2b04a;object-fit:contain;padding:3px;margin:0 auto 12px}
+.adm-login h1{font:900 22px var(--display);color:#7e0a10;margin:0}
+.adm-login p{color:#5a4440;margin:6px 0 20px}
+.adm-login .g-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;border:1px solid #dadce0;border-radius:12px;padding:12px;font:700 15px var(--sans);color:#3c4043;background:#fff;text-decoration:none}
+.adm-login .g-btn:hover{background:#f8f9fa}
+.adm-login .err{background:#fdecec;color:#9b2c2c;border-radius:10px;padding:10px;margin-bottom:14px;font-weight:600;font-size:14px}
+.adm-login .dev{margin-top:22px;padding-top:16px;border-top:1px dashed #e5d5c5;text-align:left}
+.adm-login .dev input{width:100%;border:1px solid #dccbb8;border-radius:10px;padding:9px 12px;font:15px var(--sans);margin:6px 0 8px}
+.adm-login .dev button{width:100%;border:0;border-radius:10px;padding:10px;background:#7e0a10;color:#fff;font-weight:700;cursor:pointer}
+.adm-login small{display:block;color:#8a7470;font-size:12.5px}
+.adm-login .back{display:inline-block;margin-top:18px;color:#b5121b;font-size:14px}
+
+/* Điện thoại */
+.adm .menu-toggle{display:none}
+@media (max-width:900px){
+  .adm{grid-template-columns:1fr}
+  .adm .side{position:fixed;inset:0 auto 0 0;width:260px;z-index:50;transform:translateX(-100%);transition:transform .2s}
+  .adm.nav-open .side{transform:none;box-shadow:0 0 0 100vmax rgba(0,0,0,.4)}
+  .adm .menu-toggle{display:inline-flex}
+}

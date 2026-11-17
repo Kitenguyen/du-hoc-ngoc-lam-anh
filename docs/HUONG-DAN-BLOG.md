@@ -1,6 +1,8 @@
 # Hướng dẫn đăng tin tức (Blog) cho Du học Ngọc Lâm Anh
 
-Trang **Tin tức** (`/blog`) trên web tự lấy bài từ **Blogger** – nền tảng blog miễn phí của Google.
+> Cách đăng bài chính hiện nay là **viết trong dashboard** (`/quan-tri` → Bài viết, xem `HUONG-DAN-DASHBOARD.md`). Blogger vẫn dùng song song được.
+
+Trang **Tin tức** (`/blog`) trên web cũng tự lấy bài từ **Blogger** – nền tảng blog miễn phí của Google.
 Trung tâm đăng bài bằng tài khoản Google của mình, không cần sửa code, không cần đăng nhập vào web.
 
 ## 1. Tạo blog (làm một lần)

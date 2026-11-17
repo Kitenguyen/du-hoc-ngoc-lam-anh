@@ -1,29 +1,27 @@
-// Lớp gọi máy chủ cho các form đăng ký. Hiện CHƯA có máy chủ:
-// khi chưa đặt NEXT_PUBLIC_NLA_API, mọi hàm trả về { ok: false, reason: "no-server" }
-// và giao diện chuyển sang bước "chép nội dung & nhắn Zalo / gọi điện".
-// Khi trung tâm có backend: đặt NEXT_PUBLIC_NLA_API (vd "https://api.example.vn") và
-// làm endpoint POST <API>/register nhận JSON bên dưới, trả { ok: true } hoặc { ok: false, error }.
+// Gửi form đăng ký về dashboard quản trị (POST /api/dang-ky, lưu vào cơ sở dữ liệu D1).
+// Nếu máy chủ lỗi hoặc mất kết nối, giao diện chuyển sang bước "chép nội dung & nhắn Zalo / gọi điện"
+// để không mất đăng ký của học viên.
 
 export type ApiResult = { ok: true } | { ok: false; reason: "no-server" | "error"; message: string };
 
-export const API_BASE = process.env.NEXT_PUBLIC_NLA_API ?? "";
+export const API_BASE = process.env.NEXT_PUBLIC_NLA_API ?? "/api";
 
-export const NO_SERVER_MESSAGE = "Website chưa kết nối máy chủ – trung tâm sẽ bật tính năng gửi tự động sau.";
+export const NO_SERVER_MESSAGE = "Chưa gửi được tự động – bạn gửi giúp trung tâm qua Zalo hoặc gọi điện nhé.";
 
 /** POST JSON tới máy chủ (dùng chung cho các trang đăng ký). */
 export async function postJson(path: string, body: unknown): Promise<ApiResult> {
-  if (!API_BASE) return { ok: false, reason: "no-server", message: NO_SERVER_MESSAGE };
   try {
     const r = await fetch(`${API_BASE}${path}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
     });
+    if (r.status >= 500 || r.status === 404) return { ok: false, reason: "no-server", message: NO_SERVER_MESSAGE };
     const j = (await r.json()) as { ok?: boolean; error?: string };
     if (j.ok) return { ok: true };
     return { ok: false, reason: "error", message: j.error || "Gửi chưa được." };
   } catch {
-    return { ok: false, reason: "error", message: "Lỗi kết nối, gửi chưa được." };
+    return { ok: false, reason: "no-server", message: NO_SERVER_MESSAGE };
   }
 }
 
@@ -40,5 +38,5 @@ export type RegistrationData = {
 };
 
 export function submitRegistration(data: RegistrationData): Promise<ApiResult> {
-  return postJson("/register", data);
+  return postJson("/dang-ky", { ...data, source: "dang-ky" });
 }

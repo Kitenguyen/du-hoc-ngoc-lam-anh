@@ -2,6 +2,7 @@
 // Nguồn: https://tiengtrungchuongmy.com/ (trang chủ, /du-hoc/, /doi-ngu-giao-vien/ và trang từng giáo viên).
 // Ô có dạng "[...]" là chỗ trung tâm cần điền nội dung thật — đừng thay bằng nội dung bịa.
 
+import SITE from "@/content/site.json";
 import { CONTACT } from "../../data";
 
 const IMG = "/sites/ngoc-lam-anh/home";
@@ -43,11 +44,7 @@ export const COURSES_HEAD = {
 };
 
 /** Học phí chưa được công bố — trung tâm điền theo id khóa học (id trong COURSE_GROUPS). */
-export const COURSE_FEES: Record<string, string> = {
-  "yct-1": "Trọn gói YCT 0 – 2: 4.599.000đ",
-  "yct-2": "Trọn gói YCT 0 – 2: 4.599.000đ",
-  "yct-3": "Trọn gói YCT 0 – 3: 6.999.000đ",
-};
+export const COURSE_FEES: Record<string, string> = SITE.courseFees;
 
 /** Khóa học hiện trên trang chủ (đủ danh sách ở trang Khóa học) */
 export const HOME_COURSE_IDS = ["tieng-trung-giao-tiep", "hsk-1", "hsk-3", "hsk-4", "hsk-5", "yct-1"];

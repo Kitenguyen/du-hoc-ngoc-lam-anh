@@ -1,0 +1,27 @@
+{
+  "_note": "Nội dung trang web sửa được trong dashboard (/quan-tri/noi-dung). Dashboard ghi file này lên GitHub, Cloudflare tự build lại.",
+  "contact": {
+    "phone": "+84818814444",
+    "phoneLabel": "(+84) 81 881 4444",
+    "zalo": "https://zalo.me/0818814444",
+    "email": "trungtamquynhchinese@gmail.com",
+    "address": "Tổ dân phố Cao Sơn, Phường Chương Mỹ, Hà Nội, Việt Nam",
+    "hours": "Ca sáng – chiều – tối",
+    "facebook": "https://www.facebook.com/HoaNguQuynhChinese"
+  },
+  "offer": {
+    "show": true,
+    "kicker": "Ưu đãi đặc biệt",
+    "title": "Miễn phí du học",
+    "giftLabel": "Quà tặng trị giá",
+    "giftValue": "1 TỶ ĐỒNG",
+    "badge": "1 TỶ",
+    "text": "Dành cho học viên đăng ký chương trình du học Trung Quốc tại Trung tâm Du học Ngọc Lâm Anh.",
+    "terms": "[Điều kiện áp dụng, thời hạn và nội dung quà tặng – trung tâm điền]"
+  },
+  "courseFees": {
+    "yct-1": "Trọn gói YCT 0 – 2: 4.599.000đ",
+    "yct-2": "Trọn gói YCT 0 – 2: 4.599.000đ",
+    "yct-3": "Trọn gói YCT 0 – 3: 6.999.000đ"
+  }
+}

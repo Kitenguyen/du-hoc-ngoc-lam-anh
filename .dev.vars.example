@@ -1,0 +1,5 @@
+# Sao chép thành .dev.vars để chạy trên máy. Trên Cloudflare đặt các giá trị này là Secret.
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+GITHUB_TOKEN=
+DEV_LOGIN=1

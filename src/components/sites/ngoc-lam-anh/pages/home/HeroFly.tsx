@@ -76,6 +76,7 @@ export function HeroFly() {
             <span className="l2 rise r4">{HERO_FLY.line2}</span>
           </h1>
           <p className="lead rise r5">{HERO_FLY.lead}</p>
+          {OFFER.show && (
           <a className="offer-pill rise r5" href="#uu-dai">
             <span className="gift" aria-hidden="true">
               🎁
@@ -87,10 +88,13 @@ export function HeroFly() {
               →
             </span>
           </a>
+          )}
           <div className="cta rise r6">
+            {OFFER.show && (
             <a className="btn gold" href="#uu-dai">
               Nhận ưu đãi du học
             </a>
+            )}
             <a className="btn gold" href={href(REGISTER_HREF)}>
               Đăng ký học thử miễn phí
             </a>
@@ -136,11 +140,13 @@ export function HeroFly() {
             <span className="arch" aria-hidden="true" />
             <span className="sill" aria-hidden="true" />
           </div>
+          {OFFER.show && (
           <a className="gift-badge" href="#uu-dai" aria-label={`${OFFER.giftLabel} ${OFFER.giftValue}`}>
             <small>Quà tặng</small>
-            <b>1 TỶ</b>
+            <b>{OFFER.badge}</b>
             <small>đồng</small>
           </a>
+          )}
           <div className="seal" aria-hidden="true">
             {HERO.art.seal}
           </div>

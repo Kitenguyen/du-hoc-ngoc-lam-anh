@@ -2,6 +2,7 @@
 // Trung tâm đăng bài tại blogger.com bằng tài khoản Google; web tự hiển thị bài mới.
 // Cấu hình địa chỉ blog: data.ts › BLOG.bloggerUrl
 
+import { sanitize, slugify, textOf } from "@/lib/html";
 import { BLOG } from "../../data";
 
 export type BlogPost = {
@@ -51,45 +52,6 @@ async function getJson<T>(url: string): Promise<T | null> {
   return (await res.json()) as T;
 }
 
-/** Bỏ thẻ và thuộc tính nguy hiểm khỏi HTML bài viết (nội dung lấy từ blog của chính trung tâm). */
-export function sanitize(html: string): string {
-  return html
-    .replace(/<(script|style|object|embed|form)[\s\S]*?<\/\1\s*>/gi, "")
-    .replace(/<(script|style|object|embed|form|meta|link|base)\b[^>]*\/?>/gi, "")
-    .replace(/<iframe\b[^>]*>[\s\S]*?<\/iframe\s*>/gi, (m) =>
-      /src=["']https:\/\/(www\.)?(youtube(-nocookie)?\.com|player\.vimeo\.com|www\.blogger\.com|drive\.google\.com|docs\.google\.com|www\.google\.com\/maps)\//i.test(m) ? m : "",
-    )
-    .replace(/\son[a-z]+\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)/gi, "")
-    .replace(/(href|src)\s*=\s*(["'])\s*(javascript|vbscript|data):[^"']*\2/gi, '$1="#"')
-    .replace(/<a\b(?![^>]*\btarget=)/gi, '<a target="_blank" rel="noopener"');
-}
-
-function textOf(html: string): string {
-  return html
-    .replace(/<(script|style)[\s\S]*?<\/\1>/gi, " ")
-    .replace(/<br\s*\/?>|<\/p>|<\/div>|<\/h\d>/gi, " ")
-    .replace(/<[^>]+>/g, "")
-    .replace(/&nbsp;/g, " ")
-    .replace(/&amp;/g, "&")
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-function slugify(s: string): string {
-  return s
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
-    .replace(/đ/gi, "d")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "")
-    .slice(0, 80);
-}
-
 function bigImage(url: string): string {
   // Ảnh Blogger: đổi kích thước thu nhỏ (s72-c, w200-h150…) sang ảnh lớn
   return url.replace(/\/(s\d+(-c)?|w\d+-h\d+(-[a-z-]+)?)\//, "/w800-h450-c/").replace(/=(s\d+(-c)?|w\d+-h\d+(-[a-z-]+)?)$/, "=w800-h450-c");
@@ -117,8 +79,7 @@ function toPost(e: FeedEntry): BlogPost {
   };
 }
 
-export async function listPosts(page: number, label?: string): Promise<BlogPage> {
-  const per = BLOG.perPage;
+export async function listPosts(page: number, label?: string, per: number = BLOG.perPage): Promise<BlogPage> {
   const path = label ? `/feeds/posts/default/-/${encodeURIComponent(label)}` : "/feeds/posts/default";
   const q = `alt=json&max-results=${per}&start-index=${(page - 1) * per + 1}`;
   const data = await getJson<Feed>(`${base()}${path}?${q}`);

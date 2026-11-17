@@ -1,3 +1,5 @@
+import SITE from "@/content/site.json";
+
 // Nội dung hero động và khối ưu đãi du học trên trang chủ.
 // Ô có dạng "[...]" là chỗ trung tâm cần điền nội dung thật.
 
@@ -12,13 +14,5 @@ export const HERO_FLY = {
   sign: "留学中国",
 };
 
-/** Ưu đãi du học — trung tâm điền điều kiện áp dụng và nội dung quà tặng cụ thể */
-export const OFFER = {
-  zh: "免费留学 · 价值十亿越南盾礼包",
-  kicker: "Ưu đãi đặc biệt",
-  title: "Miễn phí du học",
-  giftLabel: "Quà tặng trị giá",
-  giftValue: "1 TỶ ĐỒNG",
-  text: "Dành cho học viên đăng ký chương trình du học Trung Quốc tại Trung tâm Du học Ngọc Lâm Anh.",
-  terms: "[Điều kiện áp dụng, thời hạn và nội dung quà tặng – trung tâm điền]",
-};
+/** Ưu đãi du học — sửa trong dashboard (Nội dung trang) hoặc file src/content/site.json */
+export const OFFER = { zh: "免费留学 · 价值十亿越南盾礼包", ...SITE.offer };

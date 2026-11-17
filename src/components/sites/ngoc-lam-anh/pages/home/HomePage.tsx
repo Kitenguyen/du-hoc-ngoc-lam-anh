@@ -21,6 +21,7 @@ import {
 import { DuHocSection } from "./DuHocSection";
 import { HeroFly } from "./HeroFly";
 import { OfferBlock } from "./OfferBlock";
+import { OFFER } from "./offer-data";
 import { ScrollReveal } from "./ScrollReveal";
 import "./home.css";
 import "./hero-fly.css";
@@ -109,7 +110,7 @@ export function HomePage() {
           </div>
         </div>
 
-        <OfferBlock />
+        {OFFER.show && <OfferBlock />}
 
         <section className="block light">
           <div className="wrap">
