@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { TuDienPage } from "@/components/sites/ngoc-lam-anh/pages/tu-dien/TuDienPage";
 
-const title = "Từ điển chuyên ngành · Tiếng Trung Ngọc Lâm Anh";
+const title = "Từ điển chuyên ngành · Du học Ngọc Lâm Anh";
 const description =
   "Tra cứu từ vựng tiếng Trung chuyên ngành theo phòng ban, ngành nghề: hành chính, nhân sự, kế toán, sản xuất, QC, kho vận, may mặc, điện tử, xây dựng, thương mại, khách sạn.";
 

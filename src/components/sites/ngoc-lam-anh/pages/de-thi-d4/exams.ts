@@ -1,4 +1,4 @@
-// Đề luyện thi tiếng Trung THPT khối D4 của Trung tâm Tiếng Trung Ngọc Lâm Anh.
+// Đề luyện thi tiếng Trung THPT khối D4 của Trung tâm Du học Ngọc Lâm Anh.
 // Đề mẫu dưới đây do trung tâm tự soạn (ngắn, để làm quen dạng bài) — thêm đề mới vào mảng D4_EXAMS.
 //
 // Văn bản đề: {{n}} = chỗ trống câu n; [[n|từ]] = từ được hỏi nghĩa ở câu n (giống quy ước của trang mẫu).

@@ -5,7 +5,7 @@ export const TAI_LIEU_HEAD = {
   zh: "教学资料",
   title: "Tài liệu",
   intro:
-    "Giáo án giảng dạy, tài liệu giáo trình HSK1–HSK6 và tài liệu chuyên ngành của Trung tâm Tiếng Trung Ngọc Lâm Anh.",
+    "Giáo án giảng dạy, tài liệu giáo trình HSK1–HSK6 và tài liệu chuyên ngành của Trung tâm Du học Ngọc Lâm Anh.",
 };
 
 export const TAI_LIEU_JUMP = [

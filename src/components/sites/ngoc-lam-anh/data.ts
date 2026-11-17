@@ -1,12 +1,12 @@
-// Nội dung website Tiếng Trung Ngọc Lâm Anh.
+// Nội dung website Du học Ngọc Lâm Anh.
 // Thông tin khóa học lấy từ https://tiengtrungchuongmy.com/ — sửa chữ tại đây, giao diện tự cập nhật.
 
 export const BRAND = {
   name: "Ngọc Lâm Anh",
-  headerName: "TIẾNG TRUNG NGỌC LÂM ANH",
-  fullName: "Trung tâm Tiếng Trung Ngọc Lâm Anh",
-  // Tên chữ Hán: 玉 (Ngọc) 林 (Lâm) 英 (Anh) + 汉语 (tiếng Trung) — đổi nếu trung tâm dùng tên khác
-  zh: "玉林英汉语",
+  headerName: "DU HỌC NGỌC LÂM ANH",
+  fullName: "Trung tâm Du học Ngọc Lâm Anh",
+  // Tên chữ Hán: 玉 (Ngọc) 林 (Lâm) 英 (Anh) + 留学 (du học) — đổi nếu trung tâm dùng tên khác
+  zh: "玉林英留学",
   slogan: "Vươn tầm thế giới – Kiến tạo tương lai",
   tagline: "Ngôn ngữ vững vàng – Tương lai rộng mở",
   logoMark: "/sites/ngoc-lam-anh/logo-mark.png",

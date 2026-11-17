@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { DeThiPage } from "@/components/sites/ngoc-lam-anh/pages/de-thi/DeThiPage";
 
-const title = "Đề thi thử HSK · Tiếng Trung Ngọc Lâm Anh";
+const title = "Đề thi thử HSK · Du học Ngọc Lâm Anh";
 const description = "Đề thi thử HSK và HSKK online: làm bài có giờ, chấm điểm tự động, xem đáp án và giải thích từng câu.";
 
 export const metadata: Metadata = {

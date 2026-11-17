@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { TaiLieuPage } from "@/components/sites/ngoc-lam-anh/pages/tai-lieu/TaiLieuPage";
 
-const title = "Tài liệu · Tiếng Trung Ngọc Lâm Anh";
+const title = "Tài liệu · Du học Ngọc Lâm Anh";
 const description =
-  "Giáo án giảng dạy, tài liệu giáo trình HSK1–HSK6, tài liệu chuyên ngành, kho sách tiếng Trung và bảng tra lượng từ của Trung tâm Tiếng Trung Ngọc Lâm Anh.";
+  "Giáo án giảng dạy, tài liệu giáo trình HSK1–HSK6, tài liệu chuyên ngành, kho sách tiếng Trung và bảng tra lượng từ của Trung tâm Du học Ngọc Lâm Anh.";
 
 export const metadata: Metadata = {
   title,

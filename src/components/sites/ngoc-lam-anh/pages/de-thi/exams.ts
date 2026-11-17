@@ -1,4 +1,4 @@
-// Đề thi thử HSK / HSKK của Trung tâm Tiếng Trung Ngọc Lâm Anh.
+// Đề thi thử HSK / HSKK của Trung tâm Du học Ngọc Lâm Anh.
 // Toàn bộ câu hỏi dưới đây do trung tâm tự soạn để luyện tập (không lấy từ đề của đơn vị khác).
 // Thêm đề mới: thêm một phần tử vào mảng `exams` của cấp tương ứng trong EXAMS — trang tự cập nhật.
 //

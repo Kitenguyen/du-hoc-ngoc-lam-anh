@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { TuVungPage } from "@/components/sites/ngoc-lam-anh/pages/tu-vung/TuVungPage";
 
-const title = "Ôn tập từ vựng · Tiếng Trung Ngọc Lâm Anh";
+const title = "Ôn tập từ vựng · Du học Ngọc Lâm Anh";
 const description = "Ôn từ vựng HSK bằng thẻ học, trò chơi và bài kiểm tra tổng hợp – chạy ngay trên trình duyệt.";
 
 export const metadata: Metadata = {

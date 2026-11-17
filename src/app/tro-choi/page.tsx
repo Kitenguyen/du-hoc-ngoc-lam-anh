@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { TroChoiPage } from "@/components/sites/ngoc-lam-anh/pages/tro-choi/TroChoiPage";
 
-const title = "Trò chơi bắn chữ Hán · Tiếng Trung Ngọc Lâm Anh";
+const title = "Trò chơi bắn chữ Hán · Du học Ngọc Lâm Anh";
 const description = "Trò chơi gõ phiên âm bắn chữ Hán: ôn tập từ vựng HSK theo từng nhóm từ, chơi ngay trên trình duyệt.";
 
 export const metadata: Metadata = {

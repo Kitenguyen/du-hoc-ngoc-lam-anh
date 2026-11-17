@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { VideoGiangDayPage } from "@/components/sites/ngoc-lam-anh/pages/video-giang-day/VideoGiangDayPage";
 
-const title = "Video giảng dạy · Tiếng Trung Ngọc Lâm Anh";
+const title = "Video giảng dạy · Du học Ngọc Lâm Anh";
 const description =
-  "Video bài giảng theo từng bài của giáo trình, dành cho học viên và giáo viên Trung tâm Tiếng Trung Ngọc Lâm Anh.";
+  "Video bài giảng theo từng bài của giáo trình, dành cho học viên và giáo viên Trung tâm Du học Ngọc Lâm Anh.";
 
 export const metadata: Metadata = {
   title,

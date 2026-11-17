@@ -1,4 +1,4 @@
-// Nội dung trang chủ Tiếng Trung Ngọc Lâm Anh.
+// Nội dung trang chủ Du học Ngọc Lâm Anh.
 // Nguồn: https://tiengtrungchuongmy.com/ (trang chủ, /du-hoc/, /doi-ngu-giao-vien/ và trang từng giáo viên).
 // Ô có dạng "[...]" là chỗ trung tâm cần điền nội dung thật — đừng thay bằng nội dung bịa.
 
@@ -21,7 +21,7 @@ export const HERO = {
     bigChar: "玉",
     seal: "玉林",
     person: `${IMG}/hero-nguyen-thi-hang.webp`,
-    personAlt: "Giáo viên Nguyễn Thị Hằng – Trung tâm Tiếng Trung Ngọc Lâm Anh",
+    personAlt: "Giáo viên Nguyễn Thị Hằng – Trung tâm Du học Ngọc Lâm Anh",
     name: "Nguyễn Thị Hằng",
     role: "Giảng viên · HSK6 – HSKK cao cấp",
     badge: { value: "25", label: "năm kinh nghiệm" },

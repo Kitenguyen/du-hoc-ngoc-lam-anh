@@ -1,4 +1,4 @@
-// Danh mục giáo trình của Trung tâm Tiếng Trung Ngọc Lâm Anh.
+// Danh mục giáo trình của Trung tâm Du học Ngọc Lâm Anh.
 // Dùng chung cho /tai-lieu (Giáo án giảng dạy, Tài liệu giáo trình, Tài liệu chuyên ngành) và /giao-trinh?b=<id>.
 //
 // ⚠️ CÁC MỤC DƯỚI ĐÂY LÀ Ô GIỮ CHỖ — trung tâm thay bằng giáo trình thật:

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { CoursesPage } from "@/components/sites/ngoc-lam-anh/CoursesPage";
 
-const title = "Khóa học · Tiếng Trung Ngọc Lâm Anh";
+const title = "Khóa học · Du học Ngọc Lâm Anh";
 const description =
   "Khóa học tiếng Trung giao tiếp, luyện thi HSK 0–5, YTC cấp 1–2 và tư vấn du học Trung Quốc. Lớp 3–7 học viên, học thử miễn phí.";
 

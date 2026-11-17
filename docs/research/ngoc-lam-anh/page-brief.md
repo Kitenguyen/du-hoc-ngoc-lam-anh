@@ -1,4 +1,4 @@
-# Website Tiếng Trung Ngọc Lâm Anh — tổng quan
+# Website Du học Ngọc Lâm Anh — tổng quan
 
 Giao diện dựng lại từ https://hoangdatqnhsk.vn/moi/ (28 trang). Nội dung là của Ngọc Lâm Anh
 (lấy từ https://tiengtrungchuongmy.com/) hoặc ô giữ chỗ `[...]` để trung tâm điền. Quy ước code: xem `BUILD-GUIDE.md`.

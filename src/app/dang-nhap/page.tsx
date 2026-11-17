@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { LoginPage } from "@/components/sites/ngoc-lam-anh/pages/dang-nhap/LoginPage";
 
-const title = "Đăng nhập · Tiếng Trung Ngọc Lâm Anh";
-const description = "Đăng nhập dành cho học viên và giáo viên của Trung tâm Tiếng Trung Ngọc Lâm Anh.";
+const title = "Đăng nhập · Du học Ngọc Lâm Anh";
+const description = "Đăng nhập dành cho học viên và giáo viên của Trung tâm Du học Ngọc Lâm Anh.";
 
 export const metadata: Metadata = {
   title,

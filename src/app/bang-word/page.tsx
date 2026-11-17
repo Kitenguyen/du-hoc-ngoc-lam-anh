@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { BangWordPage } from "@/components/sites/ngoc-lam-anh/pages/bang-word/BangWordPage";
 
-const title = "Bảng Word · Tiếng Trung Ngọc Lâm Anh";
+const title = "Bảng Word · Du học Ngọc Lâm Anh";
 const description = "Soạn phiếu học tiếng Trung khổ A4: phiên âm tự động dưới chữ Hán, khung từ vựng kèm thứ tự nét, in và xuất Word / PDF.";
 
 export const metadata: Metadata = {

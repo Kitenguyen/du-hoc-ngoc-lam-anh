@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { TraLuongTuPage } from "@/components/sites/ngoc-lam-anh/pages/tra-luong-tu/TraLuongTuPage";
 
-const title = "Tra lượng từ · Tiếng Trung Ngọc Lâm Anh";
+const title = "Tra lượng từ · Du học Ngọc Lâm Anh";
 const description =
   "Bảng tra lượng từ (量词) tiếng Trung thông dụng: pinyin, nghĩa tiếng Việt, danh từ đi kèm và câu ví dụ, có đọc to. Tìm theo chữ Hán, pinyin hoặc tiếng Việt.";
 

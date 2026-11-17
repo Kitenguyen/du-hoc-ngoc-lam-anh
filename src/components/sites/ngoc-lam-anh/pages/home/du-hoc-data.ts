@@ -1,4 +1,4 @@
-// Thông tin du học Trung Quốc của Trung tâm Tiếng Trung Ngọc Lâm Anh.
+// Thông tin du học Trung Quốc của Trung tâm Du học Ngọc Lâm Anh.
 // Nguồn: tài liệu "TƯ VẤN DU HỌC TQ" của trung tâm (11/2026). Trợ cấp tính bằng tệ (NDT).
 
 export const DU_HOC = {

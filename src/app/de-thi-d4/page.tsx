@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { D4Page } from "@/components/sites/ngoc-lam-anh/pages/de-thi-d4/D4Page";
 
-const title = "Đề luyện thi D4 · Tiếng Trung Ngọc Lâm Anh";
+const title = "Đề luyện thi D4 · Du học Ngọc Lâm Anh";
 const description = "Luyện đề tiếng Trung THPT khối D4: làm bài có giờ, chấm điểm thang 10 và giải thích chi tiết từng câu.";
 
 export const metadata: Metadata = {

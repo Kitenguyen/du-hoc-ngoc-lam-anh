@@ -185,7 +185,7 @@ export function VideoGiangDayPage() {
         <PageHead
           zh="教学视频"
           title="Video giảng dạy"
-          intro="Video bài giảng theo từng bài của giáo trình, do giáo viên Trung tâm Tiếng Trung Ngọc Lâm Anh giảng. Dành riêng cho học viên và giáo viên của trung tâm."
+          intro="Video bài giảng theo từng bài của giáo trình, do giáo viên Trung tâm Du học Ngọc Lâm Anh giảng. Dành riêng cho học viên và giáo viên của trung tâm."
         />
         <section className="block light" style={{ paddingTop: 18 }}>
           <div className="wrap">

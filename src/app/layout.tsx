@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "@/components/sites/ngoc-lam-anh/site.css";
 
 export const metadata: Metadata = {
-  title: "Tiếng Trung Ngọc Lâm Anh",
+  title: "Du học Ngọc Lâm Anh",
 };
 
 export const viewport: Viewport = {

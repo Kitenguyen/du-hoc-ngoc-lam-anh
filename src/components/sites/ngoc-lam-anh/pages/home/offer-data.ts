@@ -19,6 +19,6 @@ export const OFFER = {
   title: "Miễn phí du học",
   giftLabel: "Quà tặng trị giá",
   giftValue: "1 TỶ ĐỒNG",
-  text: "Dành cho học viên đăng ký chương trình du học Trung Quốc tại Trung tâm Tiếng Trung Ngọc Lâm Anh.",
+  text: "Dành cho học viên đăng ký chương trình du học Trung Quốc tại Trung tâm Du học Ngọc Lâm Anh.",
   terms: "[Điều kiện áp dụng, thời hạn và nội dung quà tặng – trung tâm điền]",
 };
